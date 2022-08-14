@@ -6,12 +6,12 @@
 
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     list-style: none;
 }
 
 .navbar li {
-    margin-left: 20px;
+    margin-left: 50px;
 }
 
 h3 {
@@ -24,10 +24,31 @@ h3 {
     color: black;
 }
 
+@media screen and ( min-width: 961px) {
+    h3 {
+        font-family: 'Quicksand', sans-serif;
+        font-size: 20px;
+    }
+    
+    .navbar {
+        display: flex;
+        justify-content: flex-end;
+        list-style: none;
+    }
+
+    .box {
+        margin-left: 350%;
+    }
+
+    .box h3 {
+        margin-top: 30px;
+    }
+}
+
 .box {
     transition: 0.3s;
-    width: 100px;
-    height: 50px;
+    width: 150px;
+    height: 80px;
     text-align: center;
     background-color: rgb(85, 85, 158);
     color: rgb(198, 204, 209);
@@ -36,7 +57,7 @@ h3 {
 }
 
 .box h3 {
-   padding-top: 10px;
+   padding-top: 30px;
 }
 
 .logo {
