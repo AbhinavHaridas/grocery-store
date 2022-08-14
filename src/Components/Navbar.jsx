@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <div className="main">
       <div className="logo">
-      <img src="https://resources.dunzo.com/web-assets/prod/_next/static/images/logo-7b2b540792556466133aea6e7c6ae513.png" alt="" title="" width="122" height="28" class="sc-1go0t46-0 jrUJru" />
+      <i class="fa-solid fa-utensils fa-2xl" />
       </div>
         <nav>
           <ul className="navbar">
