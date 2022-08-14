@@ -1,22 +1,27 @@
-.main {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+html,body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
 }
 
 .navbar {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     list-style: none;
+    align-items: center;
+    margin: 0;
+    padding: 0;
 }
 
 .navbar li {
-    margin-left: 50px;
+    margin-bottom: 20px;
 }
 
 h3 {
     font-family: 'Quicksand', sans-serif;
-    font-size: 20px;
+    font-size: 22px;
 }
 
 .link {
@@ -24,31 +29,11 @@ h3 {
     color: black;
 }
 
-@media screen and ( min-width: 961px) {
-    h3 {
-        font-family: 'Quicksand', sans-serif;
-        font-size: 20px;
-    }
-    
-    .navbar {
-        display: flex;
-        justify-content: flex-end;
-        list-style: none;
-    }
-
-    .box {
-        margin-left: 350%;
-    }
-
-    .box h3 {
-        margin-top: 30px;
-    }
-}
 
 .box {
     transition: 0.3s;
-    width: 150px;
-    height: 80px;
+    width: 180px;
+    height: 90px;
     text-align: center;
     background-color: rgb(85, 85, 158);
     color: rgb(198, 204, 209);
@@ -79,15 +64,6 @@ h3 {
     width: 100%;
     height: 980px;
     background-color: red;
-}
-
-html,body
-{
-    width: 100%;
-    height: 100%;
-    margin: 0px;
-    padding: 0px;
-    overflow-x: hidden; 
 }
 
 .main {
