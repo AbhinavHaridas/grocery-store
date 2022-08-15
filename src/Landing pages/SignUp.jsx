@@ -7,6 +7,7 @@ const SignUpPageWrap = styled.div`
   font-family: "Forum", cursive;
   justify-content: center;
   align-items: center;
+  background-color: #00a8ff;
 `;
 
 const SignUpPage = styled.div`
@@ -21,6 +22,7 @@ const Text = styled.text`
   color: white;
   filter: drop-shadow(0px 10px 18px rgba(0, 0, 0, 0.25));
   text-shadow: 5px 6px 8px rgb(0 0 0 / 25%);
+  margin-bottom: 1.5px;
 `;
 
 const Form = styled.form`
@@ -87,8 +89,6 @@ const Image = styled.img`
 `;
 
 const SignUp = () => {
-  document.body.style.backgroundColor = "#00A8FF";
-
   const [searchString, setSearchString] = useState();
   const [phoneNumber, setPhoneNumber] = useState();
   const [email, setEmail] = useState();
