@@ -1,0 +1,44 @@
+html,body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.box {
+    background-color: aqua;
+}
+
+.navbar li {
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-family: 'Forum', cursive;
+    font-size: 22px;
+    color: white;
+}
+
+button {
+    background-color: blue;
+}
+
+.link {
+    text-decoration: none;
+    color: black;
+}
+
+.logo {
+    margin-left: 20px;
+    margin-top: 20px;
+}

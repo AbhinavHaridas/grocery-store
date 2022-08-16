@@ -61,6 +61,7 @@ h3 {
 
 .Landing {
 
+    background-image: url(/src/Landing\ pages/images/Rectangle5.png);
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
