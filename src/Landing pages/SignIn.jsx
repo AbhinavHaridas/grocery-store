@@ -5,7 +5,7 @@ const SignIn = () => {
         <div>
 <Modal isOpen={true}>
     <form>
-    <center> <h1 >Welcome,Again</h1> </center>
+    <center> <h1>Welcome,Again</h1> </center>
     <label> Phone no/email </label>
 <input type="text"
 required />
