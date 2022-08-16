@@ -25,7 +25,6 @@ const Text = styled.text`
   font-size: 70px;
   line-height: 77px;
   text-align: center;
-  color: black;
   color: #ffffff;
   position: absolute;
   top: 35%;

@@ -54,7 +54,7 @@ const Service = () => {
         <ServiceImage />
       </ServiceImageWrap>
       <ServiceImageText>
-        <h3 style={{ width: "75%" }}>
+        <h3 style={{ width: "75%", color: "black" }}>
           What began little, with a solitary idea of a store that provides a
           rebate and the basic thought of moving more for less, has become in
           the course of the last 40 years into the biggest retailer in this
@@ -62,7 +62,7 @@ const Service = () => {
         </h3>
       </ServiceImageText>
       <ServiceImageText>
-        <h3 style={{ width: "75%" }}>
+        <h3 style={{ width: "75%", color: "black" }}>
           Our store keeps on being an innovator in supportability, corporate
           magnanimity, and work opportunity. It’s everything part of our
           relentless promise to make openings and convey an incentive to clients
