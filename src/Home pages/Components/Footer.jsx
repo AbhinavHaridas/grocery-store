@@ -16,7 +16,7 @@ const Footer = () => {
                 <div className="circle" />
                 <div className="circle" />
             </ul>
-            <p>XYZ Commerce Private Limited. 2022-2024</p>
+            <p>© XYZ Commerce Private Limited. 2022-2024</p>
         </div>
     )
 }

@@ -204,7 +204,7 @@ const Footer = () => {
           <LI>
             <A href="/aboutus">
               <div>
-                <h3 style={{color: "black"}}>
+                <h3 style={{ color: "black" }}>
                   <b>Terms</b>
                 </h3>
               </div>
