@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 // Import components here
-import Wrap from "../Components/ProfileCardWrap";
+import Wrap from "./ProfileCardWrap"
 
 const TeamSection = styled.div`
   font-family: "Forum", cursive;

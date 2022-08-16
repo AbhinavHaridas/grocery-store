@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import image from "../images/Pineapple.jpg";
+import image from "./images/Pineapple.jpg";
 
 const SignUpPageWrap = styled.div`
   display: flex;

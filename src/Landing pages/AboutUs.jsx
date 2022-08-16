@@ -1,14 +1,14 @@
 import React from "react";
-import Navbar from "../Components/Navbar";
+import Navbar from "./Components/Navbar";
 import styled from "styled-components";
 
 // Assets import here
-import image from "../images/ServiceHero.jpg";
+import image from "./images/ServiceHero.jpg";
 
 // Components import here
-import Service from "../Components/Service-component";
-import Team from "../Components/Team-component";
-import Footer from "../Components/Footer";
+import Service from "./Components/Service-component";
+import Team from "./Components/Team-component";
+import Footer from "./Components/Footer";
 
 const Hero = styled.div`
   position: relative;

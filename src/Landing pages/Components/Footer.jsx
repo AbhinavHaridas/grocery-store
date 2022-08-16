@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 // Assets import here
-import twitter from "../images/twitter.png";
+// import twitter from "./images/twitter.png";
+import twitter from "../images/twitter.png"
 import instagram from "../images/instagram.png";
 import linkedin from "../images/linkedin.png";
 import facebook from "../images/facebook.png";
