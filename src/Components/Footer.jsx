@@ -48,37 +48,59 @@ const Text = styled.p`
   text-align: center;
 `;
 
+const A = styled.a`
+  text-decoration: none;
+  color: black;
+  position: relative;
+  :after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: black;
+    transition: width 0.4s ease 0s, left 0.3s ease 0s;
+    width: 0;
+  }
+  :hover:after {
+    width: 100%;
+    left: 0;
+  }
+`;
+
 const Footer = () => {
   return (
     <FooterWrap>
       <FooterList>
         <UL>
           <LI>
-            <Link to="/aboutus" className="link">
+            <A href="/aboutus">
               <div>
                 <h3>
                   <b>About Us</b>
                 </h3>
               </div>
-            </Link>
+            </A>
           </LI>
           <LI>
-            <Link to="/aboutus" className="link">
+            <A href="/aboutus">
               <div>
                 <h3>
                   <b>Contact</b>
                 </h3>
               </div>
-            </Link>
+            </A>
           </LI>
           <LI>
-            <Link to="/aboutus" className="link">
+            <A href="/aboutus">
               <div>
                 <h3>
                   <b>Terms</b>
                 </h3>
               </div>
-            </Link>
+            </A>
           </LI>
         </UL>
       </FooterList>
