@@ -20,7 +20,7 @@ html,body {
 }
 
 h3 {
-    font-family: 'Forum', cursive;
+    font-family: 'Quicksand', sans-serif;
     font-size: 22px;
 }
 
@@ -35,10 +35,10 @@ h3 {
     width: 180px;
     height: 90px;
     text-align: center;
-    background-color: rgb(6, 153, 202);
+    background-color: rgb(85, 85, 158);
     color: rgb(198, 204, 209);
     border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.24) 10px 6px 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .box h3 {
@@ -60,28 +60,18 @@ h3 {
 }
 
 .Landing {
-<<<<<<< Updated upstream:src/Landing pages/LandingStyles/LandingStyle.css
-    background-image: url(/src/images/Rectangle\ 5.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    background-color: red;
-=======
     width: 100%;
     height: 713px;
->>>>>>> Stashed changes:src/App.css
 }
 
 .main {
-    background-color: rgb(68, 66, 66);
+    background-color: gray;
     padding: 0;
 }
 
 .intro h1 {
     color: aliceblue;
     font-family: 'Forum', cursive;
-    text-shadow: .05em 0 rgb(9, 10, 10);
+    text-shadow: .1em .1em 0 hsl(200 50% 30%);
     font-size: 80px;
 }

@@ -1,0 +1,85 @@
+html,body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-family: 'Forum', cursive;
+    font-size: 22px;
+}
+
+.link {
+    text-decoration: none;
+    color: black;
+}
+
+
+.box {
+    transition: 0.3s;
+    width: 180px;
+    height: 90px;
+    text-align: center;
+    background-color: rgb(6, 153, 202);
+    color: rgb(198, 204, 209);
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 10px 6px 5px;
+}
+
+.box h3 {
+   padding-top: 30px;
+}
+
+.logo {
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.box:hover {
+    color: white;
+}
+
+.intro {
+    text-align: center;
+    margin-top: 300px;
+}
+
+.Landing {
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: red;
+    width: 100%;
+    height: 713px;
+
+}
+
+.main {
+    background-color: rgb(68, 66, 66);
+    padding: 0;
+}
+
+.intro h1 {
+    color: aliceblue;
+    font-family: 'Forum', cursive;
+    text-shadow: .05em 0 rgb(9, 10, 10);
+    font-size: 80px;
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 
-const Navbar = () => {
+const LandingNavbar = () => {
   return (
       <nav className="main">
         <ul className="navbar">
@@ -14,4 +14,4 @@ const Navbar = () => {
   );
 }
 
-export default Navbar;
+export default LandingNavbar;
