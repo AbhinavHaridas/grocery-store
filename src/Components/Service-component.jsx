@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import image from "../images/ServiceImage.jpg";
+import image from "../Landing pages/images/ServiceImage.jpg";
 
 const ServiceWrap = styled.div`
   height: 550px;

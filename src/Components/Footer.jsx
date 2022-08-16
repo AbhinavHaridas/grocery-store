@@ -4,10 +4,10 @@ import styled from "styled-components";
 
 // Assets import here
 // import twitter from "./images/twitter.png";
-import twitter from "../images/twitter.png"
-import instagram from "../images/instagram.png";
-import linkedin from "../images/linkedin.png";
-import facebook from "../images/facebook.png";
+import linkedin from "../Landing pages/images/linkedin.png";
+import facebook from "../Landing pages/images/facebook.png";
+import twitter from "../Landing pages/images/twitter.png";
+import instagram from "../Landing pages/images/instagram.png";
 
 const FooterWrap = styled.footer`
   background-color: #d1ccc0;

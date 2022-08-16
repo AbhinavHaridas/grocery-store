@@ -1,9 +1,9 @@
 import { React,useEffect,useState} from 'react'
 import styled from 'styled-components';
-import sliderImage1 from '../images/slider-img-1.jpg';
-import sliderImage2 from '../images/slider-img-2.jpg';
-import sliderImage3 from '../images/slider-img-3.png';
-import sliderImage4 from '../images/slider-img-4.png';
+import sliderImage1 from '../Landing pages/images/slider-img-1.jpg';
+import sliderImage2 from '../Landing pages/images/slider-img-2.jpg';
+import sliderImage3 from '../Landing pages/images/slider-img-3.png';
+import sliderImage4 from '../Landing pages/images/slider-img-4.png';
 
 /* Array of images used for slider */
 const sliderImages = [

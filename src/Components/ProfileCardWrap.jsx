@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import image from "../images/ProfilePicture.jpg";
-import twitter from "../images/twitter.png";
-import instagram from "../images/instagram.png";
+import image from "../Landing pages/images/ProfilePicture.jpg";
+import twitter from "../Landing pages/images/twitter.png";
+import instagram from "../Landing pages/images/instagram.png";
 
 const ProfileCardWrap = styled.div`
   display: flex;
