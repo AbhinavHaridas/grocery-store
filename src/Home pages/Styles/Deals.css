@@ -1,0 +1,14 @@
+.deal {
+    display: flex;
+    width: 100%;
+    height: 50vh;
+    background-color: rgb(12, 207, 185);
+    background-size: cover;
+}
+
+.text {
+    font-family: 'Forum', cursive; 
+    font-size: 40px;
+    color: black;  
+    margin-left: 4%;  
+}
