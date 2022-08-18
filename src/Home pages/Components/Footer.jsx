@@ -1,14 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../Styles/Footer.css"
+import styled from "styled-components";
+import "../Styles/Footer.css";
 
 const Footer = () => {
     return (
         <div className="footer">
             <ul className="Socials">
-                <li><Link to='/aboutus' className="link"><h3 className="s">About Us</h3></Link></li>
-                <li><Link to='/home' className="link"><h3 className="s">Contact</h3></Link></li>
-                <li><Link to='/home' className="link"><h3 className="s">Terms</h3></Link></li>
+                <li><Link to='/aboutus' className="Link"><h3 className="s">About Us</h3></Link></li>
+                <li><Link to='/home' className="Link"><h3 className="s">Contact</h3></Link></li>
+                <li><Link to='/home' className="Link"><h3 className="s">Terms</h3></Link></li>
             </ul>
             <ul className="circles">
                 <div className="circle" />
