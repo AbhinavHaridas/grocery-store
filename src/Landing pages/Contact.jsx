@@ -6,10 +6,36 @@ import Navbar from "../Landing pages/Components/Navbar";
 import SocialMedia from "../Landing pages/Components/Social-media";
 
 // Assets import here
-import image from "../Landing pages/images/contact-us-image.jpg";
+// import image from "../Landing pages/images/contact-us-image.jpg";
+import image from "../Landing pages/images/ContactImage.jpg";
 
 const Image = styled.img`
   width: 100%;
+  max-height: 81.5vh;
+`;
+
+const ImageWrap = styled.div`
+  width: 100%;
+  height: 81.5vh;
+  min-height:81.5vh;
+  max-height:81.5vh;
+  background-image: url(${image});
+  background-repeat:no-repeat;
+  background-size:100% 100%;
+  background-color: #000000;`;
+
+const ImageText = styled.h1`
+  position: absolute;
+  width: 55%;
+  font-family: "Forum";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 90px;
+  line-height: 80px;
+  color: #ffffff;
+  text-align: center;
+  text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
+    -1px -1px 0 #000;
 `;
 
 const Form = styled.form`
@@ -161,7 +187,10 @@ const Contact = ({ text = "Mumbai" }) => {
   return (
     <ContactWrap>
       <Navbar />
-      <Image src={image} alt="No image" />
+      {/* <Image src={image} alt="No image" /> */}
+      <ImageWrap>
+        <ImageText>We would love to hear from you!</ImageText>
+      </ImageWrap>
       <FormWrap>
         <Form>
           <Select>
