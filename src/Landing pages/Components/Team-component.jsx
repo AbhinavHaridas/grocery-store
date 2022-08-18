@@ -7,7 +7,7 @@ import Wrap from "./ProfileCardWrap"
 const TeamSection = styled.div`
   font-family: "Forum", cursive;
   padding: 30px;
-  background-color: #dedbdb; ;
+  background-color: #dedbdb; 
 `;
 
 const Heading = styled.div``;
