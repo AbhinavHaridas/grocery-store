@@ -3,13 +3,13 @@ import styled from "styled-components";
 import image from "../images/ServiceImage.jpg";
 
 const ServiceWrap = styled.div`
-  height: 550px;
+  height: 180vh;
   width: 100%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 0.5fr repeat(2, 1fr);
+  grid-template-rows: 0.3fr repeat(3, 1fr);
   font-family: "Forum", cursive;
-  padding: 30px;
+  padding: 20px;
   background-color: #e8e7e7;
   margin-top: -3.5px;
 `;
@@ -31,8 +31,8 @@ const ServiceImage = styled.div`
   background-image: url(${image});
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  height: 194px;
-  width: 322px;
+  height: 80%;
+  width: 70%;
 `;
 
 const ServiceImageText = styled.div`
@@ -72,6 +72,18 @@ const Service = () => {
       <ServiceImageWrap>
         <ServiceImage />
       </ServiceImageWrap>
+      <ServiceImageWrap>
+        <ServiceImage />
+      </ServiceImageWrap>
+      <ServiceImageText>
+        <h3 style={{ width: "75%", color: "black" }}>
+          Appropriate from new Fruits and Vegetables, Rice and Lentils, Spices
+          and Seasonings to Packaged items, Beverages, Personal consideration
+          items, Meats – we have everything. Browse a wide scope of choices in
+          each class, solely handpicked to enable you to locate the best quality
+          accessible at the least cost.
+        </h3>
+      </ServiceImageText>
     </ServiceWrap>
   );
 };
