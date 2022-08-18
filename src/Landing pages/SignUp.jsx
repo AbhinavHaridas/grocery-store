@@ -117,6 +117,11 @@ const SignUp = () => {
             <Label htmlFor="">Contact No:</Label>
             <Input
               type="tel"
+              onKeyPress={(event) => {
+                if (!/[0-9]/.test(event.key)) {
+                  event.preventDefault();
+                }
+              }}
               value={phoneNumber}
               onChange={(e) => setPhoneNumber(e.target.value)}
               maxLength={10}

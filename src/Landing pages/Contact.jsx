@@ -17,16 +17,17 @@ const Image = styled.img`
 const ImageWrap = styled.div`
   width: 100%;
   height: 81.5vh;
-  min-height:81.5vh;
-  max-height:81.5vh;
+  min-height: 82vh;
+  max-height: 81.5vh;
   background-image: url(${image});
-  background-repeat:no-repeat;
-  background-size:100% 100%;
-  background-color: #000000;`;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-color: #000000;
+`;
 
 const ImageText = styled.h1`
   position: absolute;
-  width: 55%;
+  width: 50%;
   font-family: "Forum";
   font-style: normal;
   font-weight: 400;
@@ -43,7 +44,7 @@ const Form = styled.form`
   width: 45%;
   display: flex;
   flex-direction: column;
-  padding: 27px 22px;
+  padding: 47px 22px;
   border-radius: 10px;
 `;
 
@@ -215,6 +216,17 @@ const Contact = ({ text = "Mumbai" }) => {
             value={searchString}
             onChange={(e) => setSearchString(e.target.value)}
             placeholder="Name*"
+          />
+          {/* Contact */}
+          <Input
+            type="tel"
+            onKeyPress={(event) => {
+              if (!/[0-9]/.test(event.key)) {
+                event.preventDefault();
+              }
+            }}
+            placeholder="Contact*"
+            maxLength={10}
           />
           {/* Email */}
           <Input
