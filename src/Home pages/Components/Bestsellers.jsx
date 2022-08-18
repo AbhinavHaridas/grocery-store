@@ -97,24 +97,24 @@ const TextP = styled.p`
 const Bestsellers = () => {
     return (
         <Display>
-        <Text>Bestsellers: </Text>
-        <BestSeller>
-            <SliderButton>
-                <InsideSliderLeftButton />
-            </SliderButton>
-            <Card>
-                <InsideCard />
-            </Card>
-            <Card>
-                <InsideCard />    
-            </Card>
-            <Card>
-                <InsideCard />
-            </Card>
-            <SliderButton>
-                <InsideSliderRightButton />    
-            </SliderButton>
-        </BestSeller>
+            <Text>Bestsellers: </Text>
+            <BestSeller>
+                <SliderButton>
+                    <InsideSliderLeftButton />
+                </SliderButton>
+                <Card>
+                    <InsideCard />
+                </Card>
+                <Card>
+                    <InsideCard />    
+                </Card>
+                <Card>
+                    <InsideCard />
+                </Card>
+                <SliderButton>
+                    <InsideSliderRightButton />    
+                </SliderButton>
+            </BestSeller>
         </Display> 
     )
 }
