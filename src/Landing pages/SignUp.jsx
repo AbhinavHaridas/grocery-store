@@ -8,6 +8,7 @@ const SignUpPageWrap = styled.div`
   justify-content: center;
   align-items: center;
   background-color: #00a8ff;
+  height: 100vh;
 `;
 
 const SignUpPage = styled.div`
@@ -117,6 +118,11 @@ const SignUp = () => {
             <Label htmlFor="">Contact No:</Label>
             <Input
               type="tel"
+              onKeyPress={(event) => {
+                if (!/[0-9]/.test(event.key)) {
+                  event.preventDefault();
+                }
+              }}
               value={phoneNumber}
               onChange={(e) => setPhoneNumber(e.target.value)}
               maxLength={10}

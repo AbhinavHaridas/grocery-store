@@ -2,10 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import image from "../images/ProfilePicture.jpg";
 import twitter from "../images/twitter.png";
-import instagram from "../images/instagram.png";
+// import instagram from "../images/instagram.png";
+import linkedin from "../images/linkedin.png";
 
 const ProfileCardWrap = styled.div`
   display: flex;
+  justify-content: center;
   padding: 30px 45px 39px;
   background-color: #fff;
   width: 13%;
@@ -49,8 +51,8 @@ const Wrap = ({ text }) => {
           <a href="https://twitter.com" target="_blank" rel="noreferrer">
             <Icon src={twitter} alt="No image" />
           </a>
-          <a href="https://instagram.com" target="_blank" rel="noreferrer">
-            <Icon src={instagram} alt="No image" />
+          <a href="https://linkedin.com" target="_blank" rel="noreferrer">
+            <Icon src={linkedin} alt="No image" />
           </a>
         </SocialMediaWrap>
       </ProfileCard>
