@@ -3,10 +3,11 @@ import styled from "styled-components";
 import image from "../images/ProfilePicture.jpg";
 import twitter from "../images/twitter.png";
 // import instagram from "../images/instagram.png";
-import linkedin from "../images/linkedin.png"
+import linkedin from "../images/linkedin.png";
 
 const ProfileCardWrap = styled.div`
   display: flex;
+  justify-content: center;
   padding: 30px 45px 39px;
   background-color: #fff;
   width: 13%;
