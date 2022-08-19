@@ -3,7 +3,7 @@ import  Deals from "./Components/Deals";
 import  Header  from "./Components/Header";
 import  Navbar from "./Components/Navbar";
 import Bestsellers from "./Components/Bestsellers";
-import Footer from "./Components/Footer";
+import Footer from "../Landing pages/Components/Footer";
 
 const Home = () => {
     return (

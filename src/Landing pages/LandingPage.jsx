@@ -1,15 +1,14 @@
 import React from "react";
-import Navbar from "./Components/Navbar";
 import '../Landing pages/LandingStyles/LandingStyle.css';
+import LandingNavbar from "./Components/LandingNavbar";
+import AutoSlider from "./Components/AutoSlider";
 
 
 const App = () => {
     return (
         <div className="Landing">
-            <Navbar />
-            <div className="intro">
-                <h1>Fresh groceries delivered right to your door step</h1>
-            </div>
+            <LandingNavbar />
+            <AutoSlider />
         </div>
     )
 }
