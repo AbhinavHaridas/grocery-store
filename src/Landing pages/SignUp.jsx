@@ -59,7 +59,6 @@ const CreateButton = styled.button`
     transform: translateY(-0.25em);
     background-color: orange;
   }
-  }
 `;
 
 const Input = styled.input`

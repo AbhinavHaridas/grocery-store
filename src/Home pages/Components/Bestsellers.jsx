@@ -27,7 +27,7 @@ const InsideSliderRightButton = () => {
 
 const Card = styled.div`
     width: 30vh;
-    height: 370px;
+    height: 40vh;
     border-radius: 20px;
     background-color: white;
     margin-left: 20px;
@@ -75,7 +75,7 @@ const Display = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 55vh;
+    height: 60vh;
     background-color: rgb(224, 167, 59);
     background-size: cover;
 `
