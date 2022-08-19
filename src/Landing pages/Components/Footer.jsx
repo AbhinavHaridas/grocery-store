@@ -16,7 +16,7 @@ const UL = styled.ul`
   list-style-type: none;
   display: flex;
   justify-content: center;
-  width: 1536px;
+  width: 100%;
   margin-left: -40px;
 `;
 
