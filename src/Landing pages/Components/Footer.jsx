@@ -1,11 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
-// Assets import here
-import twitter from "../images/twitter.png";
-import instagram from "../images/instagram.png";
-import linkedin from "../images/linkedin.png";
-import facebook from "../images/facebook.png";
+// Import components here
+import SocialMedia from "./Social-media";
 
 const FooterWrap = styled.footer`
   background-color: #d1ccc0;
@@ -15,25 +12,11 @@ const FooterList = styled.div`
   display: flex;
 `;
 
-const Icon = styled.img`
-  height: 25px;
-  margin-right: 20px;
-  margin-left: 20px;
-  cursor: pointer;
-`;
-
-const FooterSocialMedia = styled.div`
-  width: 1536px;
-  display: flex;
-  justify-content: center;
-  margin-top: 40px;
-`;
-
 const UL = styled.ul`
   list-style-type: none;
   display: flex;
   justify-content: center;
-  width: 1536px;
+  width: 100%;
   margin-left: -40px;
 `;
 
@@ -77,23 +60,23 @@ const Footer = () => {
           <LI>
             <A href="/aboutus">
               <div>
-                <h3 style={{color: "black"}}>
+                <h3 style={{ color: "black" }}>
                   <b>About Us</b>
                 </h3>
               </div>
             </A>
           </LI>
           <LI>
-            <A href="/aboutus">
+            <A href="/contact">
               <div>
-                <h3 style={{color: "black"}}>
+                <h3 style={{ color: "black" }}>
                   <b>Contact</b>
                 </h3>
               </div>
             </A>
           </LI>
           <LI>
-            <A href="/aboutus">
+            <A href="/home">
               <div>
                 <h3 style={{ color: "black" }}>
                   <b>Terms</b>
@@ -104,20 +87,7 @@ const Footer = () => {
         </UL>
       </FooterList>
       <>
-        <FooterSocialMedia>
-          <a href="https://twitter.com" target="_blank" rel="noreferrer">
-            <Icon src={twitter} alt="No image" />
-          </a>
-          <a href="https://instagram.com" target="_blank" rel="noreferrer">
-            <Icon src={instagram} alt="No image" />
-          </a>
-          <a href="https://linkedin.com" target="_blank" rel="noreferrer">
-            <Icon src={linkedin} alt="No image" />
-          </a>
-          <a href="https://facebook.com" target="_blank" rel="noreferrer">
-            <Icon src={facebook} alt="No image" />
-          </a>
-        </FooterSocialMedia>
+        <SocialMedia />
         <Text>© XYZ Commerce Private Limited, 2022-2024</Text>
       </>
     </FooterWrap>

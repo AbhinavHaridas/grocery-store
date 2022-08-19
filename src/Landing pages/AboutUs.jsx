@@ -31,6 +31,8 @@ const Text = styled.text`
   left: 23%;
   z-index: 1;
   width: 55%;
+  text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
+    -1px -1px 0 #000;
 `;
 
 const AboutUs = () => {
