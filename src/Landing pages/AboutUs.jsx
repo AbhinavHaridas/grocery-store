@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "./Components/Navbar";
+import LandingNavbar from "./Components/LandingNavbar";
 import styled from "styled-components";
 
 // Assets import here
@@ -9,7 +9,6 @@ import image from "./images/ServiceHero.jpg";
 import Service from "./Components/Service-component";
 import Team from "./Components/Team-component";
 import Footer from "./Components/Footer";
-import LandingNavbar from "./Components/LandingNavbar";
 
 const Hero = styled.div`
   position: relative;
