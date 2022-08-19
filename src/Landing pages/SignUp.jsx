@@ -8,6 +8,7 @@ const SignUpPageWrap = styled.div`
   justify-content: center;
   align-items: center;
   background-color: #00a8ff;
+  height: 100vh;
 `;
 
 const SignUpPage = styled.div`

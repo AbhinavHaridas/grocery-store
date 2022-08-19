@@ -9,6 +9,7 @@ import image from "./images/ServiceHero.jpg";
 import Service from "./Components/Service-component";
 import Team from "./Components/Team-component";
 import Footer from "./Components/Footer";
+import LandingNavbar from "./Components/LandingNavbar";
 
 const Hero = styled.div`
   position: relative;
@@ -38,7 +39,7 @@ const Text = styled.text`
 const AboutUs = () => {
   return (
     <div>
-      <Navbar />
+      <LandingNavbar />
       <Hero>
         <Image src={image} alt="No image" />
         <Text>Learn more about us and our goal for a better tommorrow </Text>
