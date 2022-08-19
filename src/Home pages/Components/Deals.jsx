@@ -39,7 +39,7 @@ const InsideCard = () => {
         <section>
             <div style={{display: 'flex', justifyContent: 'center'}} >
             <img src="https://imgur.com/xxh8Xni.png" 
-                style={{ width: '180px', height: '150px', marginTop: '5vh'}} 
+                style={{ width: '18.556701030927837vh', height: '15.463917525773196vh', marginTop: '5vh'}} 
             alt="images" />
             </div>
             <TextP>
