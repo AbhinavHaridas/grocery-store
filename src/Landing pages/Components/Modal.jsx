@@ -13,6 +13,7 @@ const ModalOverlay = styled.div`
   align-content: center;
   background-color: rgb(35 35 35 / 40%);
   backdrop-filter: blur(5px);
+  z-index: 1;
 `;
 
 /*   background-color: rgb(186 186 186 / 40%);
@@ -32,6 +33,7 @@ const ModalContent = styled.div`
   align-items: center;
   align-content: center;
   box-shadow: 1px 1px 15px 3px #292828;
+  z-index: 1;
 `;
 
 
