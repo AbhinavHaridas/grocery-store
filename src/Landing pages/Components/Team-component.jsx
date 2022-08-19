@@ -2,18 +2,19 @@ import React from "react";
 import styled from "styled-components";
 
 // Import components here
-import Wrap from "./ProfileCardWrap"
+import Wrap from "./ProfileCardWrap";
 
 const TeamSection = styled.div`
   font-family: "Forum", cursive;
   padding: 30px;
-  background-color: #dedbdb; 
+  background-color: #dedbdb;
 `;
 
 const Heading = styled.div``;
 
 const WrapSection = styled.div`
   display: flex;
+  justify-content: center;
 `;
 
 const Team = () => {

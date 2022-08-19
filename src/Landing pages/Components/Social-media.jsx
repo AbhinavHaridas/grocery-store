@@ -19,7 +19,7 @@ const Icon = styled.img`
 `;
 
 const FooterSocialMedia = styled.div`
-  width: 1536px;
+  width: 100%;
   display: flex;
   justify-content: center;
   margin-top: 40px;
