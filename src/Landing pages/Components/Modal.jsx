@@ -70,11 +70,14 @@ const Title = styled.h1`
 `;
 
 const Form = styled.form`
-  height:50%;
+  height: 50%;
   display: flex;
   flex-direction: column;
-  padding:15px;
-  `;
+  padding: 15px;
+  position: relative;
+  bottom: 5%;
+  gap: 5px;
+`;
 
 const Input = styled.input`
   font-family: "Forum";
