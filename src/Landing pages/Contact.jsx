@@ -2,17 +2,11 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 // Components import here
-import Navbar from "../Landing pages/Components/Navbar";
+import LandingNavbar from "./Components/LandingNavbar";
 import SocialMedia from "../Landing pages/Components/Social-media";
 
 // Assets import here
-// import image from "../Landing pages/images/contact-us-image.jpg";
 import image from "../Landing pages/images/ContactImage.jpg";
-
-const Image = styled.img`
-  width: 100%;
-  max-height: 81.5vh;
-`;
 
 const ImageWrap = styled.div`
   width: 100%;
@@ -187,7 +181,7 @@ const Contact = ({ text = "Mumbai" }) => {
 
   return (
     <ContactWrap>
-      <Navbar />
+      <LandingNavbar />
       {/* <Image src={image} alt="No image" /> */}
       <ImageWrap>
         <ImageText>We would love to hear from you!</ImageText>
