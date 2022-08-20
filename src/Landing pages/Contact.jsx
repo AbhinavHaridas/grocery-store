@@ -95,7 +95,7 @@ const FormWrap = styled.div`
   border-radius: 10px;
   width: 50%;
   position: absolute;
-  top: 200px;
+  top: 2%;
   right: 8%;
 `;
 
@@ -180,95 +180,97 @@ const Contact = ({ text = "Mumbai" }) => {
   const [query, setQuery] = useState();
 
   return (
-    <ContactWrap>
+    <>
       <LandingNavbar />
-      {/* <Image src={image} alt="No image" /> */}
-      <ImageWrap>
-        <ImageText>We would love to hear from you!</ImageText>
-      </ImageWrap>
-      <FormWrap>
-        <Form>
-          <Select>
-            <option value="default" hidden style={{ color: "#454545" }}>
-              How can we help you*
-            </option>
-            <option value="help">I need help with my order</option>
-            <option value="outdated">
-              I found incorrect/outdated information on a page
-            </option>
-            <option value="not-working">
-              The website is not working the way it should
-            </option>
-            <option value="feedback">
-              I would like to give feedback/suggestions
-            </option>
-            <option value="other">Other</option>
-          </Select>
-          {/* Name */}
-          <Input
-            type="text"
-            value={searchString}
-            onChange={(e) => setSearchString(e.target.value)}
-            placeholder="Name*"
-          />
-          {/* Contact */}
-          <Input
-            type="tel"
-            onKeyPress={(event) => {
-              if (!/[0-9]/.test(event.key)) {
-                event.preventDefault();
-              }
-            }}
-            placeholder="Contact*"
-            maxLength={10}
-          />
-          {/* Email */}
-          <Input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="Email*"
-          />
-          {/* Query */}
-          <Textarea
-            rows={6}
-            cols={50}
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            placeholder="Type Text Here*"
-          />
-          <SubmitButton>Submit</SubmitButton>
-        </Form>
-      </FormWrap>
-      <Reach>
-        <Text>You can also reach out to us on:</Text>
-        <SocialMedia />
-        <Text style={{ marginTop: 40 }}>or mail us at:</Text>
-        <Mail href="mailto:2020.shaun.dsouza@ves.ac.in">
-          <Email>2020.shaun.dsouza@ves.ac.in</Email>
-        </Mail>
-        <Mail href="mailto:2020.abhinav.haridas@ves.ac.in">
-          <Email>2020.abhinav.haridas@ves.ac.in</Email>
-        </Mail>
-        <Text style={{ marginTop: 40 }}>we are located at:</Text>
-        <LocationWrap>
-          <Location>
-            <Branch>Headquarters</Branch>
-            <Address>
-              Level 7, Plot no, FIFC Building, C-54&55, G Block BKC, Bandra
-              East, Mumbai, Maharashtra 400098
-            </Address>
-          </Location>
-          <Location>
-            <Branch>{text} Branch</Branch>
-            <Address>
-              Level 7, Plot no, FIFC Building, C-54&55, G Block BKC, Bandra
-              East, Mumbai, Maharashtra 400098
-            </Address>
-          </Location>
-        </LocationWrap>
-      </Reach>
-    </ContactWrap>
+      <ContactWrap>
+        {/* <Image src={image} alt="No image" /> */}
+        <ImageWrap>
+          <ImageText>We would love to hear from you!</ImageText>
+        </ImageWrap>
+        <FormWrap>
+          <Form>
+            <Select>
+              <option value="default" hidden style={{ color: "#454545" }}>
+                How can we help you*
+              </option>
+              <option value="help">I need help with my order</option>
+              <option value="outdated">
+                I found incorrect/outdated information on a page
+              </option>
+              <option value="not-working">
+                The website is not working the way it should
+              </option>
+              <option value="feedback">
+                I would like to give feedback/suggestions
+              </option>
+              <option value="other">Other</option>
+            </Select>
+            {/* Name */}
+            <Input
+              type="text"
+              value={searchString}
+              onChange={(e) => setSearchString(e.target.value)}
+              placeholder="Name*"
+            />
+            {/* Contact */}
+            <Input
+              type="tel"
+              onKeyPress={(event) => {
+                if (!/[0-9]/.test(event.key)) {
+                  event.preventDefault();
+                }
+              }}
+              placeholder="Contact*"
+              maxLength={10}
+            />
+            {/* Email */}
+            <Input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Email*"
+            />
+            {/* Query */}
+            <Textarea
+              rows={6}
+              cols={50}
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="Type Text Here*"
+            />
+            <SubmitButton>Submit</SubmitButton>
+          </Form>
+        </FormWrap>
+        <Reach>
+          <Text>You can also reach out to us on:</Text>
+          <SocialMedia />
+          <Text style={{ marginTop: 40 }}>or mail us at:</Text>
+          <Mail href="mailto:2020.shaun.dsouza@ves.ac.in">
+            <Email>2020.shaun.dsouza@ves.ac.in</Email>
+          </Mail>
+          <Mail href="mailto:2020.abhinav.haridas@ves.ac.in">
+            <Email>2020.abhinav.haridas@ves.ac.in</Email>
+          </Mail>
+          <Text style={{ marginTop: 40 }}>we are located at:</Text>
+          <LocationWrap>
+            <Location>
+              <Branch>Headquarters</Branch>
+              <Address>
+                Level 7, Plot no, FIFC Building, C-54&55, G Block BKC, Bandra
+                East, Mumbai, Maharashtra 400098
+              </Address>
+            </Location>
+            <Location>
+              <Branch>{text} Branch</Branch>
+              <Address>
+                Level 7, Plot no, FIFC Building, C-54&55, G Block BKC, Bandra
+                East, Mumbai, Maharashtra 400098
+              </Address>
+            </Location>
+          </LocationWrap>
+        </Reach>
+      </ContactWrap>
+    </>
   );
 };
 
