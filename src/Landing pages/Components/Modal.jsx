@@ -1,6 +1,6 @@
-import {React,useState} from 'react'
-import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const ModalOverlay = styled.div`
   position: absolute;
@@ -35,8 +35,6 @@ const ModalContent = styled.div`
   box-shadow: 1px 1px 15px 3px #292828;
   z-index: 2;
 `;
-
-
 
 const TriangleDesign = styled.div`
   width: 0;
@@ -85,13 +83,13 @@ const Input = styled.input`
   font-family: "Forum";
   font-style: normal;
   font-weight: 400;
-  font-size:25px;
+  font-size: 25px;
   background: #ffffff;
   border-radius: 10px;
   margin-top: 15px;
   height: 10%;
-  margin-bottom:15px;
-  padding:5px;
+  margin-bottom: 15px;
+  padding: 5px;
 `;
 
 const Label = styled.label`
@@ -137,7 +135,7 @@ const Text = styled.h1`
   color: #4df631;
 
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  cursor : pointer;
+  cursor: pointer;
 `;
 
 const StyledLink = styled(Link)`
@@ -155,54 +153,54 @@ const Modal = ({ isOpen, toggle }) => {
   const [phoneNumber, setPhoneNumber] = useState();
   const [password, setPassword] = useState();
 
-    return (
-      isOpen && (
-        <>
-          <ModalOverlay onClick={toggle}></ModalOverlay>
-          <ModalContent>
-            <TriangleDesign
-              style={{ transform: "rotate(140deg)", top: -5, left: -6 }}
-            />
-            <TriangleDesign
-              style={{ transform: "rotate(215deg)", top: -5, right: -6 }}
-            />
-            <TriangleDesign
-              style={{ transform: "rotate(320deg)", bottom: -5, right: -6 }}
-            />
-            <TriangleDesign
-              style={{ transform: "rotate(45deg)", bottom: -5, left: -6 }}
-            />
-            <FormWrap>
-              <Title>Welcome Back.</Title>
-              <Form>
-                <Label htmlFor="">Enter Phone No.</Label>
-                <Input
-                  type="tel"
-                  value={phoneNumber}
-                  onKeyPress={(event) => {
-                    if (!/[0-9]/.test(event.key)) {
-                      event.preventDefault();
-                    }
-                  }}
-                  onChange={(e) => setPhoneNumber(e.target.value)}
-                  maxLength={10}
-                />
-                <Label htmlFor="">Enter Password</Label>
-                <Input
-                  type="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-                <LoginButton>Submit</LoginButton>
-              </Form>
-              <StyledLink to="/home">
-                <Text>Forgot Password? Click Here</Text>
-              </StyledLink>
-            </FormWrap>
-          </ModalContent>
-        </>
-      )
-    );
-}
+  return (
+    isOpen && (
+      <>
+        <ModalOverlay onClick={toggle}></ModalOverlay>
+        <ModalContent>
+          <TriangleDesign
+            style={{ transform: "rotate(140deg)", top: -5, left: -6 }}
+          />
+          <TriangleDesign
+            style={{ transform: "rotate(215deg)", top: -5, right: -6 }}
+          />
+          <TriangleDesign
+            style={{ transform: "rotate(320deg)", bottom: -5, right: -6 }}
+          />
+          <TriangleDesign
+            style={{ transform: "rotate(45deg)", bottom: -5, left: -6 }}
+          />
+          <FormWrap>
+            <Title>Welcome Back.</Title>
+            <Form>
+              <Label htmlFor="">Enter Phone No.</Label>
+              <Input
+                type="tel"
+                value={phoneNumber}
+                onKeyPress={(event) => {
+                  if (!/[0-9]/.test(event.key)) {
+                    event.preventDefault();
+                  }
+                }}
+                onChange={(e) => setPhoneNumber(e.target.value)}
+                maxLength={10}
+              />
+              <Label htmlFor="">Enter Password</Label>
+              <Input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <LoginButton>Submit</LoginButton>
+            </Form>
+            <StyledLink to="/home">
+              <Text>Forgot Password? Click Here</Text>
+            </StyledLink>
+          </FormWrap>
+        </ModalContent>
+      </>
+    )
+  );
+};
 
 export default Modal;
