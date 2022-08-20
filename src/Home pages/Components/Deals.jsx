@@ -48,12 +48,12 @@ const InsideCard = () => {
             <div style={{ 
                 display: 'flex', 
                 justifyContent: 'end', 
-                marginRight: '30px', 
-                marginBottom: '20px' 
+                marginRight: '3.0927835051546393vh', 
+                marginBottom: '2.0618556701030926vh' 
                 }}>
                 <div style={{ 
-                    width: '40px', height: '40px', 
-                    borderRadius: '20px', 
+                    width: '4.123711340206185vh', height: '4.123711340206185vh', 
+                    borderRadius: '2.0618556701030926vh', 
                     backgroundColor: 'rgb(12, 207, 185)', 
                     fontSize: '30px',
                     textAlign: 'center'
