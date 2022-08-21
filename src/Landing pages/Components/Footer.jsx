@@ -12,23 +12,6 @@ const FooterList = styled.div`
   display: flex;
 `;
 
-<<<<<<< HEAD
-const Icon = styled.img`
-  height: 25px;
-  margin-right: 20px;
-  margin-left: 20px;
-  cursor: pointer;
-`;
-
-const FooterSocialMedia = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-top: 40px;
-`;
-
-=======
->>>>>>> master
 const UL = styled.ul`
   list-style-type: none;
   display: flex;
