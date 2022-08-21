@@ -65,7 +65,8 @@ const Display = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 62vh;
+    min-height: 62vh;
+    max-height: 70vh;
     background-color: rgb(12, 207, 185);
     background-size: cover;
 `

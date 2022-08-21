@@ -61,7 +61,7 @@ const InsideCard = () => {
                     width: '4.123711340206185vh', height: '4.123711340206185vh', 
                     borderRadius: '2.0618556701030926vh', 
                     backgroundColor: 'rgb(12, 207, 185)', 
-                    fontSize: '30px',
+                    fontSize: '3.1023784901758016vh',
                     textAlign: 'center'
                     }}>
                     ➔
@@ -90,7 +90,8 @@ const Display = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 62vh;
+    min-height: 62vh;
+    max-height: 70vh;
     background-color: rgb(224, 167, 59);
     background-size: cover;
 `
@@ -104,7 +105,7 @@ const Text = styled.h3`
 
 const TextP = styled.p`
     font-family: 'Forum', cursive; 
-    font-size: 19px;
+    font-size: 1.958762886597938vh;
     color: black;  
     margin-left: 4%; 
 `
