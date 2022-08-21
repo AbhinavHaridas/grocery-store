@@ -1,13 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-// Assets import here
-// import twitter from "./images/twitter.png";
-import twitter from "../images/twitter.png"
-import instagram from "../images/instagram.png";
-import linkedin from "../images/linkedin.png";
-import facebook from "../images/facebook.png";
+// Import components here
+import SocialMedia from "./Social-media";
 
 const FooterWrap = styled.footer`
   background-color: #d1ccc0;
@@ -17,6 +12,7 @@ const FooterList = styled.div`
   display: flex;
 `;
 
+<<<<<<< HEAD
 const Icon = styled.img`
   height: 25px;
   margin-right: 20px;
@@ -31,11 +27,13 @@ const FooterSocialMedia = styled.div`
   margin-top: 40px;
 `;
 
+=======
+>>>>>>> master
 const UL = styled.ul`
   list-style-type: none;
   display: flex;
   justify-content: center;
-  width: 1536px;
+  width: 100%;
   margin-left: -40px;
 `;
 
@@ -49,55 +47,64 @@ const Text = styled.p`
   text-align: center;
 `;
 
+const A = styled.a`
+  text-decoration: none;
+  color: black;
+  position: relative;
+  :after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: black;
+    transition: width 0.4s ease 0s, left 0.3s ease 0s;
+    width: 0;
+  }
+  :hover:after {
+    width: 100%;
+    left: 0;
+  }
+`;
+
 const Footer = () => {
   return (
     <FooterWrap>
       <FooterList>
         <UL>
           <LI>
-            <Link to="/aboutus" className="link">
+            <A href="/aboutus">
               <div>
-                <h3>
+                <h3 style={{ color: "black" }}>
                   <b>About Us</b>
                 </h3>
               </div>
-            </Link>
+            </A>
           </LI>
           <LI>
-            <Link to="/aboutus" className="link">
+            <A href="/contact">
               <div>
-                <h3>
+                <h3 style={{ color: "black" }}>
                   <b>Contact</b>
                 </h3>
               </div>
-            </Link>
+            </A>
           </LI>
           <LI>
-            <Link to="/aboutus" className="link">
+            <A href="/home">
               <div>
-                <h3>
+                <h3 style={{ color: "black" }}>
                   <b>Terms</b>
                 </h3>
               </div>
-            </Link>
+            </A>
           </LI>
         </UL>
       </FooterList>
       <>
-        <FooterSocialMedia>
-          <a href="https://twitter.com" target="_blank" rel="noreferrer">
-            <Icon src={twitter} alt="No image" />
-          </a>
-          <a href="https://instagram.com" target="_blank" rel="noreferrer">
-            <Icon src={instagram} alt="No image" />
-          </a>
-          <a href="https://linkedin.com" target="_blank" rel="noreferrer">
-            <Icon src={linkedin} alt="No image" />
-          </a>
-          <a href="https://facebook.com" target="_blank" rel="noreferrer">
-            <Icon src={facebook} alt="No image" />
-          </a>
-        </FooterSocialMedia>
+        <SocialMedia />
         <Text>© XYZ Commerce Private Limited, 2022-2024</Text>
       </>
     </FooterWrap>
