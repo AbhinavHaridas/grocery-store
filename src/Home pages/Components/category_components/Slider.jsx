@@ -1,6 +1,14 @@
 import React from "react";
 import styled from "styled-components";
+import { Swiper, SwiperSlide } from "swiper/react";
 
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+
+
+// import required modules
+import { Navigation,Pagination } from "swiper";
 
 const SliderButton = styled.div`
     width: 10vh;
@@ -10,23 +18,23 @@ const SliderButton = styled.div`
     margin-left: 10px;
 `
 
-const InsideSliderLeftButton = () => {
-    return (
-        <h1 style={{ fontSize: '40px', textAlign: 'center' }}>
-            {"<"}
-        </h1>
-    )
-}
+// const InsideSliderLeftButton = () => {
+//     return (
+//         <h1 style={{ fontSize: '40px', textAlign: 'center' }}>
+//             {"<"}
+//         </h1>
+//     )
+// }
 
-const InsideSliderRightButton = () => {
-    return (
-        <h1 style={{ fontSize: '40px', textAlign: 'center' }}>
-            {">"}
-        </h1>
-    )
-}
+// const InsideSliderRightButton = () => {
+//     return (
+//         <h1 style={{ fontSize: '40px', textAlign: 'center' }}>
+//             {">"}
+//         </h1>
+//     )
+// }
 
-const Card1 = styled.div`
+const Cardbackground = styled.div`
     width: 40vh;
     height: 370px;
     border-radius: 20px;
@@ -66,14 +74,34 @@ const InsideCard1 = () => {
     )
 }
 
-const Card2 = styled.div`
-    width: 40vh;
-    height: 370px;
-    border-radius: 20px;
-    background-color: white;
-    margin-left: 20px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-`
+const Card1 = () => {
+    return <Cardbackground>
+            <InsideCard1 style={{
+                height:"70vh"
+            }
+
+            }/>
+            </Cardbackground>
+}
+const Card2 = () => {
+    return <Cardbackground>
+            <InsideCard2 style={{
+                height:"70vh"
+            }
+
+            }/>
+            </Cardbackground>
+}
+const Card3 = () => {
+    return <Cardbackground>
+            <InsideCard3 style={{
+                height:"70vh"
+            }
+
+            }/>
+            </Cardbackground>
+}
+
 const InsideCard2 = () => {
     return (
         <section>
@@ -105,14 +133,7 @@ const InsideCard2 = () => {
     )
 }
 
-const Card3 = styled.div`
-    width: 40vh;
-    height: 370px;
-    border-radius: 20px;
-    background-color: white;
-    margin-left: 20px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-`
+
 const InsideCard3 = () => {
     return (
         <section>
@@ -151,7 +172,7 @@ const Slide = styled.div`
 `
 
 const Display = styled.div`
-background-image: url("https://i.imgur.com/9yLXljr.jpeg");
+    background-image: url("https://i.imgur.com/9yLXljr.jpeg");
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -168,30 +189,53 @@ const TextP = styled.p`
     color: black;  
     margin-left: 4%; 
 `
+const sliderStyle = {
+    display: "flex",
+    justifyContent: "center"
+}
+
+const swiperStyle = {
+    height: '70vh'
+}
 
 const Slider = () => {
     return (
         <Display>
 
-            <Slide>
-                <SliderButton>
-                    <InsideSliderLeftButton />
-                </SliderButton>
-                <Card1>
-                    <InsideCard1 />
-                </Card1>
-                <Card2>
-                    <InsideCard2 />
-                </Card2>
-                <Card3>
-                    <InsideCard3 />
-                </Card3>
-                <SliderButton>
-                    <InsideSliderRightButton />
-                </SliderButton>
+                <Slide>
+                <Swiper
+                slidesPerView={3}
+                spaceBetween={30}
+                slidesPerGroup={3}
+                speed={1500}
+                loop={true}
+                loopFillGroupWithBlank={true}
+                pagination={{
+                clickable: true,
+                }}
+                navigation={true}
+                modules={[Pagination, Navigation]}
+                className="mySwiper"
+                style={swiperStyle}
+                >
+                    <SwiperSlide style={sliderStyle}><Card1/></SwiperSlide>
+                    <SwiperSlide style={sliderStyle}><Card2/></SwiperSlide>
+                    <SwiperSlide style={sliderStyle}><Card3 /></SwiperSlide>
+                    <SwiperSlide style={sliderStyle}><Card1 /></SwiperSlide>
+                    <SwiperSlide style={sliderStyle}><Card2/></SwiperSlide>
+                    <SwiperSlide style={sliderStyle}><Card3/></SwiperSlide>
+                    <SwiperSlide style={sliderStyle}><Card1 /></SwiperSlide>
+                    <SwiperSlide style={sliderStyle}><Card2 /></SwiperSlide>
+                    <SwiperSlide style={sliderStyle}><Card3/></SwiperSlide>
+                    <SwiperSlide style={sliderStyle}><Card1/></SwiperSlide>
+                    <SwiperSlide style={sliderStyle}><Card2 /></SwiperSlide>
+                    <SwiperSlide style={sliderStyle}><Card3 /></SwiperSlide>
+                    
+                </Swiper>
                 </Slide>
         </Display>
     )
 }
 
 export default Slider;
+
