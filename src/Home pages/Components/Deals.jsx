@@ -18,7 +18,7 @@ const CardBackground = styled.div`
 
 const InsideCard = () => {
     return (
-        <section>
+        <div style={{height: '40vh'}}>
             <div style={{display: 'flex', justifyContent: 'center'}} >
             <img src="https://imgur.com/xxh8Xni.png" 
                 style={{ width: '18.556701030927837vh', height: '15.463917525773196vh', marginTop: '5vh'}} 
@@ -37,13 +37,13 @@ const InsideCard = () => {
                     width: '4.123711340206185vh', height: '4.123711340206185vh', 
                     borderRadius: '2.0618556701030926vh', 
                     backgroundColor: 'rgb(12, 207, 185)', 
-                    fontSize: '30px',
+                    fontSize: '1.875em',
                     textAlign: 'center'
                     }}>
                     ➔
                 </div>
             </div>
-        </section>
+        </div>
     )
 }
 
@@ -79,7 +79,7 @@ const Text = styled.h3`
 
 const TextP = styled.p`
     font-family: 'Forum', cursive; 
-    font-size: 19px;
+    font-size: 1.188em;
     color: black;  
     margin-left: 4%; 
 `
