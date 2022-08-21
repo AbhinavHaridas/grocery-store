@@ -99,9 +99,10 @@ const Deals = () => {
             <Text>Top Deals: </Text>
             <Deal>
                 <Swiper
-                slidesPerView={3}
+                slidesPerView={4}
                 spaceBetween={30}
-                slidesPerGroup={3}
+                slidesPerGroup={4}
+                speed={1500}
                 loop={true}
                 loopFillGroupWithBlank={true}
                 pagination={{
