@@ -37,7 +37,7 @@ const InsideCard = () => {
                     width: '4.123711340206185vh', height: '4.123711340206185vh', 
                     borderRadius: '2.0618556701030926vh', 
                     backgroundColor: 'rgb(12, 207, 185)', 
-                    fontSize: '1.875em',
+                    fontSize: '3.1023784901758016vh',
                     textAlign: 'center'
                     }}>
                     ➔
@@ -79,7 +79,7 @@ const Text = styled.h3`
 
 const TextP = styled.p`
     font-family: 'Forum', cursive; 
-    font-size: 1.188em;
+    font-size: 1.958762886597938vh;
     color: black;  
     margin-left: 4%; 
 `
