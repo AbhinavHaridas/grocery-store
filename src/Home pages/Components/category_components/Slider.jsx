@@ -195,7 +195,9 @@ const sliderStyle = {
 }
 
 const swiperStyle = {
-    height: '70vh'
+    height: '70vh',
+    width : "30%",
+    alignItems:"center"
 }
 
 const Slider = () => {
