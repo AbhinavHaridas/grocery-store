@@ -1,5 +1,11 @@
 import React from "react";
 import styled from "styled-components";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Navigation } from "swiper";
+
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 const SliderButton = styled.div`
     width: 10vh;
@@ -25,7 +31,7 @@ const InsideSliderRightButton = () => {
     )
 }
 
-const Card = styled.div`
+const CardBackground = styled.div`
     width: 30vh;
     height: 40vh;
     border-radius: 20px;
@@ -48,13 +54,13 @@ const InsideCard = () => {
             <div style={{ 
                 display: 'flex', 
                 justifyContent: 'end', 
-                marginRight: '30px', 
-                marginBottom: '20px' 
+                marginRight: '3.0927835051546393vh', 
+                marginBottom: '2.0618556701030926vh' 
                 }}>
                 <div style={{ 
-                    width: '40px', height: '40px', 
-                    borderRadius: '20px', 
-                    backgroundColor: 'orange', 
+                    width: '4.123711340206185vh', height: '4.123711340206185vh', 
+                    borderRadius: '2.0618556701030926vh', 
+                    backgroundColor: 'rgb(12, 207, 185)', 
                     fontSize: '30px',
                     textAlign: 'center'
                     }}>
@@ -64,6 +70,15 @@ const InsideCard = () => {
         </section>
     )
 }
+
+const Card = () => {
+    return (
+        <CardBackground>
+            <InsideCard />
+        </CardBackground>
+    )
+}
+
 
 const BestSeller = styled.div`
     display: flex;
@@ -75,7 +90,7 @@ const Display = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 60vh;
+    height: 62vh;
     background-color: rgb(224, 167, 59);
     background-size: cover;
 `
@@ -94,26 +109,47 @@ const TextP = styled.p`
     margin-left: 4%; 
 `
 
+const sliderStyle = {
+    display: "flex",
+    justifyContent: "center"
+}
+
+const swiperStyle = {
+    height: '47vh'
+}
+
 const Bestsellers = () => {
     return (
         <Display>
             <Text>Bestsellers: </Text>
             <BestSeller>
-                <SliderButton>
-                    <InsideSliderLeftButton />
-                </SliderButton>
-                <Card>
-                    <InsideCard />
-                </Card>
-                <Card>
-                    <InsideCard />    
-                </Card>
-                <Card>
-                    <InsideCard />
-                </Card>
-                <SliderButton>
-                    <InsideSliderRightButton />    
-                </SliderButton>
+                <Swiper
+                    slidesPerView={3}
+                    spaceBetween={30}
+                    slidesPerGroup={3}
+                    loop={true}
+                    loopFillGroupWithBlank={true}
+                    pagination={{
+                    clickable: true,
+                    }}
+                    navigation={true}
+                    modules={[Pagination, Navigation]}
+                    className="mySwiper"
+                    style={swiperStyle}
+                    >
+                        <SwiperSlide style={sliderStyle}><Card /></SwiperSlide>
+                        <SwiperSlide style={sliderStyle}><Card /></SwiperSlide>
+                        <SwiperSlide style={sliderStyle}><Card /></SwiperSlide>
+                        <SwiperSlide style={sliderStyle}><Card /></SwiperSlide>
+                        <SwiperSlide style={sliderStyle}><Card /></SwiperSlide>
+                        <SwiperSlide style={sliderStyle}><Card /></SwiperSlide>
+                        <SwiperSlide style={sliderStyle}><Card /></SwiperSlide>
+                        <SwiperSlide style={sliderStyle}><Card /></SwiperSlide>
+                        <SwiperSlide style={sliderStyle}><Card /></SwiperSlide>
+                        <SwiperSlide style={sliderStyle}><Card /></SwiperSlide>
+                        <SwiperSlide style={sliderStyle}><Card /></SwiperSlide>
+                        <SwiperSlide style={sliderStyle}><Card /></SwiperSlide>
+                    </Swiper>
             </BestSeller>
         </Display> 
     )

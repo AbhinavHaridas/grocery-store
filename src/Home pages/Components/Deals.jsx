@@ -1,31 +1,13 @@
 import React from "react";
 import styled from "styled-components";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Navigation } from "swiper";
 
-const SliderButton = styled.div`
-    width: 10vh;
-    height: 10vh;
-    border-radius: 5vh;
-    background-color: white;
-    margin-left: 10px;
-`
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
-const InsideSliderLeftButton = () => {
-    return (
-        <h1 style={{ fontSize: '40px', textAlign: 'center' }}>
-            {"<"}
-        </h1>
-    )
-}
-
-const InsideSliderRightButton = () => {
-    return (
-        <h1 style={{ fontSize: '40px', textAlign: 'center' }}>
-            {">"}
-        </h1>
-    )
-}
-
-const Card = styled.div`
+const CardBackground = styled.div`
     width: 30vh;
     height: 40vh;
     border-radius: 20px;
@@ -65,6 +47,14 @@ const InsideCard = () => {
     )
 }
 
+const Card = () => {
+    return (
+        <CardBackground>
+            <InsideCard />
+        </CardBackground>
+    )
+}
+
 const Deal = styled.div`
     display: flex;
     justify-content: space-around;
@@ -75,7 +65,7 @@ const Display = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 60vh;
+    height: 62vh;
     background-color: rgb(12, 207, 185);
     background-size: cover;
 `
@@ -94,28 +84,49 @@ const TextP = styled.p`
     margin-left: 4%; 
 `
 
+const sliderStyle = {
+    display: "flex",
+    justifyContent: "center"
+}
+
+const swiperStyle = {
+    height: '47vh'
+}
+
 const Deals = () => {
     return (
         <Display>
             <Text>Top Deals: </Text>
             <Deal>
-                <SliderButton>
-                    <InsideSliderLeftButton />
-                </SliderButton>
-                <Card>
-                    <InsideCard />
-                </Card>
-                <Card>
-                    <InsideCard />
-                </Card>
-                <Card>
-                    <InsideCard />
-                </Card>
-                <SliderButton>
-                    <InsideSliderRightButton />
-                </SliderButton>
-            </Deal>
-        </Display>
+                <Swiper
+                slidesPerView={3}
+                spaceBetween={30}
+                slidesPerGroup={3}
+                loop={true}
+                loopFillGroupWithBlank={true}
+                pagination={{
+                clickable: true,
+                }}
+                navigation={true}
+                modules={[Pagination, Navigation]}
+                className="mySwiper"
+                style={swiperStyle}
+                >
+                    <SwiperSlide style={sliderStyle}><Card /></SwiperSlide>
+                    <SwiperSlide style={sliderStyle}><Card /></SwiperSlide>
+                    <SwiperSlide style={sliderStyle}><Card /></SwiperSlide>
+                    <SwiperSlide style={sliderStyle}><Card /></SwiperSlide>
+                    <SwiperSlide style={sliderStyle}><Card /></SwiperSlide>
+                    <SwiperSlide style={sliderStyle}><Card /></SwiperSlide>
+                    <SwiperSlide style={sliderStyle}><Card /></SwiperSlide>
+                    <SwiperSlide style={sliderStyle}><Card /></SwiperSlide>
+                    <SwiperSlide style={sliderStyle}><Card /></SwiperSlide>
+                    <SwiperSlide style={sliderStyle}><Card /></SwiperSlide>
+                    <SwiperSlide style={sliderStyle}><Card /></SwiperSlide>
+                    <SwiperSlide style={sliderStyle}><Card /></SwiperSlide>
+                </Swiper>
+        </Deal>
+    </Display>
     )
 }
 
