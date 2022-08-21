@@ -16,6 +16,14 @@ const CardBackground = styled.div`
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 `
 
+const Button = styled.div`
+  transition: 0.4s ease-in-out;
+  :hover {
+    cursor: pointer;
+    transform: scale(1.4);
+  }
+`
+
 const InsideCard = () => {
     return (
         <div style={{height: '40vh'}}>
@@ -33,7 +41,7 @@ const InsideCard = () => {
                 marginRight: '3.0927835051546393vh', 
                 marginBottom: '2.0618556701030926vh' 
                 }}>
-                <div style={{ 
+                <Button style={{ 
                     width: '4.123711340206185vh', height: '4.123711340206185vh', 
                     borderRadius: '2.0618556701030926vh', 
                     backgroundColor: 'rgb(12, 207, 185)', 
@@ -41,7 +49,7 @@ const InsideCard = () => {
                     textAlign: 'center'
                     }}>
                     ➔
-                </div>
+                </Button>
             </div>
         </div>
     )
