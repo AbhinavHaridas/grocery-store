@@ -10,30 +10,6 @@ import "swiper/css/navigation";
 // import required modules
 import { Navigation,Pagination } from "swiper";
 
-const SliderButton = styled.div`
-    width: 10vh;
-    height: 10vh;
-    border-radius: 5vh;
-    background-color: white;
-    margin-left: 10px;
-`
-
-// const InsideSliderLeftButton = () => {
-//     return (
-//         <h1 style={{ fontSize: '40px', textAlign: 'center' }}>
-//             {"<"}
-//         </h1>
-//     )
-// }
-
-// const InsideSliderRightButton = () => {
-//     return (
-//         <h1 style={{ fontSize: '40px', textAlign: 'center' }}>
-//             {">"}
-//         </h1>
-//     )
-// }
-
 const Cardbackground = styled.div`
     width: 40vh;
     height: 370px;
@@ -191,14 +167,14 @@ const TextP = styled.p`
 `
 const sliderStyle = {
     display: "flex",
-    justifyContent: "center"
-}
+    justifyContent: "center",
+    alignItems:"center",
+};
 
 const swiperStyle = {
     height: '70vh',
-    width : "30%",
-    alignItems:"center"
-}
+    width:"100%",
+};
 
 const Slider = () => {
     return (
