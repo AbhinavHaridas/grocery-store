@@ -1,7 +1,7 @@
 .footer {
     display: flex;
     flex-direction: column;
-    background-color: rgb(205,195,178);
+    background-color: rgb(61, 61, 61);
 }
 
 .footer p {

@@ -80,13 +80,24 @@ const Label = styled.label`
   margin: 10px 0px;
 `;
 
-const SignUpImage = styled.div``;
+const SignUpImage = styled.div`
+height:80vh;
+
+`;
 
 const Image = styled.img`
   margin-top: 15px;
   height: 690px;
   border-radius: 10px;
 `;
+const Imagecontainer=styled.div`
+height:70vh;
+width:60vh;
+background:url("${image}");
+background-repeat:no-repeat;
+background-size:100% 100%
+`;
+
 
 const SignUp = () => {
   const [searchString, setSearchString] = useState();
@@ -162,11 +173,12 @@ const SignUp = () => {
         </FormWrap>
       </SignUpPage>
       <SignUpImage>
-        <Image
+        {/* <Image
           src={image}
           alt="pineapple"
           style={{ boxShadow: "5px 5px 20px 5px rgba(0, 0, 0, 0.25)" }}
-        />
+        /> */}
+        <Imagecontainer></Imagecontainer>
       </SignUpImage>
     </SignUpPageWrap>
   );

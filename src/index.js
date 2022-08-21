@@ -7,6 +7,7 @@ import SignIn from './Landing pages/SignIn';
 import SignUp from './Landing pages/SignUp';
 import AboutUs from './Landing pages/AboutUs';
 import Home from './Home pages/Home';
+import Category from './Home pages/Category';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -18,6 +19,7 @@ root.render(
         <Route path='/signup' element={<SignUp />} />
         <Route path='/aboutus' element={<AboutUs />} />
         <Route path='/home' element={<Home />} />
+        <Route path='/category' element={<Category/>} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
