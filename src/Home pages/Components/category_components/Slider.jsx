@@ -36,7 +36,7 @@ const InsideCard1 = () => {
                 marginRight: '30px', 
                 marginBottom: '20px' 
                 }}>
-                <div style={{ 
+                <Button style={{ 
                     width: '40px', height: '40px', 
                     borderRadius: '20px', 
                     backgroundColor: 'rgb(12, 207, 185)', 
@@ -44,7 +44,7 @@ const InsideCard1 = () => {
                     textAlign: 'center'
                     }}>
                     ➔
-                </div>
+                </Button>
             </div>
         </section>
     )
@@ -78,6 +78,14 @@ const Card3 = () => {
             </Cardbackground>
 }
 
+const Button = styled.div`
+  transition: 0.4s ease-in-out;
+  :hover {
+    cursor: pointer;
+    transform: scale(1.4);
+  }
+`
+
 const InsideCard2 = () => {
     return (
         <section>
@@ -95,7 +103,7 @@ const InsideCard2 = () => {
                 marginRight: '30px', 
                 marginBottom: '20px' 
                 }}>
-                <div style={{ 
+                <Button style={{ 
                     width: '40px', height: '40px', 
                     borderRadius: '20px', 
                     backgroundColor: 'rgb(12, 207, 185)', 
@@ -103,7 +111,7 @@ const InsideCard2 = () => {
                     textAlign: 'center'
                     }}>
                     ➔
-                </div>
+                </Button>
             </div>
         </section>
     )
@@ -127,7 +135,7 @@ const InsideCard3 = () => {
                 marginRight: '30px', 
                 marginBottom: '20px' 
                 }}>
-                <div style={{ 
+                <Button style={{ 
                     width: '40px', height: '40px', 
                     borderRadius: '20px', 
                     backgroundColor: 'rgb(12, 207, 185)', 
@@ -135,7 +143,7 @@ const InsideCard3 = () => {
                     textAlign: 'center'
                     }}>
                     ➔
-                </div>
+                </Button>
             </div>
         </section>
     )
