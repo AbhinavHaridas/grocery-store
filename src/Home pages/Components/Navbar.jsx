@@ -18,7 +18,7 @@ const Navbar = () => {
         <ul className="navbar">
           <li><div className="logo"><Link to ='/home' className='link'><i class="fa-solid fa-utensils fa-2xl" style={{color: 'white'}} /></Link></div></li>
           <li><h3>Deliver to <br/>{ places[index] }</h3></li>
-          <li><Link to='/categories'><h3>Categories</h3></Link></li>
+          <li><Link to='/category'><h3>Categories</h3></Link></li>
           <li><h3>Offers</h3></li>
           <li><h3><b>Orders</b></h3></li>
           <li><div className="cart"><i class="fa-solid fa-cart-shopping fa-2xl" style={{color: 'white'}}/></div></li>
