@@ -1,34 +1,42 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import sliderImage1 from "../images/slider-img-1.jpeg";
-import sliderImage2 from "../images/slider-img-2.jpeg";
-import sliderImage3 from "../images/slider-img-3.jpeg";
-import sliderImage4 from "../images/slider-img-4.jpeg";
+// import sliderImage1 from "../images/slider-img-1.jpeg";
+// import sliderImage2 from "../images/slider-img-2.jpeg";
+// import sliderImage3 from "../images/slider-img-3.jpeg";
+// import sliderImage4 from "../images/slider-img-4.jpeg";
+import sliderImage1 from "../images/sliderImage1.jpg";
+import sliderImage2 from "../images/sliderImage2.jpg";
+import sliderImage3 from "../images/sliderImage3.jpg";
+import sliderImage4 from "../images/sliderImage4.jpg";
 
 /* Array of images used for slider */
 const sliderImages = [
   {
-    img: sliderImage1,
+    img:sliderImage1,
+    text: "Fresh groceries delivered right to your doorstep"
   },
   {
-    img: sliderImage2,
+    img:"https://thumbs.dreamstime.com/b/shopping-basket-grocery-products-white-background-promotional-sale-banner-vector-illustration-196386385.jpg",
+    text:"Hassle-free payment and delivery"
   },
   {
-    img: sliderImage3,
+    img:"https://thumbs.dreamstime.com/b/shopping-basket-grocery-products-white-background-promotional-sale-banner-vector-illustration-196386385.jpg",
+    text:"Customer-oriented services guarenteed"
   },
   {
-    img: sliderImage4,
+    img:"https://thumbs.dreamstime.com/b/shopping-basket-grocery-products-white-background-promotional-sale-banner-vector-illustration-196386385.jpg",
+    text:"Better Ingredients, Better food and beverages at a low price"
   },
 ];
 
 /* Slideshow container  */
 const SlideshowSlider = styled.div`
   width: 100%;
-  height: 81.5vh;
+  height: 88vh;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  transition: ease 2s;
+  transition: ease 3s;
 `;
 
 /* Slideshow Image  */
@@ -37,7 +45,7 @@ const AutoSliderWrap = styled.div`
   width: 100%;
   height: 100%;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100% 100%;
   display: flex;
   align-items: center;
   text-align: center;
