@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper";
@@ -32,6 +32,7 @@ const InsideSliderRightButton = () => {
 }
 
 const CardBackground = styled.div`
+    transition: 0.3s;
     width: 30vh;
     height: 40vh;
     border-radius: 20px;
@@ -70,7 +71,8 @@ const InsideCard = () => {
                     borderRadius: '2.0618556701030926vh', 
                     backgroundColor: 'orange', 
                     fontSize: '3.1023784901758016vh',
-                    textAlign: 'center'
+                    textAlign: 'center',
+                    userSelect: 'none'
                     }}>
                     ➔
                 </Button>
@@ -80,12 +82,28 @@ const InsideCard = () => {
 }
 
 const Card = () => {
+    const [hover, setHover] = useState(false);  
+
+    let styleHover = {}
+
+    const hoverer = () => {
+        setHover(!hover);
+    }
+
+    if (hover) {
+        styleHover = {
+            width: '33vh',
+            height: '43vh'
+        }
+    }
+
     return (
-        <CardBackground>
+        <CardBackground onMouseEnter={hoverer} onMouseLeave={hoverer} style={styleHover}>
             <InsideCard />
         </CardBackground>
     )
 }
+
 
 
 const BestSeller = styled.div`
@@ -129,6 +147,9 @@ const swiperStyle = {
 }
 
 const Bestsellers = () => {
+
+
+
     return (
         <Display>
             <Text>Bestsellers: </Text>
