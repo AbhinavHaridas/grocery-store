@@ -93,7 +93,8 @@ const Card = () => {
     if (hover) {
         styleHover = {
             width: '33vh',
-            height: '43vh'
+            height: '43vh',
+            boxShadow: 'rgba(0, 0, 0, 0.35) 1px 15px 25px'
         }
     }
 
