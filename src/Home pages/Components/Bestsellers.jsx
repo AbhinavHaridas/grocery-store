@@ -7,29 +7,6 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-const SliderButton = styled.div`
-    width: 10vh;
-    height: 10vh;
-    border-radius: 5vh;
-    background-color: white;
-    margin-left: 10px;
-`
-
-const InsideSliderLeftButton = () => {
-    return (
-        <h1 style={{ fontSize: '40px', textAlign: 'center' }}>
-            {"<"}
-        </h1>
-    )
-}
-
-const InsideSliderRightButton = () => {
-    return (
-        <h1 style={{ fontSize: '40px', textAlign: 'center' }}>
-            {">"}
-        </h1>
-    )
-}
 
 const CardBackground = styled.div`
     transition: 0.3s;

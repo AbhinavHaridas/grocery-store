@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper";
@@ -8,6 +8,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 const CardBackground = styled.div`
+    transition: 0.3s;
     width: 30vh;
     height: 40vh;
     border-radius: 20px;
@@ -56,8 +57,23 @@ const InsideCard = () => {
 }
 
 const Card = () => {
+
+    const [ hover, setHover ] = useState(false);
+
+    let styleHere = {}
+
+    const hoverer = () => {
+        setHover(!hover);
+    }
+
+    if (hover) 
+        styleHere = {
+            width: '33vh',
+            height: '43vh'
+        }
+
     return (
-        <CardBackground>
+        <CardBackground onMouseEnter={hoverer} onMouseLeave={hoverer} style={styleHere}>
             <InsideCard />
         </CardBackground>
     )
