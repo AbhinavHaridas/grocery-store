@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation } from "swiper";
+import { Navigation } from "swiper";
 
 import "swiper/css";
-import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 
@@ -61,7 +60,9 @@ const InsideCard = () => {
 const Card = () => {
     const [hover, setHover] = useState(false);  
 
-    let styleHover = {}
+    let styleHover = {
+        transition: '0.2s'
+    }
 
     const hoverer = () => {
         setHover(!hover);
@@ -69,9 +70,8 @@ const Card = () => {
 
     if (hover) {
         styleHover = {
-            width: '33vh',
-            height: '43vh',
-            boxShadow: 'rgba(0, 0, 0, 0.35) 1px 15px 25px'
+            transform: 'scale(1.03)',
+            boxShadow: 'rgba(0, 0, 0, 0.35) 1px 15px 25px',
         }
     }
 
@@ -98,6 +98,7 @@ const Display = styled.div`
     max-height: 70vh;
     background-color: rgb(224, 167, 59);
     background-size: cover;
+    user-select: none; 
 `
 
 const Text = styled.h3`
@@ -105,6 +106,7 @@ const Text = styled.h3`
     font-size: 40px;
     color: black;  
     margin-left: 4%;  
+    user-select: none;
 `
 
 const TextP = styled.p`
@@ -121,13 +123,11 @@ const sliderStyle = {
 
 const swiperStyle = {
     height: '47vh', 
-    transition: '2s'
+    transition: '2s', 
+    padding: '12px'
 }
 
 const Bestsellers = () => {
-
-
-
     return (
         <Display>
             <Text>Bestsellers: </Text>
@@ -139,11 +139,8 @@ const Bestsellers = () => {
                     speed={1500}
                     loop={true}
                     loopFillGroupWithBlank={true}
-                    pagination={{
-                    clickable: true,
-                    }}
                     navigation={true}
-                    modules={[Pagination, Navigation]}
+                    modules={[Navigation]}
                     className="mySwiper"
                     style={swiperStyle}
                     >
