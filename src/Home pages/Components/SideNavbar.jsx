@@ -25,7 +25,6 @@ const Text = styled.h3`
 `
 
 const SideNavbar = ({setChoice}) => {
-
     return (
         <div style={{
             width: '25%',
