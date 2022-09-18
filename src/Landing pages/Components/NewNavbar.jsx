@@ -50,7 +50,7 @@ const ListItem = styled.li`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 35px;
+  font-size: 30px;
   
   border-left: 2px solid white;
 
@@ -84,26 +84,95 @@ const TriangleDesign = styled.div`
 `;
 
 const NewNavbar = () => {
-      const [isOpen, setIsOpen] = useState(false);
-      const toggle = () => setIsOpen(!isOpen);
 
+  const [isOpen, setIsOpen] = useState(false);
+  const [isHovering, setIsHovering] = useState(0);
+    const toggle = () => setIsOpen(!isOpen);
+
+  function hover(n) {
+
+    switch (n) {
+      default: setIsHovering(0);
+        break;
+      case 1: setIsHovering(1.53);
+        break;
+      case 2: setIsHovering(2.15);
+        break;
+      case 3: setIsHovering(2.767);
+        break;
+    }
+  }
+  
 
   return (
     <NavbarWrap>
-      <ImageWrap>
-              <i class="fa-solid fa-utensils fa-2xl" style={{ fontSize: 45, marginLeft: 30 }} />
-              <TriangleDesign style={{transform:"rotate(180deg)"}} />
-              <TriangleDesign />
+      <i
+        class="fa-solid fa-utensils fa-2xl"
+        style={{
+          fontSize: 45,
+          marginLeft: 30,
+          position: "absolute",
+          left: 0,
+          zIndex: 1,
+        }}
+      />
+      <ImageWrap
+        style={{
+          transform: isHovering !== 0 ? `scale(${isHovering})` : "scale(1)",
+          transition: "all 0.5s ease-in-out",
+        }}
+      >
+        <TriangleDesign style={{ transform: "rotate(180deg)" }} />
+        <TriangleDesign />
       </ImageWrap>
-          <LinkWrap>
-              <UL>
-                  <ListItem><Links to="" onClick={toggle}>Sign in</Links></ListItem>
-                  <ListItem><Links to="/signup" onClick={toggle}>Sign up</Links></ListItem>
-                  <ListItem><Links to="/aboutus" onClick={toggle}>About us</Links></ListItem>
-              </UL>
+      <LinkWrap>
+        <UL>
+          <ListItem>
+            <Links
+              to=""
+              onClick={toggle}
+              onMouseEnter={() => {
+                hover(1);
+              }}
+              onMouseLeave={() => {
+                hover();
+              }}
+            >
+              Sign in
+            </Links>
+          </ListItem>
+          <ListItem>
+            <Links
+              to="/signup"
+              onClick={toggle}
+              onMouseEnter={() => {
+                hover(2);
+              }}
+              onMouseLeave={() => {
+                hover();
+              }}
+            >
+              Sign up
+            </Links>
+          </ListItem>
+          <ListItem>
+            <Links
+              to="/aboutus"
+              onClick={toggle}
+              onMouseEnter={() => {
+                hover(3);
+              }}
+              onMouseLeave={() => {
+                hover();
+              }}
+            >
+              About us
+            </Links>
+          </ListItem>
+        </UL>
       </LinkWrap>
       <Modal isOpen={isOpen} toggle={toggle} />
-      </NavbarWrap>
+    </NavbarWrap>
   );
 };
 
