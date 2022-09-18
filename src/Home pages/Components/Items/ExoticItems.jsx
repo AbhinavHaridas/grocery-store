@@ -1,8 +1,9 @@
 import React from "react";
+import { Text } from './Text';
 
 const ExoticItems = () => {
     return (
-        <p>Exotic</p>
+        <Text>Exotic</Text>
     )
 }
 

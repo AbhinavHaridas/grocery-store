@@ -1,8 +1,9 @@
 import React from "react";
+import { Text } from './Text';
 
 const OrganicItems = () => {
     return (
-        <p>Organic </p>
+        <Text>Organic </Text>
     )
 }
 

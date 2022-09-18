@@ -1,8 +1,9 @@
 import React from 'react';
+import { Text } from './Text';
 
 const FruitItems = () => {
     return (
-        <p style={{textAlign: 'center'}}>Fruits</p>
+        <Text>Fruits</Text>
     )
 }
 

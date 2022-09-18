@@ -4,7 +4,7 @@ import styled from "styled-components";
 const Item = styled.div`
     width: 100%;
     transition: 0.3s;
-    height: 10%;
+    height: 30%;
     display: flex;
     flex-direction: row;
     padding-left: 20px;

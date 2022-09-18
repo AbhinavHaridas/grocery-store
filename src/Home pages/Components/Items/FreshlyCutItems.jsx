@@ -1,8 +1,9 @@
 import React from "react";
+import { Text } from './Text';
 
 const FreshlyCutItems = () => {
     return (
-        <p>Freshly cut</p>
+        <Text>Freshly cut</Text>
     )
 }
 
