@@ -3,8 +3,8 @@ import { Text } from './Text';
 import styled from 'styled-components';
 
 const CardBackground = styled.div`
-    margin-top: 20px;
-    margin-left: 20px;
+    margin-bottom: 6.05143721633888vh;
+    margin-left: 6.05143721633888vh;
     transition: 0.3s;
     width: 30vh;
     height: 42vh;
@@ -79,7 +79,7 @@ const Card = () => {
 
 const ExoticItems = () => {
     return (
-        <div style={{marginLeft: '40px'}}>
+        <div style={{marginLeft: '6.05143721633888vh'}}>
         <Text>Exotic</Text>
         <div style={
                 {
