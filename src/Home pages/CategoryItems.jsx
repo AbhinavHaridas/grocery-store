@@ -5,7 +5,7 @@ import SideDisplay from "./Components/SideDisplay";
 import { useState } from "react";
 
 const CategoryItems = () => {
-    const [choice, setChoice] = useState(0);
+    const [choice, setChoice] = useState(1);
 
     return (
         <div>
