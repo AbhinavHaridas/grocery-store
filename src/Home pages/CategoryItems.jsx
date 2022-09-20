@@ -9,7 +9,9 @@ const CategoryItems = () => {
 
     return (
         <div>
-            <Navbar />
+            <div style={{position: 'fixed',top: '0%',width: '100%'}}>
+                <Navbar />
+            </div>
             <div style={{display: "flex", justifyContent:"row"}}>
                 <SideNavbar setChoice={setChoice} />
                 <SideDisplay choice={choice} />

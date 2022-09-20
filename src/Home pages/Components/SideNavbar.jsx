@@ -4,7 +4,7 @@ import styled from "styled-components";
 const Item = styled.div`
     width: 100%;
     transition: 0.3s;
-    height: 30%;
+    height: 13.6%;
     display: flex;
     flex-direction: row;
     padding-left: 20px;
@@ -24,19 +24,28 @@ const Text = styled.h3`
     user-select: none; 
 `
 
+const scrollBehaviour = {
+    top: 0,
+    left: 0,
+    behavior: 'smooth'
+}
+
 const SideNavbar = ({setChoice}) => {
     return (
         <div style={{
-            width: '25%',
+            width: '23%',
             height: '100%',
             display: 'flex',
-            flexDirection: 'column'
+            flexDirection: 'column',
+            position: "fixed",
+            left: "0%",
+            top: "17%"
         }}>
-            <Item onClick={() => setChoice(1)}>
+            <Item onClick={() => { setChoice(1); window.scrollTo(scrollBehaviour);}}>
                 <img src="https://imgur.com/bN9PYdW.png" />
                 <Text>Vegetables</Text>
             </Item>
-            <Item onClick={() => setChoice(2)}>
+            <Item onClick={() => {setChoice(2); window.scrollTo(0,0);}}>
                 <img src="https://imgur.com/bN9PYdW.png" />
                 <Text>Fruits</Text>
             </Item>
