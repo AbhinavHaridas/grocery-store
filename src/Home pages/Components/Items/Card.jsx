@@ -46,17 +46,16 @@ const InsideCard = () => {
         <div style={{height: '40vh'}}>
             <div style={{display: 'flex', justifyContent: 'center'}} >
             <img src="https://i.imgur.com/tUrtXEA.png" 
-                style={{ width: '18.556701030927837vh', height: '15.463917525773196vh', marginTop: '5vh'}} 
+                style={{ width: '20vh', height: '16.5vh', marginTop: '5vh'}} 
             alt="images" />
             </div>
-            <TextP style={{marginLeft: '1vh'}}>Fresh Tomatoes</TextP>
+            <TextP style={{marginLeft: '1vh', height: '8%'}}>Fresh Tomatoes</TextP>
             <TextC style={{marginLeft: '1vh', height: '2%'}}>500g</TextC>
             <div style={{ 
                 display: 'flex', 
                 alignItems: 'center',
-                justifyContent: 'space-between',  
-                marginRight: '2.2vh',
-                marginBottom: '2.2vh' 
+                justifyContent: 'space-between',
+                marginRight: '2.2vh'
                 }}>
                 <TextP style={{marginLeft: '1vh'}}>$40.10</TextP>
                 <Button>

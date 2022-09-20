@@ -39,10 +39,10 @@ const SideNavbar = ({setChoice}) => {
             flexDirection: 'column',
             position: "fixed",
             left: "0%",
-            top: "17%"
+            top: "15%"
         }}>
             <Item onClick={() => { setChoice(1); window.scrollTo(scrollBehaviour);}}>
-                <img src="https://imgur.com/bN9PYdW.png" />
+                <img src="https://imgur.com/bN9PYdW.png"  />
                 <Text>Vegetables</Text>
             </Item>
             <Item onClick={() => {setChoice(2); window.scrollTo(0,0);}}>

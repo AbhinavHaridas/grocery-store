@@ -6,11 +6,6 @@ import ExoticItems from "./Items/ExoticItems";
 import OrganicItems from "./Items/OrganicItems";
 import FreshlyCutItems from "./Items/FreshlyCutItems";
 
-const placement = {
-    left: "20%",
-    top: "20%"
-}
-
 const SideDisplay = ({choice}) => {
     switch(choice) {
         case 1: 
@@ -25,6 +20,8 @@ const SideDisplay = ({choice}) => {
             return <OrganicItems />
         case 6:
             return <FreshlyCutItems />
+        default:
+            return null
     }
 }
 

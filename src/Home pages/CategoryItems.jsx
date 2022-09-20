@@ -9,7 +9,7 @@ const CategoryItems = () => {
 
     return (
         <div>
-            <div style={{position: 'fixed',top: '0%',width: '100%'}}>
+            <div style={{position: 'fixed', top: '0%', width: '100%'}}>
                 <Navbar />
             </div>
             <div style={{display: "flex", justifyContent:"row"}}>
