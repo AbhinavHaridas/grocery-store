@@ -24,13 +24,7 @@ const Text = styled.h3`
     user-select: none; 
 `
 
-const scrollBehaviour = {
-    top: 0,
-    left: 0,
-    behavior: 'smooth'
-}
-
-const SideNavbar = ({setChoice}) => {
+const SideNavbar = ({setChoice}) => { 
     return (
         <div style={{
             width: '23%',
@@ -41,28 +35,28 @@ const SideNavbar = ({setChoice}) => {
             left: "0%",
             top: "15%"
         }}>
-            <Item onClick={() => { setChoice(1); window.scrollTo(scrollBehaviour);}}>
-                <img src="https://imgur.com/bN9PYdW.png"  />
+            <Item onClick={() =>  setChoice(1)}>
+                <img src="https://imgur.com/bN9PYdW.png"  alt="Vegetables"/>
                 <Text>Vegetables</Text>
             </Item>
-            <Item onClick={() => {setChoice(2); window.scrollTo(0,0);}}>
-                <img src="https://imgur.com/bN9PYdW.png" />
+            <Item onClick={() => setChoice(2)}>
+                <img src="https://imgur.com/bN9PYdW.png" alt="Fruits"/>
                 <Text>Fruits</Text>
             </Item>
-            <Item onClick={() => setChoice(3)}>
-                <img src="https://imgur.com/bN9PYdW.png" />
+            <Item onClick={() =>  setChoice(3)}>
+                <img src="https://imgur.com/bN9PYdW.png" alt="Frozen Veg"/>
                 <Text>Frozen Veg</Text>
             </Item>
             <Item onClick={() => setChoice(4)}>
-                <img src="https://imgur.com/bN9PYdW.png" />
+                <img src="https://imgur.com/bN9PYdW.png" alt="Exotic"/>
                 <Text>Exotic</Text>
             </Item>
             <Item onClick={() => setChoice(5)}>
-                <img src="https://imgur.com/bN9PYdW.png" />
+                <img src="https://imgur.com/bN9PYdW.png" alt="Organic"/>
                 <Text>Organic</Text>
             </Item>
             <Item onClick={() => setChoice(6)}>
-                <img src="https://imgur.com/bN9PYdW.png" />
+                <img src="https://imgur.com/bN9PYdW.png" alt="Freshly Cut"/>
                 <Text>Freshly Cut</Text>
             </Item>
         </div>

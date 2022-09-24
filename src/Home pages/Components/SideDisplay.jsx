@@ -7,6 +7,7 @@ import OrganicItems from "./Items/OrganicItems";
 import FreshlyCutItems from "./Items/FreshlyCutItems";
 
 const SideDisplay = ({choice}) => {
+
     switch(choice) {
         case 1: 
             return <VegetablesItems />

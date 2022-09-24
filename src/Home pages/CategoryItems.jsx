@@ -2,10 +2,17 @@ import React from "react";
 import Navbar from "./Components/Navbar";
 import SideNavbar from "./Components/SideNavbar";
 import SideDisplay from "./Components/SideDisplay";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const CategoryItems = () => {
     const [choice, setChoice] = useState(1);
+
+    useEffect(() => {
+        window.scrollTo({
+            top: '0',
+            behavior: 'smooth'
+        })
+    }, [choice]);
 
     return (
         <div>
