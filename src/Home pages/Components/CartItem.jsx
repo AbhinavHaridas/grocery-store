@@ -92,41 +92,8 @@ const CartItem = () => {
                         </div>
                     </div>
                 </div>
-
         </div>
     )
 }
 
 export default CartItem;
-
-
-{/* <Amount>
-    <TextC>1kg</TextC>
-    <i class="fa-solid fa-caret-down fa-2xl" style={{marginLeft: '2vh'}}></i>
-</Amount>
-
-<div style={{
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'end',
-    marginBottom: '5vh',
-    marginRight: '2vh'
-    }}>
-        <i class="fa-solid fa-trash-can fa-xl"></i>
-</div>
-
-<div style={{
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'space-around',
-}}>
-
-<Amount>
-                            <i class="fa-solid fa-plus" onClick={() => setCount(count + 1)}></i>
-                            <TextC>{count}</TextC>
-                            <i class="fa-solid fa-minus" onClick={() => {
-                                if (count !== 0) setCount(count - 1)
-                                }}></i>
-                        </Amount>
-                    </div>
-                </div> */}
