@@ -10,14 +10,14 @@ import AboutUs from "./Landing pages/AboutUs";
 import Home from "./Home pages/Home";
 import Category from './Home pages/Category';
 import Contact from "./Landing pages/Contact";
-
+import Payment from "./Landing pages/Payment/Payment";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-
+        
         <Route exact path="/" element={<App />} />
         <Route exact path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
@@ -25,6 +25,7 @@ root.render(
         <Route path="/contact" element={<Contact />} />
         <Route path="/home" element={<Home />} />
         <Route path='/category' element={<Category/>} />
+        <Route path='/Payment' element={<Payment/>} />
 
       </Routes>
     </BrowserRouter>
