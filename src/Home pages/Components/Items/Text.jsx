@@ -6,3 +6,5 @@ export const Text = styled.h3`
     color: black;  
     user-select: none; 
 `
+
+export default Text;

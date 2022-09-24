@@ -11,6 +11,7 @@ import Home from "./Home pages/Home";
 import Category from './Home pages/Category';
 import Contact from "./Landing pages/Contact";
 import CategoryItems from "./Home pages/CategoryItems";
+import  CartPage from "./Home pages/CartPage";
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -27,6 +28,7 @@ root.render(
         <Route path="/home" element={<Home />} />
         <Route path='/category' element={<Category/>} />
         <Route path='/categoryitems' element={<CategoryItems />} />
+        <Route path="/cart" element={<CartPage />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
