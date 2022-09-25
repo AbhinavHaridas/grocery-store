@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import styled from "styled-components";
+import Dropdown from "./Dropdown";
 
 const TextC = styled.p`
 font-family: 'Forum', cursive; 
@@ -33,6 +34,7 @@ const Amount = styled.div`
 
 const CartItem = () => {
     const [count, setCount] = useState(0);
+    const [open, setOpen] = useState(false);
 
     return (
         <div style={{
@@ -74,7 +76,9 @@ const CartItem = () => {
                     }}>
                         <Amount>
                             <TextC>1kg</TextC>
-                            <i class="fa-solid fa-caret-down fa-2xl" style={{marginLeft: '2vh'}}></i>
+                            <i class="fa-solid fa-caret-down fa-2xl" 
+                            style={{marginLeft: '2vh'}} onClick={() => setOpen(!open)} />
+                            <Dropdown open={open}/>
                         </Amount>
                         <div style={{
                             display: 'flex',

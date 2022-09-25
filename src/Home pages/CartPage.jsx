@@ -3,12 +3,14 @@ import styled from "styled-components";
 import Address from "./Components/Address";
 import Navbar from "./Components/Navbar";
 import CartItem from "./Components/CartItem";
+import End from "./Components/End";
 
 const CartItems = styled.div `
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20px;
+    justify-content: center;
+    min-height: 90vh;
 `
 
 const CartPage = () => {
@@ -21,6 +23,7 @@ const CartPage = () => {
                 <CartItem />
                 <CartItem />
             </CartItems>
+            <End />
         </div>
     )
 }
