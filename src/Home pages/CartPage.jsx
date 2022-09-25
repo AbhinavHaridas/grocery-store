@@ -26,6 +26,7 @@ const CartPage = () => {
                 <CartItem />
                 <CartItem />
                 <CartItem />
+                <CartItem />
             </CartItems>
             <div style={{position: 'fixed', bottom: '0%', width: '100%'}}>
                 <End />

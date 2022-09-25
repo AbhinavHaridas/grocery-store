@@ -40,7 +40,8 @@ const CartItem = () => {
 
     return (
         <div style={{
-            width: '100vh', 
+            width: '110vh',
+            height: '20vh',
             backgroundColor: 'white',
             display: 'flex',
             flexDirection: 'row',
@@ -49,7 +50,7 @@ const CartItem = () => {
             transtion: '0.2s',
             boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px'
             }}>
-                <img src='https://imgur.com/SDCKI4n.png' alt='none' style={{height: '25vh'}} />
+                <img src='https://imgur.com/SDCKI4n.png' alt='none' style={{height: '20vh', alignSelf: 'center'}} />
                 <div style={{
                 display: 'flex', 
                 flexDirection: 'column',
@@ -58,6 +59,7 @@ const CartItem = () => {
                     <div style = {{
                     display: 'flex',
                     flexDirection: 'row',
+                    height: '6vh',
                     justifyContent: 'space-between',
                     width: '100%',
                     }}>
@@ -66,14 +68,21 @@ const CartItem = () => {
                     </div>
                     <div style={{
                     display: 'flex',
+                    marginTop: '1vh',
+                    height: '4vh',
                     flexDirection: 'row',
                     justifyContent: 'flex-start',
+                    textAlign: 'center',
+                    paddingTop: '0vh'
                     }}>
                         <TextC>Qty: 1</TextC>
                     </div>
                     <div style={{
                         display: 'flex',
                         flexDirection: 'row',
+                        marginTop: '1vh',
+                        height: '10vh',
+                        width: '100%',
                         justifyContent: 'space-between',
                         alignItems: 'center'
                     }}>
@@ -102,7 +111,7 @@ const CartItem = () => {
                         flexDirection: 'row', 
                         justifyContent: 'start', 
                         marginTop: '2vh', 
-                        marginBottom: '1vh'}}>
+                        marginBottom: '0vh'}}>
                         <Dropdown open={open}/>
                     </div>
                 </div>
