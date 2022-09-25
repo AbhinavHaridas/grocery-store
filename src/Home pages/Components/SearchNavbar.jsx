@@ -38,23 +38,28 @@ const Input = styled.input`
   padding: 17px 20px 17px 35px;
 `;
 
-const Mapped = styled.div`
-  margin: 40px;
-  background-color: #fff;
-  margin-left: 0px;
+const MappedContainer = styled.div`
+  position: absolute;
   display: flex;
   flex-direction: column;
+  left: 38%;
+  z-index: 1;
+  border-right: 1px solid rgb(68, 66, 66);
+  border-left: 1px solid rgb(68, 66, 66);
+  border-bottom: 1px solid rgb(68, 66, 66);
+  background: white;
+  top: 65%;
+  width: 15%;
+`;
+
+const Mapped = styled.div`
+  background-color: #fff;
 `;
 
 const P = styled.p`
   font-family: "Forum", cursive;
   font-size: 16px;
-  margin-top: -40px;
-  margin-bottom: -40px;
   padding: 10px 12px;
-  border-bottom: 1px solid black;
-  display: flex;
-  flex-direction: column;
 `;
 
 const SearchNavbar = () => {
@@ -112,25 +117,24 @@ const SearchNavbar = () => {
           </div>
         </li>
       </ul>
-      {items
-        .filter((val) => {
-          if (searchItem == "") {
-            return val;
-          } else if (val.toLowerCase().includes(searchItem.toLowerCase())) {
-            return val;
-          }
-        })
-        .map((item) => {
-          return (
-            <Mapped
-              style={{
-                display: searchItem != "" ? "block" : "none",
-              }}
-            >
-              <P>{item}</P>
-            </Mapped>
-          );
-        })}
+      {searchItem !== "" && (
+        <MappedContainer>
+          {items
+            .filter((val) => {
+              if (val.toLowerCase().includes(searchItem.toLowerCase())) {
+                return val;
+              }
+            })
+            .map((item) => {
+              return (
+                <Mapped>
+                  <P>{item}</P>
+                </Mapped>
+              );
+            })}
+        </MappedContainer>
+      )
+      }
     </nav>
   );
 };
