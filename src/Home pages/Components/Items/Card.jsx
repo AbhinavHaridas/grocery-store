@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 const Button = styled.div`
@@ -21,7 +21,7 @@ const TextC = styled.p`
 font-family: 'Forum', cursive; 
 font-size: 2.65vh;
 color: black;  
-margin-left: 4%; 
+margin-right: 1vh;
 `;
 
 const TextP = styled.p`
@@ -42,6 +42,8 @@ border: solid gray 1px
 `;
 
 const InsideCard = () => {
+    const [item, setItem] = useState(0);
+
     return (
         <div style={{height: '40vh'}}>
             <div style={{display: 'flex', justifyContent: 'center'}} >
@@ -58,9 +60,12 @@ const InsideCard = () => {
                 marginRight: '2.2vh'
                 }}>
                 <TextP style={{marginLeft: '1vh'}}>$40.10</TextP>
-                <Button>
-                    <i class="fa-solid fa-plus"></i>
-                </Button>
+                <div style={{display: 'flex', alignItems: 'center'}}>
+                    <TextC>{item}</TextC>
+                    <Button onClick={() => setItem(item + 1)}>
+                        <i class="fa-solid fa-plus"></i>
+                    </Button>
+                </div>
             </div>
         </div>
     )
