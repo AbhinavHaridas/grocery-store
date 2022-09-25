@@ -10,6 +10,7 @@ import AboutUs from "./Landing pages/AboutUs";
 import Home from "./Home pages/Home";
 import Category from './Home pages/Category';
 import Contact from "./Landing pages/Contact";
+import TrackOrder from "./Home pages/TrackOrder";
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -25,6 +26,7 @@ root.render(
         <Route path="/contact" element={<Contact />} />
         <Route path="/home" element={<Home />} />
         <Route path='/category' element={<Category/>} />
+        <Route path='/trackorder' element={<TrackOrder/>} />
 
       </Routes>
     </BrowserRouter>
