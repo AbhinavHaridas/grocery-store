@@ -30,12 +30,12 @@ const Amount = styled.div`
     align-items: center;
     margin-top: 1.8vh;
     margin-left: 20px;
-    margin-right: 20px
+    margin-right: 20px;
 `
 
 const CartItem = () => {
     const [count, setCount] = useState(1);
-    const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState(false); 
     const [index, setIndex] = useState(0);
 
     if (count > 0) {
@@ -90,12 +90,12 @@ const CartItem = () => {
                         <Amount>
                             <TextC>{AMOUNT[index]}</TextC>
                             <i class="fa-solid fa-caret-down fa-2xl" 
-                            style={{marginLeft: '2vh'}} onClick={() => setOpen(!open)} />
+                            style={{marginLeft: '2vh', position: 'relative'}} onClick={() => setOpen(!open)} />
                         </Amount>
                         <div style={{
                             display: 'flex',
                             flexDirection: 'row',
-                            alignItems: 'center'
+                            alignItems: 'center',
                         }}>
                         <i class="fa-solid fa-trash-can fa-2xl" 
                         style={{marginTop: '1.5vh', 
@@ -117,7 +117,7 @@ const CartItem = () => {
                         justifyContent: 'start', 
                         marginTop: '2vh', 
                         marginBottom: '0vh'}}>
-                        <Dropdown open={open}/>
+                            <Dropdown open={open} setIndex={setIndex}/>
                     </div>
                 </div>
         </div>
