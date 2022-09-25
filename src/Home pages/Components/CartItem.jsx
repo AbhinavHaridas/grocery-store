@@ -34,11 +34,12 @@ const Amount = styled.div`
 `
 
 const CartItem = () => {
-    const [count, setCount] = useState(0);
+    const [count, setCount] = useState(1);
     const [open, setOpen] = useState(false);
     const [index, setIndex] = useState(0);
 
-    return (
+    if (count > 0) {
+        return (
         <div style={{
             width: '110vh',
             height: '20vh',
@@ -96,7 +97,11 @@ const CartItem = () => {
                             flexDirection: 'row',
                             alignItems: 'center'
                         }}>
-                        <i class="fa-solid fa-trash-can fa-2xl" style={{marginTop: '1.5vh', marginRight: '4vh'}}></i>
+                        <i class="fa-solid fa-trash-can fa-2xl" 
+                        style={{marginTop: '1.5vh', 
+                        marginRight: '4vh',
+                        cursor: 'pointer'}}
+                        onClick={() => setCount(0)} />
                         <Amount>
                             <i class="fa-solid fa-plus" onClick={() => setCount(count + 1)}></i>
                             <TextC>{count}</TextC>
@@ -117,6 +122,8 @@ const CartItem = () => {
                 </div>
         </div>
     )
+    }
+ 
 }
 
 export default CartItem;
