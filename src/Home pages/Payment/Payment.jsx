@@ -1,6 +1,10 @@
 import React from 'react';
 import './Payment.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Navbar from '../Components/Navbar';
+import Footer from "../../Landing pages/Components/Footer";
+
+
 class Payment extends React.Component {
  
  
@@ -9,22 +13,12 @@ class Payment extends React.Component {
      
     return (
     
-      <div className="maincontainer">
-       <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
-          <h5 class="my-0 mr-md-auto font-weight-normal">Company name</h5>
-          <nav class="my-2 my-md-0 mr-md-3">
-            <a class="p-2 text-dark" href="#">Features</a>
-            <a class="p-2 text-dark" href="#">Enterprise</a>
-            <a class="p-2 text-dark" href="#">Support</a>
-            <a class="p-2 text-dark" href="#">Pricing</a>
-          </nav>
-          <a class="btn btn-outline-primary" href="#">Sign up</a>
-        </div>
+      <div className="maincontainer" style={{backgroundColor:"rgb(224 224 224)",paddingBottom: 20}}>
+       
         <div class="container">
           <div class="py-5 text-center">
             
-            <h2>Checkout form</h2>
-            <p class="lead">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+            <h1>Checkout</h1>
           </div>
           <div class="row">
             <div class="col-md-4 order-md-2 mb-4">
@@ -81,14 +75,14 @@ class Payment extends React.Component {
                 <div class="row">
                   <div class="col-md-6 mb-3">
                     <label for="firstName">First name</label>
-                    <input type="text" class="form-control" id="firstName" placeholder="" value="" required />
+                    <input type="text" class="form-control" id="username" placeholder="Username" required />
                     <div class="invalid-feedback">
                       Valid first name is required.
                     </div>
                   </div>
                   <div class="col-md-6 mb-3">
                     <label for="lastName">Last name</label>
-                    <input type="text" class="form-control" id="lastName" placeholder="" value="" required />
+                    <input type="text" class="form-control" id="username" placeholder="Username" required />
                     <div class="invalid-feedback">
                       Valid last name is required.
                     </div>
@@ -129,7 +123,7 @@ class Payment extends React.Component {
                     <label for="country">Country</label>
                     <select class="custom-select d-block w-100" id="country" required>
                       <option value="">Choose...</option>
-                      <option>United States</option>
+                      <option>India</option>
                     </select>
                     <div class="invalid-feedback">
                       Please select a valid country.
@@ -220,8 +214,21 @@ class Payment extends React.Component {
         </div>
      
       </div>
-      
+    
 )
 };
 }
-export default Payment;
+
+
+
+const Paymentpage = () => {
+  return (
+      <>
+      <Navbar />
+      <Payment />
+      
+      <Footer />
+      </>
+  )
+}
+export default Paymentpage;

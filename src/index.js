@@ -10,7 +10,7 @@ import AboutUs from "./Landing pages/AboutUs";
 import Home from "./Home pages/Home";
 import Category from './Home pages/Category';
 import Contact from "./Landing pages/Contact";
-import Payment from "./Landing pages/Payment/Payment";
+import Paymentpage from "./Home pages/Payment/Payment";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -25,7 +25,7 @@ root.render(
         <Route path="/contact" element={<Contact />} />
         <Route path="/home" element={<Home />} />
         <Route path='/category' element={<Category/>} />
-        <Route path='/Payment' element={<Payment/>} />
+        <Route path='/Payment' element={<Paymentpage/>} />
 
       </Routes>
     </BrowserRouter>
