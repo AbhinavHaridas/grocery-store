@@ -81,8 +81,7 @@ const Label = styled.label`
 `;
 
 const SignUpImage = styled.div`
-height:80vh;
-
+// height:80vh;
 `;
 
 const Image = styled.img`
@@ -91,11 +90,12 @@ const Image = styled.img`
   border-radius: 10px;
 `;
 const Imagecontainer=styled.div`
-height:70vh;
-width:60vh;
+height:96vh;
+width:65vh;
 background:url("${image}");
 background-repeat:no-repeat;
-background-size:100% 100%
+background-size:100% 100%;
+margin-top: 2vh;
 `;
 
 
