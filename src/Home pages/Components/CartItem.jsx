@@ -39,14 +39,13 @@ const CartItem = () => {
     return (
         <div style={{
             width: '130vh', 
-            height: '25vh', 
             backgroundColor: 'white',
             display: 'flex',
             flexDirection: 'row',
             marginTop: '2vh',
             borderRadius: '6px'
             }}>
-                <img src='https://imgur.com/SDCKI4n.png' alt='none' />
+                <img src='https://imgur.com/SDCKI4n.png' alt='none' style={{height: '25vh'}} />
                 <div style={{
                 display: 'flex', 
                 flexDirection: 'column',
@@ -78,7 +77,6 @@ const CartItem = () => {
                             <TextC>1kg</TextC>
                             <i class="fa-solid fa-caret-down fa-2xl" 
                             style={{marginLeft: '2vh'}} onClick={() => setOpen(!open)} />
-                            <Dropdown open={open}/>
                         </Amount>
                         <div style={{
                             display: 'flex',
@@ -94,6 +92,14 @@ const CartItem = () => {
                             }}></i>
                         </Amount>
                         </div>
+                    </div>
+                    <div style={{
+                        display: 'flex', 
+                        flexDirection: 'row', 
+                        justifyContent: 'start', 
+                        marginTop: '2vh', 
+                        marginBottom: '1vh'}}>
+                        <Dropdown open={open}/>
                     </div>
                 </div>
         </div>
