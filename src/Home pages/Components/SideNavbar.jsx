@@ -33,7 +33,7 @@ const SideNavbar = ({setChoice}) => {
             flexDirection: 'column',
             position: "fixed",
             left: "0%",
-            top: "15%"
+            top: "17%"
         }}>
             <Item onClick={() =>  setChoice(1)}>
                 <img src="https://imgur.com/bN9PYdW.png"  alt="Vegetables"/>
