@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import styled from "styled-components";
 import Dropdown from "./Dropdown";
+import AMOUNT from "./AMOUNT";
 
 const TextC = styled.p`
 font-family: 'Forum', cursive; 
@@ -35,15 +36,18 @@ const Amount = styled.div`
 const CartItem = () => {
     const [count, setCount] = useState(0);
     const [open, setOpen] = useState(false);
+    const [index, setIndex] = useState(0);
 
     return (
         <div style={{
-            width: '130vh', 
+            width: '100vh', 
             backgroundColor: 'white',
             display: 'flex',
             flexDirection: 'row',
             marginTop: '2vh',
-            borderRadius: '6px'
+            borderRadius: '6px',
+            transtion: '0.2s',
+            boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px'
             }}>
                 <img src='https://imgur.com/SDCKI4n.png' alt='none' style={{height: '25vh'}} />
                 <div style={{
@@ -74,7 +78,7 @@ const CartItem = () => {
                         alignItems: 'center'
                     }}>
                         <Amount>
-                            <TextC>1kg</TextC>
+                            <TextC>{AMOUNT[index]}</TextC>
                             <i class="fa-solid fa-caret-down fa-2xl" 
                             style={{marginLeft: '2vh'}} onClick={() => setOpen(!open)} />
                         </Amount>
