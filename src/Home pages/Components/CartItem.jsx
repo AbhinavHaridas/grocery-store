@@ -65,7 +65,7 @@ const CartItem = () => {
                     width: '100%',
                     }}>
                         <TextP>Nagpur Oranges</TextP>
-                        <TextP>$40.99</TextP>
+                        <TextP>${40.99 * (count)}</TextP>
                     </div>
                     <div style={{
                     display: 'flex',
@@ -76,7 +76,7 @@ const CartItem = () => {
                     textAlign: 'center',
                     paddingTop: '0vh'
                     }}>
-                        <TextC>Qty: 1</TextC>
+                        <TextC>Qty: {count}</TextC>
                     </div>
                     <div style={{
                         display: 'flex',
@@ -87,10 +87,10 @@ const CartItem = () => {
                         justifyContent: 'space-between',
                         alignItems: 'center'
                     }}>
-                        <Amount>
+                        <Amount onClick={() => setOpen(!open)}>
                             <TextC>{AMOUNT[index]}</TextC>
                             <i class="fa-solid fa-caret-down fa-2xl" 
-                            style={{marginLeft: '2vh'}} onClick={() => setOpen(!open)} />
+                            style={{marginLeft: '2vh'}} />
                         </Amount>
                         <div style={{
                             display: 'flex',
@@ -115,9 +115,10 @@ const CartItem = () => {
                         display: 'flex', 
                         flexDirection: 'row', 
                         justifyContent: 'start', 
-                        marginTop: '2vh', 
+                        marginTop: '2vh',
+                        position: 'relative', 
                         marginBottom: '0vh'}}>
-                            <Dropdown open={open} setIndex={setIndex}/>
+                            <Dropdown open={open} setIndex={setIndex} setOpen={setOpen}/>
                     </div>
                 </div>
         </div>

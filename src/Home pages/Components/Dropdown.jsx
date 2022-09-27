@@ -5,18 +5,12 @@ import AMOUNT from "./AMOUNT";
 const Menu = styled.div`
 background-color: #8f8484;
 width: 11vh;
-/* height: 20vh; */
 margin-left: 2.1vh;
 margin-top: -2vh;
-opacity: 1;
-transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
 text-align: center;
 border: solid grey 1px;
 user-select: none;
 cursor: pointer;
-:hover {
-
-}
 `
 
 const TextC = styled.p`
@@ -32,14 +26,19 @@ const getIndex = (element, array) => {
     return 0; 
 }
 
-const Dropdown = ({open, setIndex}) => {
+const Dropdown = ({open, setIndex, setOpen}) => {
     if (open) {
         return (
             <Menu>
                 {
                     AMOUNT.map((weight) => (
                         <>
-                            <TextC><div onClick={() => setIndex(getIndex(weight, AMOUNT))}>{weight}</div></TextC>
+                            <TextC><div onClick={
+                                () => {
+                                    setIndex(getIndex(weight, AMOUNT));
+                                    setOpen(false);
+                                }
+                            }>{weight}</div></TextC>
                         </>
                     ))
                 }
