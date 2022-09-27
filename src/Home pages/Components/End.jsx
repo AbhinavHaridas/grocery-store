@@ -30,7 +30,7 @@ const End = () => {
             backgroundColor: 'white',
             display: 'flex',
             flexDirection: 'row',
-            height: '14vh',
+            height: '12vh',
             justifyContent: 'space-around',
             marginTop: '10px',
             alignItems: 'center'

@@ -90,7 +90,7 @@ const CartItem = () => {
                         <Amount>
                             <TextC>{AMOUNT[index]}</TextC>
                             <i class="fa-solid fa-caret-down fa-2xl" 
-                            style={{marginLeft: '2vh', position: 'relative'}} onClick={() => setOpen(!open)} />
+                            style={{marginLeft: '2vh'}} onClick={() => setOpen(!open)} />
                         </Amount>
                         <div style={{
                             display: 'flex',
