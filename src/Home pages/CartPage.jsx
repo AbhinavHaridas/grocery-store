@@ -4,7 +4,6 @@ import Address from "./Components/Address";
 import Navbar from "./Components/Navbar";
 import CartItem from "./Components/CartItem";
 import End from "./Components/End";
-import Footer from "../Landing pages/Components/Footer";
 
 const CartItems = styled.div `
     display: flex;
@@ -31,7 +30,6 @@ const CartPage = () => {
             boxShadow: 'rgba(0, 0, 0, 0.35) 0px -10px 15px -7px'}}>
                 <End />
             </div>
-            <Footer />
         </div>
     )
 }
