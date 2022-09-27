@@ -26,7 +26,7 @@ const CartPage = () => {
                 <CartItem />
                 <CartItem />
             </CartItems>
-            <div style={{position: 'sticky', bottom: '0%', width: '100%', 
+            <div style={{position: 'sticky', bottom: '0%', width: '100%', top: '86%', 
             boxShadow: 'rgba(0, 0, 0, 0.35) 0px -10px 15px -7px'}}>
                 <End />
             </div>
