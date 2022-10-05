@@ -99,12 +99,6 @@ const SearchNavbar = ({ setIsSelected, isSelected }) => {
             </Link>
           </div>
         </li>
-        <li></li>
-        <li>
-          <Link to="/category">
-            <h3>Categories</h3>
-          </Link>
-        </li>
         <li>
           <Input
             type="text"
@@ -118,7 +112,11 @@ const SearchNavbar = ({ setIsSelected, isSelected }) => {
             }}
           />
         </li>
-
+        <li>
+          <Link to="/category">
+            <h3>Categories</h3>
+          </Link>
+        </li>
         <li>
           <h3>Offers</h3>
         </li>
