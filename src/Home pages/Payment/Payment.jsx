@@ -214,6 +214,7 @@ class Payment extends React.Component {
         </div>
      
       </div>
+      
     
 )
 };
