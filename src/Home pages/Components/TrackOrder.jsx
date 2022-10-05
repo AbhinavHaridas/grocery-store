@@ -1,6 +1,6 @@
 import React, { useState, Component } from "react";
 import SearchNavbar from "./SearchNavbar";
-import { GoogleMap, LoadScript } from "@react-google-maps/api";
+import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 import styled from "styled-components";
 import { Tick } from "./Tick.js";
 
@@ -117,6 +117,15 @@ const Div = styled.div`
 
 const TrackOrder = () => {
   const [isSelected, setIsSelected] = useState(false);
+
+  const [map, setMap] = React.useState(null);
+
+  const onLoad = React.useCallback(function callback(map) {
+    const bounds = new window.google.maps.LatLngBounds(center);
+    map.fitBounds(bounds);
+    setMap(map);
+  }, []);
+
   return (
     <TrackOrderWrap>
       <NavbarWrap>
@@ -134,8 +143,15 @@ const TrackOrder = () => {
               mapContainerStyle={containerStyle}
               center={center}
               zoom={10}
+              onLoad={onLoad}
             >
               {/* Child components, such as markers, info windows, etc. */}
+              <Marker
+                icon={
+                  "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png"
+                }
+                position={center}
+              />
               <></>
             </GoogleMap>
           </LoadScript>
