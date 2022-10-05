@@ -2,6 +2,7 @@ import React, { useState, Component } from "react";
 import SearchNavbar from "./SearchNavbar";
 import { GoogleMap, LoadScript } from "@react-google-maps/api";
 import styled from "styled-components";
+import { Tick } from "./Tick.js";
 
 // Import Images here
 import cancel from "../images/cancel.png";
@@ -109,6 +110,11 @@ const Progress = styled.img`
   margin-right: auto;
 `;
 
+const Div = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
 const TrackOrder = () => {
   const [isSelected, setIsSelected] = useState(false);
   return (
@@ -136,7 +142,12 @@ const TrackOrder = () => {
 
           <OrderDetailsWrap>
             <OrderDetails>
-              <p style={{ fontSize: 44, margin: 0 }}>Order ID: BS323WDS423</p>
+              <Div>
+                <p style={{ fontSize: 44, margin: 0 }}>
+                  Order ID: BS323WDS423{" "}
+                </p>
+                <Tick size={50} style={{ display: "inline-block" }} />
+              </Div>
               <DetailWrite>13:47 pm | 12 June 2022</DetailWrite>
               <DetailWrite>Order Total : $ 450.00 </DetailWrite>
               <DetailWrite> Order Items : 5 </DetailWrite>
