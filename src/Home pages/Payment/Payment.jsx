@@ -18,7 +18,7 @@ class Payment extends React.Component {
         <div class="container">
           <div class="py-5 text-center">
             
-            <h1>Checkout</h1>
+            <h1>CHECKOUT</h1>
           </div>
           <div class="row">
             <div class="col-md-4 order-md-2 mb-4">
