@@ -12,6 +12,7 @@ import Category from './Home pages/Category';
 import Contact from "./Landing pages/Contact";
 import Paymentpage from "./Home pages/Payment/Payment";
 import FAQ from "./Home pages/faq/Faq";
+import Offers from "./Home pages/Components/Offers/Offers";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -28,7 +29,7 @@ root.render(
         <Route path='/category' element={<Category/>} />
         <Route path='/Payment' element={<Paymentpage/>} />
         <Route path='/Faq' element={<FAQ/>} />
-
+        <Route path='/offers' element={<Offers/>} />   
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
