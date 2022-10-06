@@ -52,7 +52,7 @@ const InsideCard = () => {
             alt="images" />
             </div>
             <TextP style={{marginLeft: '1vh', height: '8%'}}>Fresh Tomatoes</TextP>
-            <TextC style={{marginLeft: '1vh', height: '2%'}}>500g</TextC>
+            <TextC style={{marginLeft: '1vh', height: '2%'}}>{500 * item}g</TextC>
             <div style={{ 
                 display: 'flex', 
                 alignItems: 'center',
