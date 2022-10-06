@@ -9,6 +9,8 @@ import AboutUs from "./Landing pages/AboutUs";
 import Home from "./Home pages/Home";
 import Category from "./Home pages/Category";
 import Contact from "./Landing pages/Contact";
+import CategoryItems from "./Home pages/CategoryItems";
+import CartPage from "./Home pages/CartPage";
 import TrackOrder from "./Home pages/Components/TrackOrder";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -22,7 +24,9 @@ root.render(
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/home" element={<Home />} />
-        <Route path="/category" element={<Category />} />
+        <Route path='/category' element={<Category/>} />
+        <Route path='/categoryitems' element={<CategoryItems />} />
+        <Route path="/cart" element={<CartPage />} />
         <Route path="/trackorder" element={<TrackOrder />} />
       </Routes>
     </BrowserRouter>
