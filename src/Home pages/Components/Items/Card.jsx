@@ -42,7 +42,7 @@ border: solid gray 1px
 `;
 
 const InsideCard = () => {
-    const [item, setItem] = useState(0);
+    const [item, setItem] = useState(1);
 
     return (
         <div style={{height: '40vh'}}>
@@ -59,7 +59,7 @@ const InsideCard = () => {
                 justifyContent: 'space-between',
                 marginRight: '2.2vh'
                 }}>
-                <TextP style={{marginLeft: '1vh'}}>$40.10</TextP>
+                <TextP style={{marginLeft: '1vh'}}>${40.10 * item}</TextP>
                 <div style={{display: 'flex', alignItems: 'center'}}>
                     <TextC>{item}</TextC>
                     <Button onClick={() => setItem(item + 1)}>
