@@ -1,0 +1,19 @@
+.heading {
+  font-family: "Forum", cursive;
+  margin-top: 150px;
+  font-size: 80px;
+  color: aliceblue;
+  text-shadow: 0.05em 0 rgb(9, 10, 10);
+  text-align: center;
+}
+
+.header {
+  background-image: url(../images/vegetables.png);
+  background-size: cover;
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  background-repeat: no-repeat;
+  user-select: none;
+}

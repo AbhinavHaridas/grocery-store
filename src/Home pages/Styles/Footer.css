@@ -1,0 +1,64 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(61, 61, 61);
+}
+
+.footer p {
+    font-family: 'Forum', cursive; 
+    font-size: 20px;
+    margin-left: 42%;
+    margin-bottom: 30px;
+}
+
+.Socials {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    margin-left: 40%;
+}
+
+.Socials li {
+    margin-left: 20px;
+}
+
+.s {
+    color: black;
+}
+
+.circles {
+    display: flex;
+    margin-left: 40%;
+}
+
+.circle {
+    width: 40px;
+    height: 40px;
+    margin-left: 20px;
+    border-radius: 20px;
+    background-color: black;
+}
+
+.Link {
+    text-decoration: none;
+    color: black;
+    position: relative;
+}
+
+.Link:after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: black;
+    transition: width 0.4s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+
+.Link:hover:after {
+    width: 100%;
+    left: 0;
+}

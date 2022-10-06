@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import image from "../images/Pineapple.jpg";
+import image from "./images/Pineapple.jpg";
 
 const SignUpPageWrap = styled.div`
   display: flex;
@@ -8,6 +8,7 @@ const SignUpPageWrap = styled.div`
   justify-content: center;
   align-items: center;
   background-color: #00a8ff;
+  height: 100vh;
 `;
 
 const SignUpPage = styled.div`
@@ -58,7 +59,6 @@ const CreateButton = styled.button`
     transform: translateY(-0.25em);
     background-color: orange;
   }
-  }
 `;
 
 const Input = styled.input`
@@ -80,13 +80,24 @@ const Label = styled.label`
   margin: 10px 0px;
 `;
 
-const SignUpImage = styled.div``;
+const SignUpImage = styled.div`
+// height:80vh;
+`;
 
 const Image = styled.img`
   margin-top: 15px;
   height: 690px;
   border-radius: 10px;
 `;
+const Imagecontainer=styled.div`
+height:96vh;
+width:65vh;
+background:url("${image}");
+background-repeat:no-repeat;
+background-size:100% 100%;
+margin-top: 2vh;
+`;
+
 
 const SignUp = () => {
   const [searchString, setSearchString] = useState();
@@ -117,6 +128,11 @@ const SignUp = () => {
             <Label htmlFor="">Contact No:</Label>
             <Input
               type="tel"
+              onKeyPress={(event) => {
+                if (!/[0-9]/.test(event.key)) {
+                  event.preventDefault();
+                }
+              }}
               value={phoneNumber}
               onChange={(e) => setPhoneNumber(e.target.value)}
               maxLength={10}
@@ -162,11 +178,12 @@ const SignUp = () => {
         </FormWrap>
       </SignUpPage>
       <SignUpImage>
-        <Image
+        {/* <Image
           src={image}
           alt="pineapple"
           style={{ boxShadow: "5px 5px 20px 5px rgba(0, 0, 0, 0.25)" }}
-        />
+        /> */}
+        <Imagecontainer></Imagecontainer>
       </SignUpImage>
     </SignUpPageWrap>
   );
