@@ -17,8 +17,8 @@ const CartItems = styled.div `
 const CartPage = () => {
     return (
         <div style={{backgroundColor: 'rgb(179, 173, 173)', minHeight: '1200px'}}>
-            <Navbar />
             <div style={{position: 'sticky', top: '0%', width: '100%', boxShadow: 'rgba(0, 0, 0, 0.35) 0px 10px 15px -7px'}}>
+                <Navbar />
                 <Address />
             </div>
             <CartItems>
