@@ -34,7 +34,10 @@ const FruitItems = () => {
                 {
                     jsonData?.fruits.map((fruit) => {
                         return (
-                                <Card name={fruit.name} image={fruit.image} weight={fruit.weight} price={fruit.price} />
+                                <Card name={fruit.name} 
+                                image={fruit.image} 
+                                weight={fruit.weight} 
+                                price={fruit.price} />
                             )
                         })
                 }
