@@ -15,7 +15,6 @@ const FruitItems = () => {
         .then(response => response.json())
         .then(json => {
             if (jsonData === null) setJsonData(json)
-            console.log(jsonData) 
     })
     }, [jsonData])
 

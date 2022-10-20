@@ -41,13 +41,13 @@ background-color: white;
 border: solid gray 1px
 `;
 
-const InsideCard = ({name, photo, weight, price}) => {
+const InsideCard = ({name, image, weight, price}) => {
     const [item, setItem] = useState(1);
 
     return (
         <div style={{height: '40vh'}}>
             <div style={{display: 'flex', justifyContent: 'center'}} >
-            <img src={photo} 
+            <img src={image} 
                 style={{ width: '20vh', height: '16.5vh', marginTop: '5vh'}} 
             alt="images" />
             </div>
@@ -74,7 +74,7 @@ const InsideCard = ({name, photo, weight, price}) => {
 export const Card = (props) => {
     return (
         <CardBackground>
-            <InsideCard name={props.name} photo={props.photo} weight={props.weight} price={props.price}/>
+            <InsideCard name={props.name} image={props.image} weight={props.weight} price={props.price}/>
         </CardBackground>
     )
 }
