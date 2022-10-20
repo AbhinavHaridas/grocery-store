@@ -41,25 +41,25 @@ background-color: white;
 border: solid gray 1px
 `;
 
-const InsideCard = () => {
+const InsideCard = ({name, photo, weight, price}) => {
     const [item, setItem] = useState(1);
 
     return (
         <div style={{height: '40vh'}}>
             <div style={{display: 'flex', justifyContent: 'center'}} >
-            <img src="https://i.imgur.com/tUrtXEA.png" 
+            <img src={photo} 
                 style={{ width: '20vh', height: '16.5vh', marginTop: '5vh'}} 
             alt="images" />
             </div>
-            <TextP style={{marginLeft: '1vh', height: '8%'}}>Fresh Tomatoes</TextP>
-            <TextC style={{marginLeft: '1vh', height: '2%'}}>{500 * item}g</TextC>
+            <TextP style={{marginLeft: '1vh', height: '8%'}}>{name}</TextP>
+            <TextC style={{marginLeft: '1vh', height: '2%'}}>{weight * item}g</TextC>
             <div style={{ 
                 display: 'flex', 
                 alignItems: 'center',
                 justifyContent: 'space-between',
                 marginRight: '2.2vh'
                 }}>
-                <TextP style={{marginLeft: '1vh'}}>${40 * item}</TextP>
+                <TextP style={{marginLeft: '1vh'}}>${price * item}</TextP>
                 <div style={{display: 'flex', alignItems: 'center'}}>
                     <TextC>{item}</TextC>
                     <Button onClick={() => setItem(item + 1)}>
@@ -71,10 +71,10 @@ const InsideCard = () => {
     )
 }
 
-export const Card = () => {
+export const Card = (props) => {
     return (
         <CardBackground>
-            <InsideCard />
+            <InsideCard name={props.name} photo={props.photo} weight={props.weight} price={props.price}/>
         </CardBackground>
     )
 }

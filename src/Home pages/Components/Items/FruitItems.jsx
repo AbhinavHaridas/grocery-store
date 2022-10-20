@@ -2,8 +2,23 @@ import React from 'react';
 import { Text } from './Text';
 import { Card } from './Card';
 import { useState } from 'react';
+import { useEffect } from 'react';
+
+const  API_ADDRESS = 'http://localhost:5000/fruits';
+
 
 const FruitItems = () => {
+    const [jsonData, setJsonData] = useState(null)
+
+    useEffect(() => {
+        fetch(`${API_ADDRESS}`, { mode: 'cors' })
+        .then(response => response.json())
+        .then(json => {
+            if (jsonData === null) setJsonData(json)
+            console.log(jsonData) 
+    })
+    }, [jsonData])
+
     return ( 
         <div style={{
             marginLeft: "27%",
@@ -17,18 +32,13 @@ const FruitItems = () => {
                     flexWrap: 'wrap'
                 }
             }>
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
+                {
+                    jsonData?.fruits.map((fruit) => {
+                        return (
+                                <Card name={fruit.name} image={fruit.image} weight={fruit.weight} price={fruit.price} />
+                            )
+                        })
+                }
             </div>
         </div>
     )
