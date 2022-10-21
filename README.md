@@ -1,3 +1,6 @@
+To get the api running please refer to https://github.com/AbhinavHaridas/GroceryStoreAPI and clone the withoutDatabase branch. 
+Then run this app (It will run on port 5000) while running the react app.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
