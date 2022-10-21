@@ -1,8 +1,21 @@
 import React from 'react';
 import { Text } from './Text';
 import { Card } from './Card';
+import { useState, useEffect } from 'react';
+
+const API_ADDRESS = "http://localhost:5000/freshlycut"
 
 const FreshlyCutItems = () => {
+    const [ jsonData, setJsonData ] = useState(null);
+
+    useEffect(() => {
+        fetch(API_ADDRESS, {mode: 'cors'})
+        .then(response => response.json())
+        .then(json => {
+            if (jsonData === null) setJsonData(json)
+        })
+    })
+
     return (
         <div style={{
             marginLeft: "27%",
@@ -16,18 +29,16 @@ const FreshlyCutItems = () => {
                     flexWrap: 'wrap'
                 }
             }>
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
+                {
+                    jsonData?.freshlycut.map((fc) => {
+                        return (
+                            <Card name={fc.name} 
+                            image={fc.image} 
+                            weight={fc.weight} 
+                            price={fc.price} />
+                        )
+                    })
+                }                
             </div>
         </div>
     )
