@@ -3,7 +3,7 @@ import { Text } from './Text';
 import { Card } from './Card';
 import { useState, useEffect } from 'react';
 
-const API_ADDRESS = "http://localhost:5000/organic";
+const API_ADDRESS = "http://localhost:8000/organic";
 
 const OrganicItems = () => {
     const [ jsonData, setJsonData ] = useState(null)

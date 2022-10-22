@@ -5,6 +5,9 @@ import { Navigation } from "swiper";
 
 import "swiper/css";
 import "swiper/css/navigation";
+import { useEffect } from "react";
+
+const API_ADDRESS = "http://localhost:8000/deals"
 
 const CardBackground = styled.div`
     transition: 0.3s;
@@ -24,16 +27,16 @@ const Button = styled.div`
   }
 `
 
-const InsideCard = () => {
+const InsideCard = ({image, desc}) => {
     return (
         <div style={{height: '40vh'}}>
             <div style={{display: 'flex', justifyContent: 'center'}} >
-            <img src="https://imgur.com/xxh8Xni.png" 
+            <img src={image} 
                 style={{ width: '18.556701030927837vh', height: '15.463917525773196vh', marginTop: '5vh'}} 
             alt="images" />
             </div>
             <TextP>
-                Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical
+                {desc}
             </TextP>
             <div style={{ 
                 display: 'flex', 
@@ -55,7 +58,7 @@ const InsideCard = () => {
     )
 }
 
-const Card = () => {
+const Card = (props) => {
 
     const [ hover, setHover ] = useState(false);
 
@@ -73,7 +76,7 @@ const Card = () => {
 
     return (
         <CardBackground onMouseEnter={hoverer} onMouseLeave={hoverer} style={styleHere}>
-            <InsideCard />
+            <InsideCard image={props.image} desc={props.desc} />
         </CardBackground>
     )
 }
@@ -121,6 +124,16 @@ const swiperStyle = {
 }
 
 const Deals = () => {
+    const [jsonData, setJsonData] = useState(null)
+
+    useEffect(() => {
+        fetch(API_ADDRESS, {mode:'cors'})
+        .then(response => response.json())
+        .then(json => {
+            if (jsonData === null) setJsonData(json)
+        })
+    })
+
     return (
         <Display>
             <Text>Top Deals: </Text>
@@ -137,6 +150,7 @@ const Deals = () => {
                 className="mySwiper"
                 style={swiperStyle}
                 >
+                    {/* <SwiperSlide style={sliderStyle}><Card /></SwiperSlide>
                     <SwiperSlide style={sliderStyle}><Card /></SwiperSlide>
                     <SwiperSlide style={sliderStyle}><Card /></SwiperSlide>
                     <SwiperSlide style={sliderStyle}><Card /></SwiperSlide>
@@ -147,8 +161,20 @@ const Deals = () => {
                     <SwiperSlide style={sliderStyle}><Card /></SwiperSlide>
                     <SwiperSlide style={sliderStyle}><Card /></SwiperSlide>
                     <SwiperSlide style={sliderStyle}><Card /></SwiperSlide>
-                    <SwiperSlide style={sliderStyle}><Card /></SwiperSlide>
-                    <SwiperSlide style={sliderStyle}><Card /></SwiperSlide>
+                    <SwiperSlide style={sliderStyle}><Card /></SwiperSlide> */}
+                    {
+                        jsonData?.map((deal) => {
+                            return (
+                                <SwiperSlide style={sliderStyle}>
+                                    <Card image={deal.image} desc={deal.desc} />
+                                    {
+                                    //Please include an "image" and a "desc" attribute in the backend. 
+                                    //Make sure that the json has an array of objects which have two properties called "image" and "desc"
+                                    }
+                                </SwiperSlide>
+                            )
+                        })
+                    }
                 </Swiper>
         </Deal>
     </Display>

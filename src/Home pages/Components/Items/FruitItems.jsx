@@ -4,7 +4,7 @@ import { Card } from './Card';
 import { useState } from 'react';
 import { useEffect } from 'react';
 
-const  API_ADDRESS = 'http://localhost:5000/fruits';
+const  API_ADDRESS = 'http://localhost:8000/fruits';
 
 
 const FruitItems = () => {

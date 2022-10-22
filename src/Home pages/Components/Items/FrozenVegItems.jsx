@@ -3,7 +3,7 @@ import { Text } from './Text';
 import { Card } from './Card';
 import { useState, useEffect } from 'react';
 
-const  API_ADDRESS = 'http://localhost:5000/frozen';
+const  API_ADDRESS = 'http://localhost:8000/frozen';
 
 const FrozenVegItems = () => {
     const [jsonData, setJsonData] = useState(null);

@@ -3,7 +3,7 @@ import { Text } from './Text';
 import { Card } from './Card';
 import { useState, useEffect } from 'react';
 
-const API_ADDRESS = "http://localhost:5000/freshlycut"
+const API_ADDRESS = "http://localhost:8000/freshlycut"
 
 const FreshlyCutItems = () => {
     const [ jsonData, setJsonData ] = useState(null);
