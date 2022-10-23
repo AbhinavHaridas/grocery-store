@@ -7,7 +7,6 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { useEffect } from "react";
 
-const API_ADDRESS = "http://localhost:8000/deals"
 
 const CardBackground = styled.div`
     transition: 0.3s;
@@ -27,7 +26,7 @@ const Button = styled.div`
   }
 `
 
-const InsideCard = ({image, desc}) => {
+const InsideCard = ({image, description}) => {
     return (
         <div style={{height: '40vh'}}>
             <div style={{display: 'flex', justifyContent: 'center'}} >
@@ -36,7 +35,7 @@ const InsideCard = ({image, desc}) => {
             alt="images" />
             </div>
             <TextP>
-                {desc}
+                {description}
             </TextP>
             <div style={{ 
                 display: 'flex', 
@@ -76,7 +75,7 @@ const Card = (props) => {
 
     return (
         <CardBackground onMouseEnter={hoverer} onMouseLeave={hoverer} style={styleHere}>
-            <InsideCard image={props.image} desc={props.desc} />
+            <InsideCard image={props.image} description={props.description} />
         </CardBackground>
     )
 }
@@ -124,13 +123,16 @@ const swiperStyle = {
 }
 
 const Deals = ({id, title}) => {
-    const [jsonData, setJsonData] = useState(null)
+    // const API_ADDRESS = `http://localhost:8000/deals/get_specific_deal_items?deal_type_id=${id}`;
+    const API_ADDRESS = "http://localhost:8000/deals/";
+
+    const [jsonData, setJsonData] = useState(null);
 
     useEffect(() => {
         fetch(API_ADDRESS, {mode:'cors'})
         .then(response => response.json())
         .then(json => {
-            if (jsonData === null) setJsonData(json)
+            if (jsonData === null) setJsonData(json);
         })
     })
 
@@ -164,17 +166,27 @@ const Deals = ({id, title}) => {
                     <SwiperSlide style={sliderStyle}><Card /></SwiperSlide> */}
                     {
                         jsonData?.map((deal) => {
-                            return (
-                                <SwiperSlide style={sliderStyle}>
-                                    <Card deal_type_id={deal.deal_type_id} image={deal.image} desc={deal.desc} />
-                                    {
-                                    //Please include an "image" and a "desc" attribute in the backend. 
-                                    //Make sure that the json has an array of objects which have two properties called "image" and "desc"
-                                    }
-                                </SwiperSlide>
-                            )
+                            if (deal.deal_type_id === id) {
+                                return (
+                                    <SwiperSlide style={sliderStyle}>
+                                        <Card image={deal.image} description={deal.description} />
+                                    </SwiperSlide>
+                                )
+                            } else return null;
                         })
                     }
+                    {/* {
+                        jsonData?.map((deal) => {
+                            return (
+                                    <SwiperSlide style={sliderStyle}>
+                                        <Card image={deal.image} description={deal.description} />
+                                            {
+                                                                //Please include an "image" and a "desc" attribute in the backend. 
+                                                                //Make sure that the json has an array of objects which have two properties called "image" and "desc"
+                                            }
+                                    </SwiperSlide>
+                        )})
+                    } */}
                 </Swiper>
         </Deal>
     </Display>
