@@ -138,7 +138,7 @@ const TrackOrder = () => {
         <Heading>Track Your Order</Heading>
 
         <Content>
-          <LoadScript googleMapsApiKey="AIzaSyBYMVLPoeReMN4jWOhKCV-g6x0BhYeXPus">
+          <LoadScript googleMapsApiKey="">
             <GoogleMap
               mapContainerStyle={containerStyle}
               center={center}
