@@ -123,7 +123,7 @@ const swiperStyle = {
     padding: '12px'
 }
 
-const Deals = () => {
+const Deals = ({id, title}) => {
     const [jsonData, setJsonData] = useState(null)
 
     useEffect(() => {
@@ -136,7 +136,7 @@ const Deals = () => {
 
     return (
         <Display>
-            <Text>Top Deals: </Text>
+            <Text>{title} </Text>
             <Deal>
                 <Swiper
                 slidesPerView={4}
@@ -166,7 +166,7 @@ const Deals = () => {
                         jsonData?.map((deal) => {
                             return (
                                 <SwiperSlide style={sliderStyle}>
-                                    <Card image={deal.image} desc={deal.desc} />
+                                    <Card deal_type_id={deal.deal_type_id} image={deal.image} desc={deal.desc} />
                                     {
                                     //Please include an "image" and a "desc" attribute in the backend. 
                                     //Make sure that the json has an array of objects which have two properties called "image" and "desc"
