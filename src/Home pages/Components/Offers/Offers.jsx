@@ -7,7 +7,7 @@ const Offers1 = () => {
     return (
        
 <div class="container bootstrap snippets bootdey">
-  <div class="row">
+  <div class="row_off">
     <div class="col-md-5">
       
       <div class="alert alert-info alert-coupon">
@@ -16,30 +16,30 @@ const Offers1 = () => {
       </div>    
       
       <div class="alert alert-warning alert-coupon">
-        <h4>"#HDFC10"</h4>
-        <p>10% off on HDFC cards.</p>
+        <h4>"#FRUIT5"</h4>
+        <p>5% cashback on seasonal fruits.</p>
       </div>
           
       <div class="alert alert-danger alert-coupon">
-        <h4>"#UPI10"</h4>
-        <p>10% Discount on UPI service.</p>
+        <h4>"#VEG10"</h4>
+        <p>10% Discount Vegetables.</p>
       </div> 
     </div>
     
     <div class="col-md-5">
      
       <div class="alert alert-info alert-coupon">
-        <h4>"#2NDDELFREE"</h4>
-        <p>Free Delivery on second order.</p>
+        <h4>"#20SELFCARE"</h4>
+        <p>20% off on personal care products</p>
       </div>    
       
       <div class="alert alert-warning alert-coupon">
         <h4>"#5TH40"</h4>
-        <p>40% off on your 5th order.</p>
+        <p>40% off on more than 5 items .</p>
       </div> 
       <div class="alert alert-danger alert-coupon">
-        <h4>"#FREEDEL299"</h4>
-        <p>Free delivery on orders above 299.</p>
+        <h4>"#30BESTSELLER"</h4>
+        <p>30% cashback on bestseller products.</p>
       </div> 
     </div>
   </div>
