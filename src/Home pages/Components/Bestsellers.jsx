@@ -1,37 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation } from "swiper";
+import { Navigation } from "swiper";
 
 import "swiper/css";
-import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-const SliderButton = styled.div`
-    width: 10vh;
-    height: 10vh;
-    border-radius: 5vh;
-    background-color: white;
-    margin-left: 10px;
-`
-
-const InsideSliderLeftButton = () => {
-    return (
-        <h1 style={{ fontSize: '40px', textAlign: 'center' }}>
-            {"<"}
-        </h1>
-    )
-}
-
-const InsideSliderRightButton = () => {
-    return (
-        <h1 style={{ fontSize: '40px', textAlign: 'center' }}>
-            {">"}
-        </h1>
-    )
-}
 
 const CardBackground = styled.div`
+    transition: 0.3s;
     width: 30vh;
     height: 40vh;
     border-radius: 20px;
@@ -70,7 +47,8 @@ const InsideCard = () => {
                     borderRadius: '2.0618556701030926vh', 
                     backgroundColor: 'orange', 
                     fontSize: '3.1023784901758016vh',
-                    textAlign: 'center'
+                    textAlign: 'center',
+                    userSelect: 'none'
                     }}>
                     ➔
                 </Button>
@@ -80,12 +58,30 @@ const InsideCard = () => {
 }
 
 const Card = () => {
+    const [hover, setHover] = useState(false);  
+
+    let styleHover = {
+        transition: '0.2s'
+    }
+
+    const hoverer = () => {
+        setHover(!hover);
+    }
+
+    if (hover) {
+        styleHover = {
+            transform: 'scale(1.03)',
+            boxShadow: 'rgba(0, 0, 0, 0.35) 1px 15px 25px',
+        }
+    }
+
     return (
-        <CardBackground>
+        <CardBackground onMouseEnter={hoverer} onMouseLeave={hoverer} style={styleHover}>
             <InsideCard />
         </CardBackground>
     )
 }
+
 
 
 const BestSeller = styled.div`
@@ -102,6 +98,7 @@ const Display = styled.div`
     max-height: 70vh;
     background-color: rgb(224, 167, 59);
     background-size: cover;
+    user-select: none; 
 `
 
 const Text = styled.h3`
@@ -109,6 +106,7 @@ const Text = styled.h3`
     font-size: 40px;
     color: black;  
     margin-left: 4%;  
+    user-select: none;
 `
 
 const TextP = styled.p`
@@ -125,7 +123,8 @@ const sliderStyle = {
 
 const swiperStyle = {
     height: '47vh', 
-    transition: '2s'
+    transition: '2s', 
+    padding: '12px'
 }
 
 const Bestsellers = () => {
@@ -140,11 +139,8 @@ const Bestsellers = () => {
                     speed={1500}
                     loop={true}
                     loopFillGroupWithBlank={true}
-                    pagination={{
-                    clickable: true,
-                    }}
                     navigation={true}
-                    modules={[Pagination, Navigation]}
+                    modules={[Navigation]}
                     className="mySwiper"
                     style={swiperStyle}
                     >

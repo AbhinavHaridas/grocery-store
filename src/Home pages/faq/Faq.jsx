@@ -9,7 +9,7 @@ const FAQ1 = () => {
     
         <><h1 className='style' align="center">Frequently Asked Questions</h1>
        
-        <div style={{minHeight: '80vh'}}><Accordion defaultActiveKey="0" flush>
+        <div style={{minHeight: '80vh'}}><Accordion flush>
             <Accordion.Item eventKey="0">
                 <Accordion.Header><b>Do you provide delivery in my area?</b></Accordion.Header>
                 <Accordion.Body>

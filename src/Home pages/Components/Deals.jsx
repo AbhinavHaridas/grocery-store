@@ -1,13 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation } from "swiper";
+import { Navigation } from "swiper";
 
 import "swiper/css";
-import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 const CardBackground = styled.div`
+    transition: 0.3s;
     width: 30vh;
     height: 40vh;
     border-radius: 20px;
@@ -56,8 +56,23 @@ const InsideCard = () => {
 }
 
 const Card = () => {
+
+    const [ hover, setHover ] = useState(false);
+
+    let styleHere = {}
+
+    const hoverer = () => {
+        setHover(!hover);
+    }
+
+    if (hover) 
+        styleHere = {
+            transform: 'scale(1.03)',
+            boxShadow: 'rgba(0, 0, 0, 0.35) 1px 15px 25px',
+        }
+
     return (
-        <CardBackground>
+        <CardBackground onMouseEnter={hoverer} onMouseLeave={hoverer} style={styleHere}>
             <InsideCard />
         </CardBackground>
     )
@@ -67,6 +82,7 @@ const Deal = styled.div`
     display: flex;
     justify-content: space-around;
     align-items: center;
+    user-select: none; 
 `
 
 const Display = styled.div`
@@ -83,7 +99,8 @@ const Text = styled.h3`
     font-family: 'Forum', cursive; 
     font-size: 40px;
     color: black;  
-    margin-left: 4%;  
+    margin-left: 4%;
+    user-select: none; 
 `
 
 const TextP = styled.p`
@@ -99,7 +116,8 @@ const sliderStyle = {
 }
 
 const swiperStyle = {
-    height: '47vh'
+    height: '47vh', 
+    padding: '12px'
 }
 
 const Deals = () => {
@@ -114,11 +132,8 @@ const Deals = () => {
                 speed={1500}
                 loop={true}
                 loopFillGroupWithBlank={true}
-                pagination={{
-                clickable: true,
-                }}
                 navigation={true}
-                modules={[Pagination, Navigation]}
+                modules={[Navigation]}
                 className="mySwiper"
                 style={swiperStyle}
                 >
