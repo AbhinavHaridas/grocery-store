@@ -15,6 +15,8 @@ import TrackOrder from "./Home pages/Components/TrackOrder";
 import Paymentpage from "./Home pages/Payment/Payment";
 import FAQ from "./Home pages/faq/Faq";
 import Offers from "./Home pages/Components/Offers/Offers";
+import Terms from "./Home pages/Components/Terms"
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -34,6 +36,8 @@ root.render(
         <Route path='/Payment' element={<Paymentpage/>} />
         <Route path='/Faq' element={<FAQ/>} />
         <Route path='/offers' element={<Offers/>} />   
+        <Route path="/Terms" element={<Terms />} />
+        
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
