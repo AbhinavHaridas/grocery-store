@@ -12,6 +12,7 @@ import Contact from "./Landing pages/Contact";
 import CategoryItems from "./Home pages/CategoryItems";
 import CartPage from "./Home pages/CartPage";
 import TrackOrder from "./Home pages/Components/TrackOrder";
+import Terms from "./Home pages/Components/Terms"
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -28,6 +29,7 @@ root.render(
         <Route path='/categoryitems' element={<CategoryItems />} />
         <Route path="/cart" element={<CartPage />} />
         <Route path="/trackorder" element={<TrackOrder />} />
+        <Route path="/Terms" element={<Terms />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
