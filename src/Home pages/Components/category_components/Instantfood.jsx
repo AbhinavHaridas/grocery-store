@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import "../category_components/tomato.css";
+import "../category_components/Instantfood.css";
 
-const Vegcard = styled.div`
+
+const Instacard = styled.div`
   width: 40vh;
   height: 370px;
   border-radius: 20px;
@@ -11,9 +12,9 @@ const Vegcard = styled.div`
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 `;
 
-const InsideCardveg = ({
-  src = "https://imgur.com/ICRZASq.jpeg",
-  category = "Orange",
+const InsideCardinsta = ({
+  src = "",
+  category = "",
 }) => {
   return (
     <section>
@@ -29,7 +30,7 @@ const InsideCardveg = ({
       </TextP>
       <div>
         <center>
-          <button type="button" class="btnveg">
+          <button type="button" class="btninsta">
             {" "}
             <i class="fa fa-shopping-cart"></i>Add to cart{" "}
           </button>
@@ -39,19 +40,20 @@ const InsideCardveg = ({
   );
 };
 
-const Slideveg = styled.div`
+const Slideinsta = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
 `;
 
-const Displayveg = styled.div`
+const Displayinsta = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
   background-color: white;
   background-size: cover;
 `;
+
 const TextP = styled.p`
   font-family: "Forum", cursive;
   font-size: 19px;
@@ -59,33 +61,33 @@ const TextP = styled.p`
   margin-left: 4%;
 `;
 
-const Vegetables = () => {
+const Instantfood = () => {
   return (
-    <div className="veggies">
-      <Displayveg>
-        <h3 className="text1">Vegetables</h3>
-        <Slideveg>
-          <Vegcard>
-            <InsideCardveg
-              src={"https://imgur.com/GEtx9iF.png"}
-              category={"Capsicum"}
+    <div className="fruit">
+      <Displayinsta>
+        <h3 className="text1">Instant Food</h3>
+        <Slideinsta>
+          <Instacard>
+            <InsideCardinsta
+              src={"https://m.media-amazon.com/images/I/51llDKvs5ML.jpg"}
+              category={"Chicken cup noodles"}
             />
-          </Vegcard>
-          <Vegcard>
-            <InsideCardveg
-              src={"https://imgur.com/S9pxNaL.png"}
-              category={"Cabbage"}
+          </Instacard>
+          <Instacard>
+            <InsideCardinsta
+              src={"https://m.media-amazon.com/images/I/91sFWJgCLDL._SL1500_.jpg"}
+              category={"Veg cup noodles"}
             />
-          </Vegcard>
-          <Vegcard>
-            <InsideCardveg
-              src={"https://imgur.com/mCOCUky.png"}
-              category={"Tomato"}
+          </Instacard>
+          <Instacard>
+            <InsideCardinsta
+              src={"https://m.media-amazon.com/images/I/71CcmSuTAnL._SL1500_.jpg"}
+              category={"Lays Magic Masala"}
             />
-          </Vegcard>
-        </Slideveg>
-      </Displayveg>
+          </Instacard>
+        </Slideinsta>
+      </Displayinsta>
     </div>
   );
 };
-export default Vegetables;
+export default Instantfood;
