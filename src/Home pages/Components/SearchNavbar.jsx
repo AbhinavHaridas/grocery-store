@@ -59,7 +59,7 @@ const MappedContainer = styled.div`
   position: absolute;
   display: flex;
   flex-direction: column;
-  left: 38%;
+  left: 18%;
   z-index: 1;
   border-right: 1px solid rgb(68, 66, 66);
   border-left: 1px solid rgb(68, 66, 66);
@@ -134,9 +134,11 @@ const SearchNavbar = ({ setIsSelected, isSelected }) => {
           </div>
         </li>
         <li>
-          <div className="dropdown">
-            <i class="fa-thin fa-bars fa" style={{ color: "white" }}></i>
-          </div>
+          <Link to="/dashboard">
+            <div className="dropdown">
+              <i class="fa-thin fa-bars fa" style={{ color: "white" }}></i>
+            </div>
+          </Link>
         </li>
       </ul>
       {searchItem !== "" && isSelected && (
