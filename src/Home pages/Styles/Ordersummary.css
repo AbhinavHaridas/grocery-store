@@ -64,6 +64,7 @@
     width: 49%;
     /* min-height: 40vh; */
     height: 40vh;
+    overflow-y: scroll;
   }
 
   .detail-modal{
@@ -75,7 +76,7 @@
   }
   
   .table_summary{
-    height: 200px;
+    height: 400px;
   }
   
   .close {
