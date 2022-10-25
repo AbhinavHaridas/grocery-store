@@ -41,7 +41,7 @@ background-color: white;
 border: solid gray 1px
 `;
 
-const InsideCard = ({name, image, quantity, price, id}) => {
+const InsideCard = ({name, image, quantity, price}) => {
     const [item, setItem] = useState(1);
 
     return (
@@ -74,7 +74,7 @@ const InsideCard = ({name, image, quantity, price, id}) => {
 export const Card = (props) => {
     return (
         <CardBackground>
-            <InsideCard name={props.name} image={props.image} quantity={props.quantity} price={props.price} id={props.id} />
+            <InsideCard name={props.name} image={props.image} quantity={props.quantity} price={props.price} />
         </CardBackground>
     )
 }

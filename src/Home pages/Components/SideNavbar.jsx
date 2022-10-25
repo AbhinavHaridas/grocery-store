@@ -25,7 +25,7 @@ const Text = styled.h3`
     user-select: none; 
 `
 
-const SideNavbar = ({ choice, setChoice, categories }) => { 
+const SideNavbar = ({ setChoice, categories }) => { 
 
     return (
         <div style={{
