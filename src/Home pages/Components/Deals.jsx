@@ -127,18 +127,17 @@ const swiperStyle = {
 }
 
 const Deals = ({ id, title, COLORS }) => {
-    // const API_ADDRESS = `http://localhost:8000/deals/get_specific_deal_items?deal_type_id=${id}`;
-    const API_ADDRESS = "http://localhost:8000/deals/";
-
     const [jsonData, setJsonData] = useState(null);
 
     useEffect(() => {
-        fetch(API_ADDRESS, {mode:'cors'})
+        fetch(`http://localhost:8000/deals/get_specific_deal_items?deal_type_id=${id}`, 
+            {mode:'cors'}
+        )
         .then(response => response.json())
         .then(json => {
             setJsonData(json);
         })
-    }, [])
+    }, [id])
 
     return (
         <Display COLORS={COLORS} id={id}>
@@ -170,13 +169,11 @@ const Deals = ({ id, title, COLORS }) => {
                     <SwiperSlide style={sliderStyle}><Card /></SwiperSlide> */}
                     {
                         jsonData?.map((deal) => {
-                            if (deal.deal_type_id === id) {
-                                return (
-                                    <SwiperSlide style={sliderStyle}>
-                                        <Card image={deal.image} description={deal.description} COLORS={COLORS} id={id} />
-                                    </SwiperSlide>
-                                )
-                            } else return null;
+                            return (
+                                <SwiperSlide style={sliderStyle}>
+                                    <Card image={deal.image} description={deal.description} COLORS={COLORS} id={id} />
+                                </SwiperSlide>
+                            )
                         })
                     }
                     {/* {
