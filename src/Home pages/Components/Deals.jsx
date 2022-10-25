@@ -26,9 +26,14 @@ const Button = styled.div`
   }
 `
 
-const InsideCard = ({image, description}) => {
+const InsideCard = ({ image, description, COLORS, id }) => {
     return (
-        <div style={{height: '40vh'}}>
+        <div style={{
+            height: '40vh', 
+            display: 'flex', 
+            flexDirection: 'column', 
+            justifyContent: 'space-between'
+            }}>
             <div style={{display: 'flex', justifyContent: 'center'}} >
             <img src={image} 
                 style={{ width: '18.556701030927837vh', height: '15.463917525773196vh', marginTop: '5vh'}} 
@@ -46,7 +51,7 @@ const InsideCard = ({image, description}) => {
                 <Button style={{ 
                     width: '4.123711340206185vh', height: '4.123711340206185vh', 
                     borderRadius: '2.0618556701030926vh', 
-                    backgroundColor: 'rgb(12, 207, 185)', 
+                    backgroundColor: `${COLORS[id - 1]}`, 
                     fontSize: '3.1023784901758016vh',
                     textAlign: 'center'
                     }}>
@@ -58,9 +63,8 @@ const InsideCard = ({image, description}) => {
 }
 
 const Card = (props) => {
-
     const [ hover, setHover ] = useState(false);
-
+    
     let styleHere = {}
 
     const hoverer = () => {
@@ -75,7 +79,7 @@ const Card = (props) => {
 
     return (
         <CardBackground onMouseEnter={hoverer} onMouseLeave={hoverer} style={styleHere}>
-            <InsideCard image={props.image} description={props.description} />
+            <InsideCard image={props.image} description={props.description} COLORS={props.COLORS} id={props.id} />
         </CardBackground>
     )
 }
@@ -93,7 +97,7 @@ const Display = styled.div`
     width: 100%;
     min-height: 62vh;
     max-height: 70vh;
-    background-color: rgb(12, 207, 185);
+    background-color: ${props => props.COLORS[props.id - 1]};
     background-size: cover;
 `
 
@@ -122,7 +126,7 @@ const swiperStyle = {
     padding: '12px'
 }
 
-const Deals = ({id, title}) => {
+const Deals = ({ id, title, COLORS }) => {
     // const API_ADDRESS = `http://localhost:8000/deals/get_specific_deal_items?deal_type_id=${id}`;
     const API_ADDRESS = "http://localhost:8000/deals/";
 
@@ -132,12 +136,12 @@ const Deals = ({id, title}) => {
         fetch(API_ADDRESS, {mode:'cors'})
         .then(response => response.json())
         .then(json => {
-            if (jsonData === null) setJsonData(json);
+            setJsonData(json);
         })
-    })
+    }, [])
 
     return (
-        <Display>
+        <Display COLORS={COLORS} id={id}>
             <Text>{title} </Text>
             <Deal>
                 <Swiper
@@ -169,7 +173,7 @@ const Deals = ({id, title}) => {
                             if (deal.deal_type_id === id) {
                                 return (
                                     <SwiperSlide style={sliderStyle}>
-                                        <Card image={deal.image} description={deal.description} />
+                                        <Card image={deal.image} description={deal.description} COLORS={COLORS} id={id} />
                                     </SwiperSlide>
                                 )
                             } else return null;
