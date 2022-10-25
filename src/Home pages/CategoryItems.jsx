@@ -34,7 +34,7 @@ const CategoryItems = () => {
             </div>
             <div style={{display: "flex", justifyContent:"row"}}>
                 <SideNavbar setChoice={setChoice} categories={categories} />
-                <SideDisplay choice={choice} jsonData={jsonData} />
+                <SideDisplay choice={choice} categories={categories} jsonData={jsonData} />
             </div>
         </div>
 

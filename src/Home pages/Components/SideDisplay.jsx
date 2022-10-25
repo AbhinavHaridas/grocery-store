@@ -14,7 +14,7 @@ const SideDisplay = ({ choice, categories, jsonData }) => {
             marginLeft: "27%",
             marginTop: "8%"
         }}>
-            {/* <Text>{categories[choice - 1].title}</Text> */}
+            <Text>{categories[choice - 1]?.title}</Text>
             <div style={
             {
                 display: 'flex',
