@@ -42,8 +42,6 @@ border: solid gray 1px
 `;
 
 const InsideCard = ({name, image, quantity, price}) => {
-    const [item, setItem] = useState(1);
-
     return (
         <div style={{height: '40vh'}}>
             <div style={{display: 'flex', justifyContent: 'center'}} >
@@ -52,17 +50,16 @@ const InsideCard = ({name, image, quantity, price}) => {
             alt="images" />
             </div>
             <TextP style={{marginLeft: '1vh', height: '8%'}}>{name}</TextP>
-            <TextC style={{marginLeft: '1vh', height: '2%'}}>{quantity * item}g</TextC>
+            <TextC style={{marginLeft: '1vh', height: '2%'}}> {quantity}</TextC>
             <div style={{ 
                 display: 'flex', 
                 alignItems: 'center',
                 justifyContent: 'space-between',
                 marginRight: '2.2vh'
                 }}>
-                <TextP style={{marginLeft: '1vh'}}>${price * item}</TextP>
+                <TextP style={{marginLeft: '1vh'}}>${price}</TextP>
                 <div style={{display: 'flex', alignItems: 'center'}}>
-                    <TextC>{item}</TextC>
-                    <Button onClick={() => setItem(item + 1)}>
+                    <Button onClick={() => {}}>
                         <i class="fa-solid fa-plus"></i>
                     </Button>
                 </div>
