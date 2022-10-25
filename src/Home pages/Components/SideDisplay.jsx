@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
-import VegetablesItems from "./Items/VegetablesItems";
-import FruitItems from "./Items/FruitItems";
-import FrozenVegItems from "./Items/FrozenVegItems";
-import ExoticItems from "./Items/ExoticItems";
-import OrganicItems from "./Items/OrganicItems";
-import FreshlyCutItems from "./Items/FreshlyCutItems";
+import React from "react";
+// import VegetablesItems from "./Items/VegetablesItems";
+// import FruitItems from "./Items/FruitItems";
+// import FrozenVegItems from "./Items/FrozenVegItems";
+// import ExoticItems from "./Items/ExoticItems";
+// import OrganicItems from "./Items/OrganicItems";
+// import FreshlyCutItems from "./Items/FreshlyCutItems";
 import { Card } from './Items/Card';
 import { Text } from './Items/Text';
 

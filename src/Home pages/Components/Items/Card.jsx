@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 
 const Button = styled.div`
@@ -41,7 +41,7 @@ background-color: white;
 border: solid gray 1px
 `;
 
-const InsideCard = ({name, image, quantity, price}) => {
+const InsideCard = ({ name, image, quantity, price }) => {
     return (
         <div style={{height: '40vh'}}>
             <div style={{display: 'flex', justifyContent: 'center'}} >
@@ -50,7 +50,7 @@ const InsideCard = ({name, image, quantity, price}) => {
             alt="images" />
             </div>
             <TextP style={{marginLeft: '1vh', height: '8%'}}>{name}</TextP>
-            <TextC style={{marginLeft: '1vh', height: '2%'}}> {quantity}</TextC>
+            <TextC style={{marginLeft: '1vh', height: '2%'}}>qty: {quantity}</TextC>
             <div style={{ 
                 display: 'flex', 
                 alignItems: 'center',

@@ -8,7 +8,7 @@ import { useState, useEffect } from 'react';
 const  API_ADDRESS = 'http://localhost:8000/frozen';
 
 const FrozenVegItems = () => {
-    const [jsonData, setJsonData] = useState(null);
+    const [ jsonData, setJsonData ] = useState(null);
 
     useEffect(()=> {
         fetch(API_ADDRESS, {mode: 'cors'})
