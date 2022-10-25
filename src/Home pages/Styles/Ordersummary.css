@@ -23,7 +23,7 @@
   }
   
   .modal {
-    display: none;
+    /* display: none; */
     position: fixed;
     z-index: 1;
     left: 0;
@@ -39,7 +39,7 @@
     width: 60%;
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
     animation-name: modalopen;
-    animation-duration: var(--modal-duration);
+    animation-duration: 0.2s;
   }
   
   .modal-header h2,
@@ -62,7 +62,8 @@
     background: #fff;
     float: left; 
     width: 49%;
-    min-height: 40vh;
+    /* min-height: 40vh; */
+    height: 40vh;
   }
 
   .detail-modal{
@@ -73,8 +74,8 @@
     min-height: 40vh;
   }
   
-  .table-summary{
-    min-height: 10vh;
+  .table_summary{
+    height: 200px;
   }
   
   .close {
@@ -92,10 +93,19 @@
   }
   
   @keyframes modalopen {
-    from {
+    /* from {
       opacity: 0;
     }
     to {
+      opacity: 1;
+    } */
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
       opacity: 1;
     }
   }
