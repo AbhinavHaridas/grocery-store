@@ -1,3 +1,5 @@
+// Useless Component
+
 import React from 'react';
 import { Text } from './Text';
 import { Card } from './Card';
