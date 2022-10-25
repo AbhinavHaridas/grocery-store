@@ -41,7 +41,7 @@ background-color: white;
 border: solid gray 1px
 `;
 
-const InsideCard = ({name, image, weight, price}) => {
+const InsideCard = ({name, image, quantity, price, id}) => {
     const [item, setItem] = useState(1);
 
     return (
@@ -52,7 +52,7 @@ const InsideCard = ({name, image, weight, price}) => {
             alt="images" />
             </div>
             <TextP style={{marginLeft: '1vh', height: '8%'}}>{name}</TextP>
-            <TextC style={{marginLeft: '1vh', height: '2%'}}>{weight * item}g</TextC>
+            <TextC style={{marginLeft: '1vh', height: '2%'}}>{quantity * item}g</TextC>
             <div style={{ 
                 display: 'flex', 
                 alignItems: 'center',
@@ -74,7 +74,7 @@ const InsideCard = ({name, image, weight, price}) => {
 export const Card = (props) => {
     return (
         <CardBackground>
-            <InsideCard name={props.name} image={props.image} weight={props.weight} price={props.price}/>
+            <InsideCard name={props.name} image={props.image} quantity={props.quantity} price={props.price} id={props.id} />
         </CardBackground>
     )
 }
