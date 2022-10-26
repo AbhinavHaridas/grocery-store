@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import Home from "../../Home pages/Home";
 
 const ModalOverlay = styled.div`
   position: absolute;
@@ -122,7 +125,6 @@ const LoginButton = styled.button`
     transform: translateY(-0.25em);
     background-color: #4DF631;
   }
-  }
 `;
 
 const Text = styled.h1`
@@ -152,7 +154,29 @@ const StyledLink = styled(Link)`
 const Modal = ({ isOpen, toggle }) => {
   const [phoneNumber, setPhoneNumber] = useState();
   const [password, setPassword] = useState();
+  const [submit, setSubmit] = useState(false);
+  const [jsonData, setJsonData] = useState(null);
+  const navigate = useNavigate();
 
+  useEffect(() => {
+    fetch("http://localhost:8000/customers/", { mode: 'cors' })
+    .then(response => response.json())
+    .then(json => {
+      setJsonData(json)
+    });
+  }, []);
+  
+  const Login = () => {
+    if (submit) {
+      for (const user of jsonData) {
+        if (user?.contact === phoneNumber && user?.password === password) {
+            return navigate('/home');
+        }
+      }
+    }
+    return null;
+  }
+  
   return (
     isOpen && (
       <>
@@ -191,7 +215,10 @@ const Modal = ({ isOpen, toggle }) => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
-              <LoginButton>Submit</LoginButton>
+              <LoginButton onClick={() => setSubmit(true)}>Submit</LoginButton >
+              {
+                Login()
+              }
             </Form>
             <StyledLink to="/home">
               <Text>Forgot Password? Click Here</Text>
