@@ -30,7 +30,8 @@ const Modal_a = ({ isOpen, toggle }) => {
   )
 };
 
-const Model = ({ open, setOpen }) => {
+
+export const Model = ({ open, setOpen }) => {
   if (open) {
     return (
       <div id="my-modal" class="modal" onClick={() => setOpen(false)}>
