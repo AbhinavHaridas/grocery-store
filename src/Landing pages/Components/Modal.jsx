@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import ForgotPassword from "./ForgotPassword";
 
 const ModalOverlay = styled.div`
   position: absolute;
@@ -152,6 +153,7 @@ const StyledLink = styled(Link)`
 const Modal = ({ isOpen, toggle }) => {
   const [phoneNumber, setPhoneNumber] = useState();
   const [password, setPassword] = useState();
+  const [forgotPassword, setForgotPassword] = useState(false);
 
   return (
     isOpen && (
@@ -193,8 +195,9 @@ const Modal = ({ isOpen, toggle }) => {
               />
               <LoginButton>Submit</LoginButton>
             </Form>
-            <StyledLink to="/home">
+            <StyledLink onClick={() => setForgotPassword(true)}>
               <Text>Forgot Password? Click Here</Text>
+              <ForgotPassword ForgotPassword={forgotPassword} />
             </StyledLink>
           </FormWrap>
         </ModalContent>
