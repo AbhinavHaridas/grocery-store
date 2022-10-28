@@ -123,7 +123,6 @@ const LoginButton = styled.button`
     transform: translateY(-0.25em);
     background-color: #4DF631;
   }
-  }
 `;
 
 const Text = styled.h1`
@@ -138,27 +137,9 @@ const Text = styled.h1`
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 `;
 
-const StyledLink = styled(Link)`
-  text-decoration: none;
-  height: 5%;
-  width: 66%;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  align-self: center;
-`;
-
-const Modal = ({ isOpen, toggle }) => {
+const Modal = ({ isOpen, toggle, isPasswordForgotten }) => {
   const [phoneNumber, setPhoneNumber] = useState();
   const [password, setPassword] = useState();
-  const [forgotPassword, setForgotPassword] = useState(false);
-
-  const isPasswordForgotten = () => {
-    if (forgotPassword) {
-      return <ForgotPassword style={{ boxSizing: 'border-box', width: '1800px', height: '1800px' }}/>
-    }
-  }
 
   return (
     isOpen && (
@@ -200,14 +181,11 @@ const Modal = ({ isOpen, toggle }) => {
               />
               <LoginButton>Submit</LoginButton>
             </Form>
-            <div onClick={() => setForgotPassword(true)}>
-              {
-                console.log(forgotPassword)
-              }
+            <div onClick={() => {
+              toggle(); 
+              isPasswordForgotten();
+              }}>
               <Text>Forgot Password? Click Here</Text>
-              {
-                isPasswordForgotten()
-              }
             </div>
           </FormWrap>
         </ModalContent>

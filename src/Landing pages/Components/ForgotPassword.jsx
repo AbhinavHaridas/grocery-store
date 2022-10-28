@@ -2,19 +2,19 @@ import React, { useEffect, useState, useRef } from "react";
 import styled from "styled-components";
 import '../LandingStyles/LandingStyle.css';
 
-// const ModalOverlay = styled.div`
-//   position: absolute;
-//   top: 0;
-//   height: 100%;
-//   width: 100%;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   align-content: center;
-//   background-color: rgb(35 35 35 / 40%);
-//   backdrop-filter: blur(5px);
-//   z-index: 2;
-// `;
+const ModalOverlay = styled.div`
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  background-color: rgb(35 35 35 / 40%);
+  backdrop-filter: blur(5px);
+  z-index: 2;
+`;
 
 /*   background-color: rgb(186 186 186 / 40%);
   backdrop-filter: blur(3px); */
@@ -126,42 +126,24 @@ const LoginButton = styled.button`
   }
 `;
 
-const ForgotPassword = () => {
+const ForgotPassword = ({ forgotPassword, isPasswordForgotten }) => {
     const [emailAddress, setEmailAddress] = useState("");
-    const reference = useRef([]);
-
-    // useEffect(() => {
-    //   const observer = new IntersectionObserver((entries) => {
-    //     entries.forEach((entry) => {
-    //       if (entry.isIntersecting) {
-    //         return entry.target.classList.add("show");
-    //       } else {
-    //         return entry.target.classList.remove("show");
-    //       }
-    //     })
-    //   })
-    //   reference.current.forEach((el.current) => observer.current.observe(el.current););
-    // }, [reference]);
 
         return (
         <>
-        {/* <ModalOverlay onClick={toggle}></ModalOverlay> */}
+        <ModalOverlay onClick={isPasswordForgotten}></ModalOverlay>
         <ModalContent>
           <TriangleDesign
             style={{ transform: "rotate(140deg)", top: -5, left: -6 }}
-            ref={reference}
           />
           <TriangleDesign
             style={{ transform: "rotate(215deg)", top: -5, right: -6 }}
-            ref={reference}
           />
           <TriangleDesign
             style={{ transform: "rotate(320deg)", bottom: -5, right: -6 }}
-            ref={reference}
           />
           <TriangleDesign
             style={{ transform: "rotate(45deg)", bottom: -5, left: -6 }}
-            ref={reference}
           />
           <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-around', alignItems: 'center'}}>
             <Title>Did you forgot your passwords. <b>No Worries</b></Title>
