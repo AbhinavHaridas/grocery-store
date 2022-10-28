@@ -13,6 +13,7 @@ import CategoryItems from "./Home pages/CategoryItems";
 import CartPage from "./Home pages/CartPage";
 import TrackOrder from "./Home pages/Components/TrackOrder";
 import Modal_a from "./Home pages/Components/Modalordersummary";
+import ForgotPassword from "./Landing pages/Components/ForgotPassword";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -29,6 +30,7 @@ root.render(
         <Route path='/categoryitems' element={<CategoryItems />} />
         <Route path="/cart" element={<CartPage />} />
         <Route path="/trackorder" element={<TrackOrder />} />
+        <Route path="/forgotpassword" element={<ForgotPassword />} />
         <Route path="/Modalordersummary" element={<Modal_a />}/>
       </Routes>
     </BrowserRouter>

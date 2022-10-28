@@ -136,7 +136,6 @@ const Text = styled.h1`
   color: #4df631;
 
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  cursor: pointer;
 `;
 
 const StyledLink = styled(Link)`
@@ -154,6 +153,12 @@ const Modal = ({ isOpen, toggle }) => {
   const [phoneNumber, setPhoneNumber] = useState();
   const [password, setPassword] = useState();
   const [forgotPassword, setForgotPassword] = useState(false);
+
+  const isPasswordForgotten = () => {
+    if (forgotPassword) {
+      return <ForgotPassword style={{ boxSizing: 'border-box', width: '1800px', height: '1800px' }}/>
+    }
+  }
 
   return (
     isOpen && (
@@ -195,10 +200,15 @@ const Modal = ({ isOpen, toggle }) => {
               />
               <LoginButton>Submit</LoginButton>
             </Form>
-            <StyledLink onClick={() => setForgotPassword(true)}>
+            <div onClick={() => setForgotPassword(true)}>
+              {
+                console.log(forgotPassword)
+              }
               <Text>Forgot Password? Click Here</Text>
-              <ForgotPassword ForgotPassword={forgotPassword} />
-            </StyledLink>
+              {
+                isPasswordForgotten()
+              }
+            </div>
           </FormWrap>
         </ModalContent>
       </>

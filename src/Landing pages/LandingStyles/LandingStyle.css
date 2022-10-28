@@ -78,3 +78,8 @@ h3 {
     text-shadow: .05em 0 rgb(9, 10, 10);
     font-size: 80px;
 }
+
+.show {
+    transform: rotate(30deg);
+    filter: blur(0);
+}
