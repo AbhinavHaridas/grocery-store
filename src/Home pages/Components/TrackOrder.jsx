@@ -147,8 +147,8 @@ const TrackOrder = () => {
         <Heading>Track Your Order</Heading>
 
         <Content>
+          <LoadScript googleMapsApiKey="">
           <Callmodal summaryClick={summaryClick} setSummaryClick={setSummaryClick}/>
-          <LoadScript googleMapsApiKey={`${process.env.API_KEY}`}>
             <GoogleMap
               mapContainerStyle={containerStyle}
               center={center}
