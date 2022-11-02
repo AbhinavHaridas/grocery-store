@@ -3,6 +3,7 @@ import SearchNavbar from "./SearchNavbar";
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 import styled from "styled-components";
 import { Tick } from "./Tick.js";
+import {Model} from "./Modalordersummary";
 
 // Import Images here
 import cancel from "../images/cancel.png";
@@ -115,7 +116,15 @@ const Div = styled.div`
   justify-content: space-between;
 `;
 
+const Callmodal= ({summaryClick,setSummaryClick})=> {
+  if (summaryClick)
+  {return(
+    <Model open={summaryClick} setOpen={setSummaryClick}/>
+  )}
+} 
+
 const TrackOrder = () => {
+  const [summaryClick,setSummaryClick]=useState(false);
   const [isSelected, setIsSelected] = useState(false);
 
   const [map, setMap] = React.useState(null);
@@ -138,6 +147,7 @@ const TrackOrder = () => {
         <Heading>Track Your Order</Heading>
 
         <Content>
+          <Callmodal summaryClick={summaryClick} setSummaryClick={setSummaryClick}/>
           <LoadScript googleMapsApiKey={`${process.env.API_KEY}`}>
             <GoogleMap
               mapContainerStyle={containerStyle}
@@ -175,7 +185,7 @@ const TrackOrder = () => {
 
                   <img src={cancel} alt="" style={{ size: 38 }} />
                 </Button>
-                <Button style={{ backgroundColor: "#90F83F", width: 315 }}>
+                <Button onClick={() => setSummaryClick(true)} style={{ backgroundColor: "#90F83F", width: 315 }}>
                   View Order Summary
                   <img src={list_alt} alt="" style={{ size: 38 }} />
                 </Button>
@@ -221,3 +231,5 @@ const TrackOrder = () => {
 };
 
 export default TrackOrder;
+
+
