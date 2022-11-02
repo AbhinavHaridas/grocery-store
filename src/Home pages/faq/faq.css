@@ -1,0 +1,9 @@
+.style{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 15vh;
+    color: rgb(132, 132, 154);
+    font-family: Forum;
+    font-size: 300%; 
+}
