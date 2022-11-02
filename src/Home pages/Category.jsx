@@ -8,6 +8,7 @@ import Personalcare from "./Components/category_components/Personalcare";
 import  Navbar from "./Components/Navbar";
 import Footer from "../Landing pages/Components/Footer";
 import Slider from "./Components/category_components/Slider";
+import AllCategories from "./AllCategories";
 
 
 const Category = () => {
@@ -15,12 +16,7 @@ const Category = () => {
         <>
         <Navbar />
         <Slider />
-        <Vegetables />
-        <Fruit /> 
-        <Dailyessential/>
-        <Instantfood/>
-        <Cleaningessential/>
-        <Personalcare /> 
+        <AllCategories />
         <Footer />
         </>
     )

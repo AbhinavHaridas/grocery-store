@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 
 const Button = styled.div`
@@ -41,28 +41,25 @@ background-color: white;
 border: solid gray 1px
 `;
 
-const InsideCard = () => {
-    const [item, setItem] = useState(1);
-
+const InsideCard = ({ name, image, quantity, price }) => {
     return (
         <div style={{height: '40vh'}}>
             <div style={{display: 'flex', justifyContent: 'center'}} >
-            <img src="https://i.imgur.com/tUrtXEA.png" 
+            <img src={image} 
                 style={{ width: '20vh', height: '16.5vh', marginTop: '5vh'}} 
             alt="images" />
             </div>
-            <TextP style={{marginLeft: '1vh', height: '8%'}}>Fresh Tomatoes</TextP>
-            <TextC style={{marginLeft: '1vh', height: '2%'}}>{500 * item}g</TextC>
+            <TextP style={{marginLeft: '1vh', height: '8%'}}>{name}</TextP>
+            <TextC style={{marginLeft: '1vh', height: '2%'}}>qty: {quantity}</TextC>
             <div style={{ 
                 display: 'flex', 
                 alignItems: 'center',
                 justifyContent: 'space-between',
                 marginRight: '2.2vh'
                 }}>
-                <TextP style={{marginLeft: '1vh'}}>${40 * item}</TextP>
+                <TextP style={{marginLeft: '1vh'}}>${price}</TextP>
                 <div style={{display: 'flex', alignItems: 'center'}}>
-                    <TextC>{item}</TextC>
-                    <Button onClick={() => setItem(item + 1)}>
+                    <Button onClick={() => {}}>
                         <i class="fa-solid fa-plus"></i>
                     </Button>
                 </div>
@@ -71,10 +68,10 @@ const InsideCard = () => {
     )
 }
 
-export const Card = () => {
+export const Card = (props) => {
     return (
         <CardBackground>
-            <InsideCard />
+            <InsideCard name={props.name} image={props.image} quantity={props.quantity} price={props.price} />
         </CardBackground>
     )
 }
