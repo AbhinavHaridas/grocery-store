@@ -24,7 +24,6 @@ const AllDeals = () => {
         <>
             {
                 jsonData?.map((deal_type) => {
-                    console.log(deal_type.id)
                     return <Deals id={deal_type.id} title={deal_type.title} COLORS={COLORS} />
                 })
             }

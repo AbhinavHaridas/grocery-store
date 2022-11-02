@@ -10,7 +10,7 @@ const CategoryItems = () => {
     const [jsonData, setJsonData] = useState(null);
 
     useEffect(() => {
-        fetch("http://localhost:8000/categories/", { mode: 'cors' })
+        fetch("http://localhost:8000/categories/fetch_category_types", { mode: 'cors' })
         .then(response => response.json())
         .then(json => {
             json.map((category) => {
