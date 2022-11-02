@@ -88,7 +88,6 @@ const Input = styled.input`
   background: #ffffff;
   border-radius: 10px;
   margin-top: 15px;
-  width: 20vh;
   height: 3.5vh;
   margin-bottom: 15px;
   padding: 5px;
@@ -135,7 +134,7 @@ const ForgotPassword = ({ forgotPassword, isPasswordForgotten }) => {
   return (
     <>
       <ModalOverlay onClick={isPasswordForgotten}></ModalOverlay>
-      <ModalContent style={{ display: 'flex', flexDirection: 'row', width: '120vh'}}>
+      <ModalContent style={{ display: 'flex', flexDirection: 'row', width: '125vh', left: '18%'}}>
         <TriangleDesign
           style={{ transform: "rotate(140deg)", top: -5, left: -6 }}
         />
@@ -150,8 +149,8 @@ const ForgotPassword = ({ forgotPassword, isPasswordForgotten }) => {
         />
         <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
           <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
-            <Title>Generate OTP</Title>
-            <Title>Enter new password</Title>
+            <Title style={{marginLeft: '5vh'}}>Generate OTP</Title>
+            <Title style={{marginLeft: '2vh'}}>Enter new password</Title>
           </div>
           <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
             <div style={{display: 'flex', flexDirection: 'column', marginTop: '5vh'}}>
@@ -165,7 +164,7 @@ const ForgotPassword = ({ forgotPassword, isPasswordForgotten }) => {
                 }}
                 onChange={(e) => setPhoneNumber(e.target.value)} />
             </div>
-            <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-around' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-around', marginLeft: '4vh'}}>
               <div style={{display: 'flex', flexDirection: 'column'}}>
                 <Label htmlFor="">Enter OTP.</Label>
                 <Input
@@ -179,7 +178,7 @@ const ForgotPassword = ({ forgotPassword, isPasswordForgotten }) => {
                 />
               </div>
               <div style={{display: 'flex', flexDirection: 'column'}}>
-                <Label htmlFor="">Enter Phone Number.</Label>
+                <Label htmlFor="">Change Password.</Label>
                 <Input
                   type="tel"
                   onKeyPress={(event) => {
@@ -187,14 +186,14 @@ const ForgotPassword = ({ forgotPassword, isPasswordForgotten }) => {
                       event.preventDefault();
                     }
                   }}
-                  onChange={(e) => setPhoneNumber(e.target.value)}
+                  onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
             </div>
           </div>
           <div style={{display: 'flex', justifyContent: 'space-around'}}>
-            <LoginButton>Submit</LoginButton>
-            <LoginButton>Submit</LoginButton>
+            <LoginButton>Generate OTP</LoginButton>
+            <LoginButton style={{width: '30vh'}}>Submit New Password</LoginButton>
           </div>
         </div>
       </ModalContent>
