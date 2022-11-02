@@ -1,0 +1,13 @@
+body{margin-top:0px;}	
+
+.alert-coupon {
+  border: 1px dashed;
+  
+}
+
+.row_off{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+}
