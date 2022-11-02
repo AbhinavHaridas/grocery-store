@@ -12,6 +12,7 @@ import Contact from "./Landing pages/Contact";
 import CategoryItems from "./Home pages/CategoryItems";
 import CartPage from "./Home pages/CartPage";
 import TrackOrder from "./Home pages/Components/TrackOrder";
+import Dashboard from "./Home pages/Dashboard";
 import Paymentpage from "./Home pages/Payment/Payment";
 import FAQ from "./Home pages/faq/Faq";
 import Offers from "./Home pages/Components/Offers/Offers";
@@ -34,6 +35,7 @@ root.render(
         <Route path="/categoryitems" element={<CategoryItems />} />
         <Route path="/cart" element={<CartPage />} />
         <Route path="/trackorder" element={<TrackOrder />} />
+        <Route path="/dashboard" element={<Dashboard />} />
         <Route path='/Payment' element={<Paymentpage/>} />
         <Route path='/Faq' element={<FAQ/>} />
         <Route path='/offers' element={<Offers/>} />   
