@@ -13,6 +13,7 @@ import CategoryItems from "./Home pages/CategoryItems";
 import CartPage from "./Home pages/CartPage";
 import TrackOrder from "./Home pages/Components/TrackOrder";
 import Order from "./Home pages/YourOrder";
+import Modal_a from "./Home pages/Components/Modalordersummary";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -30,6 +31,7 @@ root.render(
         <Route path="/cart" element={<CartPage />} />
         <Route path="/trackorder" element={<TrackOrder />} />
         <Route path="/yourorder" element={<Order />} />
+        <Route path="/Modalordersummary" element={<Modal_a />}/>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
