@@ -88,7 +88,8 @@ const Input = styled.input`
   background: #ffffff;
   border-radius: 10px;
   margin-top: 15px;
-  height: 10%;
+  width: 20vh;
+  height: 3.5vh;
   margin-bottom: 15px;
   padding: 5px;
   width: 400px;
@@ -112,7 +113,7 @@ const LoginButton = styled.button`
   font-weight: 400;
   font-size: 25px;
   padding: 10px;
-  width: 50%;
+  width: 25vh;
   align-self: center;
   margin-top: 20px;
   border-radius: 10px;
@@ -127,41 +128,78 @@ const LoginButton = styled.button`
 `;
 
 const ForgotPassword = ({ forgotPassword, isPasswordForgotten }) => {
-    const [emailAddress, setEmailAddress] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState();
+  const [otp, setOtp] = useState();
+  const [password, setPassword] = useState("");
 
-        return (
-        <>
-        <ModalOverlay onClick={isPasswordForgotten}></ModalOverlay>
-        <ModalContent>
-          <TriangleDesign
-            style={{ transform: "rotate(140deg)", top: -5, left: -6 }}
-          />
-          <TriangleDesign
-            style={{ transform: "rotate(215deg)", top: -5, right: -6 }}
-          />
-          <TriangleDesign
-            style={{ transform: "rotate(320deg)", bottom: -5, right: -6 }}
-          />
-          <TriangleDesign
-            style={{ transform: "rotate(45deg)", bottom: -5, left: -6 }}
-          />
-          <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-around', alignItems: 'center'}}>
-            <Title>Did you forgot your passwords. <b>No Worries</b></Title>
-              <Label htmlFor="">Enter Email Address.</Label>
+  return (
+    <>
+      <ModalOverlay onClick={isPasswordForgotten}></ModalOverlay>
+      <ModalContent style={{ display: 'flex', flexDirection: 'row', width: '120vh'}}>
+        <TriangleDesign
+          style={{ transform: "rotate(140deg)", top: -5, left: -6 }}
+        />
+        <TriangleDesign
+          style={{ transform: "rotate(215deg)", top: -5, right: -6 }}
+        />
+        <TriangleDesign
+          style={{ transform: "rotate(320deg)", bottom: -5, right: -6 }}
+        />
+        <TriangleDesign
+          style={{ transform: "rotate(45deg)", bottom: -5, left: -6 }}
+        />
+        <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+          <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
+            <Title>Generate OTP</Title>
+            <Title>Enter new password</Title>
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
+            <div style={{display: 'flex', flexDirection: 'column', marginTop: '5vh'}}>
+              <Label htmlFor="">Enter Phone Number.</Label>
               <Input
                 type="tel"
                 onKeyPress={(event) => {
-                  if ((!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/).test(event.key)) {
+                  if (!/[0-9]/.test(event.key)) {
                     event.preventDefault();
                   }
                 }}
-                onChange={(e) => setEmailAddress(e.target.value)}
-              />
+                onChange={(e) => setPhoneNumber(e.target.value)} />
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-around' }}>
+              <div style={{display: 'flex', flexDirection: 'column'}}>
+                <Label htmlFor="">Enter OTP.</Label>
+                <Input
+                  type="tel"
+                  onKeyPress={(event) => {
+                    if (!/[0-9]/.test(event.key)) {
+                      event.preventDefault();
+                    }
+                  }}
+                  onChange={(e) => setOtp(e.target.value)}
+                />
+              </div>
+              <div style={{display: 'flex', flexDirection: 'column'}}>
+                <Label htmlFor="">Enter Phone Number.</Label>
+                <Input
+                  type="tel"
+                  onKeyPress={(event) => {
+                    if (!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(event.key)) {
+                      event.preventDefault();
+                    }
+                  }}
+                  onChange={(e) => setPhoneNumber(e.target.value)}
+                />
+              </div>
+            </div>
+          </div>
+          <div style={{display: 'flex', justifyContent: 'space-around'}}>
+            <LoginButton>Submit</LoginButton>
             <LoginButton>Submit</LoginButton>
           </div>
-        </ModalContent>
-        </>
-    )
+        </div>
+      </ModalContent>
+    </>
+  )
 }
 
 export default ForgotPassword;
