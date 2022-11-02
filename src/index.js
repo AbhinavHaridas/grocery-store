@@ -16,7 +16,8 @@ import Paymentpage from "./Home pages/Payment/Payment";
 import FAQ from "./Home pages/faq/Faq";
 import Offers from "./Home pages/Components/Offers/Offers";
 import Terms from "./Home pages/Components/Terms"
-
+import Order from "./Home pages/YourOrder";
+import Modal_a from "./Home pages/Components/Modalordersummary";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -29,15 +30,16 @@ root.render(
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/home" element={<Home />} />
-        <Route path='/category' element={<Category/>} />
-        <Route path='/categoryitems' element={<CategoryItems />} />
+        <Route path="/category" element={<Category />} />
+        <Route path="/categoryitems" element={<CategoryItems />} />
         <Route path="/cart" element={<CartPage />} />
         <Route path="/trackorder" element={<TrackOrder />} />
         <Route path='/Payment' element={<Paymentpage/>} />
         <Route path='/Faq' element={<FAQ/>} />
         <Route path='/offers' element={<Offers/>} />   
         <Route path="/Terms" element={<Terms />} />
-        
+        <Route path="/yourorder" element={<Order />} />
+        <Route path="/Modalordersummary" element={<Modal_a />}/>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
