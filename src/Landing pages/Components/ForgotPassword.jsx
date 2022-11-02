@@ -105,7 +105,7 @@ const Label = styled.label`
   color: #ffffff;
 `;
 
-const LoginButton = styled.button`
+const Button = styled.button`
   font-family: "Forum";
   font-style: normal;
   background:white;
@@ -192,8 +192,8 @@ const ForgotPassword = ({ forgotPassword, isPasswordForgotten }) => {
             </div>
           </div>
           <div style={{display: 'flex', justifyContent: 'space-around'}}>
-            <LoginButton>Generate OTP</LoginButton>
-            <LoginButton style={{width: '30vh'}}>Submit New Password</LoginButton>
+            <Button>Generate OTP</Button>
+            <Button style={{width: '30vh'}}>Submit New Password</Button>
           </div>
         </div>
       </ModalContent>
