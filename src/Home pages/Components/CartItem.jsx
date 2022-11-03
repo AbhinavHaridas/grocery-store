@@ -65,7 +65,7 @@ const CartItem = ({ name, price, quantity, Count}) => {
                     width: '100%',
                     }}>
                         <TextP>{name}</TextP>
-                        <TextP>${price * (count)}</TextP>
+                        <TextP>₹{price * (count)}</TextP>
                     </div>
                     <div style={{
                     display: 'flex',
