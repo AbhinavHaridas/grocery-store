@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";
+import { Link } from "react-router-dom";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -48,7 +49,8 @@ const InsideCard = ({ image, description, COLORS, id }) => {
                 marginRight: '3.0927835051546393vh', 
                 marginBottom: '2.0618556701030926vh' 
                 }}>
-                <Button style={{ 
+                <Link style={{all: 'unset'}} to='/categoryitems'>
+                    <Button style={{ 
                     width: '4.123711340206185vh', height: '4.123711340206185vh', 
                     borderRadius: '2.0618556701030926vh', 
                     backgroundColor: `${COLORS[id - 1]}`, 
@@ -56,7 +58,8 @@ const InsideCard = ({ image, description, COLORS, id }) => {
                     textAlign: 'center'
                     }}>
                     ➔
-                </Button>
+                    </Button>
+                </Link>
             </div>
         </div>
     )

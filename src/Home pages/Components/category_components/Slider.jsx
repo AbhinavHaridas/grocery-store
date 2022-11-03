@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 // Import Swiper styles
 import "swiper/css";
@@ -21,7 +22,7 @@ const Cardbackground = styled.div`
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 `
 
-const InsideCard = ({ title, image }) => {
+const InsideCard = ({ title, image, id }) => {
     return (
         <section>
             <div style={{display: 'flex', justifyContent: 'center'}} >
@@ -38,15 +39,16 @@ const InsideCard = ({ title, image }) => {
                 marginRight: '30px', 
                 marginBottom: '20px' 
                 }}>
-                <Button style={{ 
+                <Link to={id}><Button style={{ 
                     width: '40px', height: '40px', 
                     borderRadius: '20px', 
                     backgroundColor: 'rgb(12, 207, 185)', 
                     fontSize: '30px',
                     textAlign: 'center'
-                    }}>
+                    }}
+                    >
                     ➔
-                </Button>
+                </Button></Link>
             </div>
         </section>
     )
@@ -54,7 +56,7 @@ const InsideCard = ({ title, image }) => {
 
 const Card = (props) => {
     return <Cardbackground>
-            <InsideCard title={props.title} image={props.image}/>
+            <InsideCard title={props.title} image={props.image} id={props.id} />
             </Cardbackground>
 }
 
@@ -102,6 +104,7 @@ const swiperStyle = {
 
 const Slider = () => {
     const [jsonData, setJsonData] = useState(null);
+    const [scrollState, setScrollState] = useState(false);
 
     useEffect(() => {
         fetch("http://localhost:8000/categories/fetch_category_types", {mode: 'cors'})
@@ -130,7 +133,7 @@ const Slider = () => {
                 >
                         {
                             jsonData?.map((category) => {
-                                return <SwiperSlide style={sliderStyle}><Card title={category.title} image={category.image} /></SwiperSlide>
+                                return <SwiperSlide style={sliderStyle}><Card title={category.title} image={category.image} id={category.id} /></SwiperSlide>
                             })
                         }  
                 </Swiper>

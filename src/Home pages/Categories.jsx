@@ -59,7 +59,7 @@ const TextP = styled.p`
   margin-left: 4%;
 `;
 
-const Categories = ({ id, title, COLORS }) => {
+const Categories = ({ id, title, COLORS, scroll }) => {
     const [jsonData, setJsonData] = useState(null);
 
     useEffect(() => {
@@ -75,7 +75,7 @@ const Categories = ({ id, title, COLORS }) => {
     }, [id]);
 
     return (
-        <Displayveg COLORS={COLORS} id={id}>
+        <div id={id}><Displayveg COLORS={COLORS} id={id} scroll={scroll}>
             <h3 className="text1">{title}</h3>
             <Slideveg>
                     {
@@ -86,7 +86,7 @@ const Categories = ({ id, title, COLORS }) => {
                         })
                     }
             </Slideveg>
-        </Displayveg>
+        </Displayveg></div>
     )
 }
 
