@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 // Import Swiper styles
 import "swiper/css";
@@ -21,7 +22,7 @@ const Cardbackground = styled.div`
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 `
 
-const InsideCard = ({ title, image }) => {
+const InsideCard = ({ title, image, id, setScrollID, scrollID }) => {
     return (
         <section>
             <div style={{display: 'flex', justifyContent: 'center'}} >
@@ -38,15 +39,17 @@ const InsideCard = ({ title, image }) => {
                 marginRight: '30px', 
                 marginBottom: '20px' 
                 }}>
-                <Button style={{ 
+                <Link to={`/category#${scrollID}`} style={{all: 'unset'}}><Button style={{ 
                     width: '40px', height: '40px', 
                     borderRadius: '20px', 
                     backgroundColor: 'rgb(12, 207, 185)', 
                     fontSize: '30px',
                     textAlign: 'center'
-                    }}>
+                    }}
+                    onClick={() => setScrollID(id)}
+                    >
                     ➔
-                </Button>
+                </Button></Link>
             </div>
         </section>
     )
@@ -54,10 +57,9 @@ const InsideCard = ({ title, image }) => {
 
 const Card = (props) => {
     return <Cardbackground>
-            <InsideCard title={props.title} image={props.image}/>
+            <InsideCard title={props.title} image={props.image} id={props.id} setScrollID={props.setScrollID} />
             </Cardbackground>
 }
-
 
 const Button = styled.div`
   transition: 0.4s ease-in-out;
@@ -100,7 +102,7 @@ const swiperStyle = {
     width:"100%",
 };
 
-const Slider = () => {
+const Slider = ({ setScrollID, scrollID }) => {
     const [jsonData, setJsonData] = useState(null);
 
     useEffect(() => {
@@ -130,7 +132,7 @@ const Slider = () => {
                 >
                         {
                             jsonData?.map((category) => {
-                                return <SwiperSlide style={sliderStyle}><Card title={category.title} image={category.image} /></SwiperSlide>
+                                return <SwiperSlide style={sliderStyle}><Card title={category.title} image={category.image} id={category.id} setScrollID={setScrollID} scrollID={scrollID} /></SwiperSlide>
                             })
                         }  
                 </Swiper>

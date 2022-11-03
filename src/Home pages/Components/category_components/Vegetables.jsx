@@ -2,6 +2,22 @@ import React from "react";
 import styled from "styled-components";
 import "../category_components/tomato.css";
 
+const SliderButton = styled.div`
+  width: 10vh;
+  height: 10vh;
+  border-radius: 5vh;
+  background-color: white;
+  margin-left: 10px;
+`;
+
+const InsideSliderLeftButton = () => {
+  return <h1 style={{ fontSize: "40px", textAlign: "center" }}>{"<"}</h1>;
+};
+
+const InsideSliderRightButton = () => {
+  return <h1 style={{ fontSize: "40px", textAlign: "center" }}>{">"}</h1>;
+};
+
 const Vegcard = styled.div`
   width: 40vh;
   height: 370px;
