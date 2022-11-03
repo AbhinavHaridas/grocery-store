@@ -16,6 +16,7 @@ import Order from "./Home pages/YourOrder";
 import Modal_a from "./Home pages/Components/Modalordersummary";
 import ForgotPassword from "./Landing pages/Components/ForgotPassword";
 import Offers from "./Home pages/Components/Offers/Offers";
+import Terms from "./Home pages/Components/Terms";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -35,7 +36,8 @@ root.render(
         <Route path="/yourorder" element={<Order />} />
         <Route path="/forgotpassword" element={<ForgotPassword />} />
         <Route path="/Modalordersummary" element={<Modal_a />} />
-        <Route path="/offers" element={<Offers/>} />
+        <Route path="/offers" element={<Offers />} />
+        <Route path= "/terms" element={<Terms />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
