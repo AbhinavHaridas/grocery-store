@@ -157,7 +157,7 @@ const Modal = ({ isOpen, toggle, isPasswordForgotten }) => {
     fetch("http://localhost:8000/customers/signin", requestOptions)
       .then(response => response.json())
       .then(json => {
-        if (json === "Login Successful") navigate('/home', { replace:true })
+        if (json.message === "Login Successful") navigate('/home', { replace:true })
       })
       .catch(error => console.log('error', error));
   }

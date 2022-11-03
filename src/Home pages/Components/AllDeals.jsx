@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import Deals from "./Deals";
 
-const COLORS = ["rgb(12, 207, 185)", "rgb(224, 167, 59)", "grey"];
+const COLORS = ["rgb(175,238,238)", "rgb(255,192,203)", "rgb(250,250,210)"];
 
 const AllDeals = () => {
   const [jsonData, setJsonData] = useState(null);
