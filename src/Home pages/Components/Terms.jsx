@@ -1,10 +1,12 @@
 import React from 'react';
 import "../Styles/Terms.css"
+import Navbar from "../../Landing pages/Components/Navbar"
+import Footer from "../../Landing pages/Components/Footer"
 
-const Terms = () =>{
+const Terms1 = () =>{
     return(
       <body>
-       <><div><h1 class="tandc">TERMS AND CONDITIONS</h1></div>
+       <><div><h1 style={{marginTop:"3vh"}} class="tandc">TERMS AND CONDITIONS</h1></div>
        <br></br>
        <br></br>
          <div class="row">
@@ -59,4 +61,14 @@ const Terms = () =>{
     )
 }
 
+const Terms = () =>{
+  return(
+    <>
+    <Navbar />
+    <Terms1 />
+    <Footer />
+    </>
+  )
+}
 export default Terms;
+

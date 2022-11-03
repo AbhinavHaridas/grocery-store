@@ -18,6 +18,7 @@ import Offers from "./Home pages/Components/Offers/Offers";
 import Terms from "./Home pages/Components/Terms"
 import Order from "./Home pages/YourOrder";
 import Modal_a from "./Home pages/Components/Modalordersummary";
+// import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
