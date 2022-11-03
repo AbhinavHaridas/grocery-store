@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import ForgotPassword from "./ForgotPassword";
 
 const ModalOverlay = styled.div`
@@ -140,6 +140,27 @@ const Text = styled.h1`
 const Modal = ({ isOpen, toggle, isPasswordForgotten }) => {
   const [phoneNumber, setPhoneNumber] = useState();
   const [password, setPassword] = useState();
+  const navigate = useNavigate()
+
+  const logIn = (e) => {
+    e.preventDefault();
+    var urlencoded = new URLSearchParams();
+    urlencoded.append("contact", phoneNumber);
+    urlencoded.append("password", password);
+
+    var requestOptions = {
+      method: 'POST',
+      body: urlencoded,
+      redirect: 'follow'
+    };
+
+    fetch("http://localhost:8000/customers/signin", requestOptions)
+      .then(response => response.json())
+      .then(json => {
+        if (json === "Login Successful") navigate('/home', { replace:true })
+      })
+      .catch(error => console.log('error', error));
+  }
 
   return (
     isOpen && (
@@ -179,7 +200,7 @@ const Modal = ({ isOpen, toggle, isPasswordForgotten }) => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
-              <LoginButton>Submit</LoginButton>
+              <LoginButton onClick={(e) => logIn(e)}>Submit</LoginButton>
             </Form>
             <div onClick={() => {
               toggle(); 

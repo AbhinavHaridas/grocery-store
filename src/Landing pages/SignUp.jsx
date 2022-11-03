@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom'
+import { useEffect } from "react";
 import styled from "styled-components";
 import image from "./images/Pineapple.jpg";
 
@@ -89,7 +91,7 @@ const Image = styled.img`
   height: 690px;
   border-radius: 10px;
 `;
-const Imagecontainer=styled.div`
+const Imagecontainer = styled.div`
 height:96vh;
 width:65vh;
 background:url("${image}");
@@ -100,13 +102,39 @@ margin-top: 2vh;
 
 
 const SignUp = () => {
-  const [searchString, setSearchString] = useState();
+  const [name, setName] = useState();
   const [phoneNumber, setPhoneNumber] = useState();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [address, setAddress] = useState();
   const [confirmPassword, setConfirmPassword] = useState();
   const [location, setLocation] = useState();
+  const navigate = useNavigate();
+
+  const createAccount = (e) => {
+    e.preventDefault();
+    var urlencoded = new URLSearchParams();
+    urlencoded.append("name", name);
+    urlencoded.append("contact", phoneNumber);
+    urlencoded.append("email", email);
+    urlencoded.append("address", address);
+    urlencoded.append("password", password);
+    urlencoded.append("location", location);
+
+    var requestOptions = {
+      method: 'POST',
+      body: urlencoded,
+      redirect: 'follow'
+    };
+
+    fetch("http://localhost:8000/customers/create_new_account", requestOptions)
+      .then(response => response.json())
+      .then(result => {
+        console.log(result);
+        navigate('/', {replace: true}); 
+      })
+      .catch(error => console.log('error', error));
+  }
 
   return (
     <SignUpPageWrap>
@@ -121,8 +149,8 @@ const SignUp = () => {
             </Label>
             <Input
               type="text"
-              value={searchString}
-              onChange={(e) => setSearchString(e.target.value)}
+              value={name}
+              onChange={(e) => setName(e.target.value)}
             />
             {/* Phone no */}
             <Label htmlFor="">Contact No:</Label>
@@ -173,7 +201,7 @@ const SignUp = () => {
               value={location}
               onChange={(e) => setLocation(e.target.value)}
             />
-            <CreateButton>Create Account</CreateButton>
+            <CreateButton onClick={(e) => createAccount(e)}>Create Account</CreateButton>
           </Form>
         </FormWrap>
       </SignUpPage>

@@ -7,6 +7,7 @@ import SocialMedia from "../Landing pages/Components/Social-media";
 
 // Assets import here
 import image from "../Landing pages/images/ContactImage.jpg";
+import { useEffect } from "react";
 
 const ImageWrap = styled.div`
   width: 100%;
@@ -175,9 +176,40 @@ const Address = styled.text`
 `;
 
 const Contact = ({ text = "Mumbai" }) => {
-  const [searchString, setSearchString] = useState();
+  const [name, setName] = useState();
   const [email, setEmail] = useState();
-  const [query, setQuery] = useState();
+  const [description, setDescription] = useState();
+  const [contact, setContact] = useState();
+  const [reason, setReason] = useState("");
+
+  const insertFeedback = (e) => {
+    e.preventDefault();
+    var urlencoded = new URLSearchParams();
+    urlencoded.append("customer_id", "2");
+    urlencoded.append("name", name);
+    urlencoded.append("contact", contact);
+    urlencoded.append("email", email);
+    urlencoded.append("reason", reason);
+    urlencoded.append("description", description);
+
+    var requestOptions = {
+      method: 'POST',
+      body: urlencoded,
+      redirect: 'follow'
+    };
+
+    fetch("http://localhost:8000/feedbacks/insert_feedback", requestOptions)
+      .then(response => response.json())
+      .then(json => {
+        console.log(json);
+        alert(json);
+      })
+      .catch(error => console.log('error', error));
+  }
+
+  useEffect(() => {
+    console.log(reason);
+  }, [reason])
 
   return (
     <>
@@ -189,7 +221,10 @@ const Contact = ({ text = "Mumbai" }) => {
         </ImageWrap>
         <FormWrap>
           <Form>
-            <Select>
+            <Select
+            onChange={(e) => {
+              setReason(e.target.value);
+            }}>
               <option value="default" hidden style={{ color: "#454545" }}>
                 How can we help you*
               </option>
@@ -208,8 +243,8 @@ const Contact = ({ text = "Mumbai" }) => {
             {/* Name */}
             <Input
               type="text"
-              value={searchString}
-              onChange={(e) => setSearchString(e.target.value)}
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               placeholder="Name*"
             />
             {/* Contact */}
@@ -220,6 +255,7 @@ const Contact = ({ text = "Mumbai" }) => {
                   event.preventDefault();
                 }
               }}
+              onChange={(e) => setContact(e.target.value)}
               placeholder="Contact*"
               maxLength={10}
             />
@@ -234,11 +270,11 @@ const Contact = ({ text = "Mumbai" }) => {
             <Textarea
               rows={6}
               cols={50}
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
               placeholder="Type Text Here*"
             />
-            <SubmitButton>Submit</SubmitButton>
+            <SubmitButton onClick={(e) => insertFeedback(e)}>Submit</SubmitButton>
           </Form>
         </FormWrap>
         <Reach>
