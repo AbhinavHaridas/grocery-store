@@ -60,7 +60,6 @@ const Card = (props) => {
             </Cardbackground>
 }
 
-
 const Button = styled.div`
   transition: 0.4s ease-in-out;
   :hover {
