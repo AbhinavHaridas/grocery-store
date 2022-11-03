@@ -104,7 +104,6 @@ const swiperStyle = {
 
 const Slider = ({ setScrollID, scrollID }) => {
     const [jsonData, setJsonData] = useState(null);
-    const [scrollState, setScrollState] = useState(false);
 
     useEffect(() => {
         fetch("http://localhost:8000/categories/fetch_category_types", {mode: 'cors'})
