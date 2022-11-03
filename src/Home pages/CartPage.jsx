@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Address from "./Components/Address";
 import Navbar from "./Components/Navbar";
@@ -14,7 +14,23 @@ const CartItems = styled.div `
     padding-bottom: 2vh;
 `
 
+
+
 const CartPage = () => {
+    const [jsonData, setJsonData] = useState(null);
+
+    useEffect(() => {
+        var requestOptions = {
+            method: 'GET',
+            redirect: 'follow'
+          };
+          
+          fetch("http://localhost:8000/categories//fetch_cart_items?customer_id=2", requestOptions)
+            .then(response => response.json())
+            .then(json => setJsonData(json))
+            .catch(error => console.log('error', error));
+    }, [])
+
     return (
         <div style={{backgroundColor: 'rgb(179, 173, 173)', minHeight: '1200px'}}>
             <Navbar />
@@ -22,8 +38,17 @@ const CartPage = () => {
                 <Address />
             </div>
             <CartItems>
-                <CartItem />
-                <CartItem />
+                {
+                    jsonData?.map((item) => {
+                        return (
+                            <CartItem name={item.name} 
+                            price={item.price} 
+                            quantity={item.quantity}
+                            Count={item.no_of_items}
+                            />
+                        )
+                    })
+                }
                 <CartItem />
             </CartItems>
             <div style={{position: 'sticky', bottom: '0%', width: '100%', top: '86%', 

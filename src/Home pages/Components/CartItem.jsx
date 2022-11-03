@@ -33,8 +33,8 @@ const Amount = styled.div`
     margin-right: 20px;
 `
 
-const CartItem = () => {
-    const [count, setCount] = useState(1);
+const CartItem = ({ name, price, quantity, Count}) => {
+    const [count, setCount] = useState(Count);
     const [open, setOpen] = useState(false); 
     const [index, setIndex] = useState(0);
 
@@ -64,8 +64,8 @@ const CartItem = () => {
                     justifyContent: 'space-between',
                     width: '100%',
                     }}>
-                        <TextP>Nagpur Oranges</TextP>
-                        <TextP>${40.99 * (count)}</TextP>
+                        <TextP>{name}</TextP>
+                        <TextP>${price * (count)}</TextP>
                     </div>
                     <div style={{
                     display: 'flex',
