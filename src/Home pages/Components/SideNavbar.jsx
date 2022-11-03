@@ -24,8 +24,7 @@ const Text = styled.h3`
     user-select: none; 
 `
 
-const SideNavbar = ({ setChoice, categories }) => { 
-
+const SideNavbar = ({setChoice}) => { 
     return (
         <div style={{
             width: '23%',
@@ -36,7 +35,7 @@ const SideNavbar = ({ setChoice, categories }) => {
             left: "0%",
             top: "17%"
         }}>
-            {/* <Item onClick={() =>  setChoice(1)}>
+            <Item onClick={() =>  setChoice(1)}>
                 <img src="https://imgur.com/bN9PYdW.png"  alt="Vegetables"/>
                 <Text>Vegetables</Text>
             </Item>
@@ -59,15 +58,7 @@ const SideNavbar = ({ setChoice, categories }) => {
             <Item onClick={() => setChoice(6)}>
                 <img src="https://imgur.com/bN9PYdW.png" alt="Freshly Cut"/>
                 <Text>Freshly Cut</Text>
-            </Item> */}
-            {
-                categories?.map((category) => {
-                    return <Item onClick={() => setChoice(category.id)}>
-                        <img src={category.image} alt={category.title} />
-                        <Text>{category.title}</Text>
-                    </Item>
-                })
-            }
+            </Item>
         </div>
     )
 }

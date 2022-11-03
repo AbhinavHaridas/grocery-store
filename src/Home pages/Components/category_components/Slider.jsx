@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { useEffect } from "react";
-import { Link } from "react-router-dom";
 
 // Import Swiper styles
 import "swiper/css";
@@ -11,7 +9,6 @@ import "swiper/css/navigation";
 
 // import required modules
 import { Navigation,Pagination } from "swiper";
-import { useState } from "react";
 
 const Cardbackground = styled.div`
     width: 40vh;
@@ -22,16 +19,16 @@ const Cardbackground = styled.div`
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 `
 
-const InsideCard = ({ title, image, id, setScrollID, scrollID }) => {
+const InsideCard1 = () => {
     return (
         <section>
             <div style={{display: 'flex', justifyContent: 'center'}} >
-            <img src={image} 
+            <img src="https://imgur.com/Dn1j1Vu.jpeg" 
                 style={{ width: '180px', height: '150px', marginTop: '5vh'}} 
             alt="images" />
             </div>
             <TextP><center>
-                {title}</center>
+                Vegetables</center>
             </TextP>
             <div style={{ 
                 display: 'flex', 
@@ -39,25 +36,45 @@ const InsideCard = ({ title, image, id, setScrollID, scrollID }) => {
                 marginRight: '30px', 
                 marginBottom: '20px' 
                 }}>
-                <Link to={`/category#${scrollID}`} style={{all: 'unset'}}><Button style={{ 
+                <Button style={{ 
                     width: '40px', height: '40px', 
                     borderRadius: '20px', 
                     backgroundColor: 'rgb(12, 207, 185)', 
                     fontSize: '30px',
                     textAlign: 'center'
-                    }}
-                    onClick={() => setScrollID(id)}
-                    >
+                    }}>
                     ➔
-                </Button></Link>
+                </Button>
             </div>
         </section>
     )
 }
 
-const Card = (props) => {
+const Card1 = () => {
     return <Cardbackground>
-            <InsideCard title={props.title} image={props.image} id={props.id} setScrollID={props.setScrollID} />
+            <InsideCard1 style={{
+                height:"70vh"
+            }
+
+            }/>
+            </Cardbackground>
+}
+const Card2 = () => {
+    return <Cardbackground>
+            <InsideCard2 style={{
+                height:"70vh"
+            }
+
+            }/>
+            </Cardbackground>
+}
+const Card3 = () => {
+    return <Cardbackground>
+            <InsideCard3 style={{
+                height:"70vh"
+            }
+
+            }/>
             </Cardbackground>
 }
 
@@ -68,6 +85,69 @@ const Button = styled.div`
     transform: scale(1.4);
   }
 `
+
+const InsideCard2 = () => {
+    return (
+        <section>
+            <div style={{display: 'flex', justifyContent: 'center'}} >
+            <img src="https://imgur.com/bcfZTTj.jpeg" 
+                style={{ width: '180px', height: '150px', marginTop: '5vh'}} 
+            alt="images" />
+            </div>
+            <TextP><center>
+                Fruits</center>
+            </TextP>
+            <div style={{ 
+                display: 'flex', 
+                justifyContent: 'end', 
+                marginRight: '30px', 
+                marginBottom: '20px' 
+                }}>
+                <Button style={{ 
+                    width: '40px', height: '40px', 
+                    borderRadius: '20px', 
+                    backgroundColor: 'rgb(12, 207, 185)', 
+                    fontSize: '30px',
+                    textAlign: 'center'
+                    }}>
+                    ➔
+                </Button>
+            </div>
+        </section>
+    )
+}
+
+
+const InsideCard3 = () => {
+    return (
+        <section>
+            <div style={{display: 'flex', justifyContent: 'center'}} >
+            <img src="https://imgur.com/wy14F0R.png" 
+                style={{ width: '180px', height: '150px', marginTop: '5vh'}} 
+            alt="images" />
+            </div>
+            <TextP><center>
+                Home appliances</center>
+            </TextP>
+            <div style={{ 
+                display: 'flex', 
+                justifyContent: 'end', 
+                marginRight: '30px', 
+                marginBottom: '20px' 
+                }}>
+                <Button style={{ 
+                    width: '40px', height: '40px', 
+                    borderRadius: '20px', 
+                    backgroundColor: 'rgb(12, 207, 185)', 
+                    fontSize: '30px',
+                    textAlign: 'center'
+                    }}>
+                    ➔
+                </Button>
+            </div>
+        </section>
+    )
+}
 
 const Slide = styled.div`
     display: flex;
@@ -82,6 +162,8 @@ const Display = styled.div`
     width: 100%;
     height: 100vh;
     background-size: cover;
+    display: flex;
+    justify-content: center;
 `
 
 
@@ -102,15 +184,7 @@ const swiperStyle = {
     width:"100%",
 };
 
-const Slider = ({ setScrollID, scrollID }) => {
-    const [jsonData, setJsonData] = useState(null);
-
-    useEffect(() => {
-        fetch("http://localhost:8000/categories/fetch_category_types", {mode: 'cors'})
-        .then(response => response.json())
-        .then(json => setJsonData(json));
-    }, [])
-
+const Slider = () => {
     return (
         <Display>
 
@@ -130,11 +204,19 @@ const Slider = ({ setScrollID, scrollID }) => {
                 className="mySwiper"
                 style={swiperStyle}
                 >
-                        {
-                            jsonData?.map((category) => {
-                                return <SwiperSlide style={sliderStyle}><Card title={category.title} image={category.image} id={category.id} setScrollID={setScrollID} scrollID={scrollID} /></SwiperSlide>
-                            })
-                        }  
+                    <SwiperSlide style={sliderStyle}><Card1/></SwiperSlide>
+                    <SwiperSlide style={sliderStyle}><Card2/></SwiperSlide>
+                    <SwiperSlide style={sliderStyle}><Card3 /></SwiperSlide>
+                    <SwiperSlide style={sliderStyle}><Card1 /></SwiperSlide>
+                    <SwiperSlide style={sliderStyle}><Card2/></SwiperSlide>
+                    <SwiperSlide style={sliderStyle}><Card3/></SwiperSlide>
+                    <SwiperSlide style={sliderStyle}><Card1 /></SwiperSlide>
+                    <SwiperSlide style={sliderStyle}><Card2 /></SwiperSlide>
+                    <SwiperSlide style={sliderStyle}><Card3/></SwiperSlide>
+                    <SwiperSlide style={sliderStyle}><Card1/></SwiperSlide>
+                    <SwiperSlide style={sliderStyle}><Card2 /></SwiperSlide>
+                    <SwiperSlide style={sliderStyle}><Card3 /></SwiperSlide>
+                    
                 </Swiper>
                 </Slide>
         </Display>

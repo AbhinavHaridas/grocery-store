@@ -31,8 +31,8 @@ root.render(
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/home" element={<Home />} />
-        <Route path='/category' element={<Category/>} />
-        <Route path='/categoryitems' element={<CategoryItems />} />
+        <Route path="/category" element={<Category />} />
+        <Route path="/categoryitems" element={<CategoryItems />} />
         <Route path="/cart" element={<CartPage />} />
         <Route path="/trackorder" element={<TrackOrder />} />
         <Route path="/yourorder" element={<Order />} />

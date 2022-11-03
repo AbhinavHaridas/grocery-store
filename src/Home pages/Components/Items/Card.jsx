@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 const Button = styled.div`
@@ -41,25 +41,28 @@ background-color: white;
 border: solid gray 1px
 `;
 
-const InsideCard = ({ name, image, quantity, price }) => {
+const InsideCard = () => {
+    const [item, setItem] = useState(1);
+
     return (
         <div style={{height: '40vh'}}>
             <div style={{display: 'flex', justifyContent: 'center'}} >
-            <img src={image} 
+            <img src="https://i.imgur.com/tUrtXEA.png" 
                 style={{ width: '20vh', height: '16.5vh', marginTop: '5vh'}} 
             alt="images" />
             </div>
-            <TextP style={{marginLeft: '1vh', height: '8%'}}>{name}</TextP>
-            <TextC style={{marginLeft: '1vh', height: '2%'}}>qty: {quantity}</TextC>
+            <TextP style={{marginLeft: '1vh', height: '8%'}}>Fresh Tomatoes</TextP>
+            <TextC style={{marginLeft: '1vh', height: '2%'}}>{500 * item}g</TextC>
             <div style={{ 
                 display: 'flex', 
                 alignItems: 'center',
                 justifyContent: 'space-between',
                 marginRight: '2.2vh'
                 }}>
-                <TextP style={{marginLeft: '1vh'}}>${price}</TextP>
+                <TextP style={{marginLeft: '1vh'}}>${40 * item}</TextP>
                 <div style={{display: 'flex', alignItems: 'center'}}>
-                    <Button onClick={() => {}}>
+                    <TextC>{item}</TextC>
+                    <Button onClick={() => setItem(item + 1)}>
                         <i class="fa-solid fa-plus"></i>
                     </Button>
                 </div>
@@ -68,10 +71,10 @@ const InsideCard = ({ name, image, quantity, price }) => {
     )
 }
 
-export const Card = (props) => {
+export const Card = () => {
     return (
         <CardBackground>
-            <InsideCard name={props.name} image={props.image} quantity={props.quantity} price={props.price} />
+            <InsideCard />
         </CardBackground>
     )
 }

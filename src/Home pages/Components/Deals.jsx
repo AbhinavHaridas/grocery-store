@@ -2,12 +2,9 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";
-import { Link } from "react-router-dom";
 
 import "swiper/css";
 import "swiper/css/navigation";
-import { useEffect } from "react";
-
 
 const CardBackground = styled.div`
     transition: 0.3s;
@@ -27,21 +24,16 @@ const Button = styled.div`
   }
 `
 
-const InsideCard = ({ image, description, COLORS, id }) => {
+const InsideCard = () => {
     return (
-        <div style={{
-            height: '40vh', 
-            display: 'flex', 
-            flexDirection: 'column', 
-            justifyContent: 'space-between'
-            }}>
+        <div style={{height: '40vh'}}>
             <div style={{display: 'flex', justifyContent: 'center'}} >
-            <img src={image} 
+            <img src="https://imgur.com/xxh8Xni.png" 
                 style={{ width: '18.556701030927837vh', height: '15.463917525773196vh', marginTop: '5vh'}} 
             alt="images" />
             </div>
             <TextP>
-                {description}
+                Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical
             </TextP>
             <div style={{ 
                 display: 'flex', 
@@ -49,25 +41,24 @@ const InsideCard = ({ image, description, COLORS, id }) => {
                 marginRight: '3.0927835051546393vh', 
                 marginBottom: '2.0618556701030926vh' 
                 }}>
-                <Link style={{all: 'unset'}} to='/categoryitems'>
-                    <Button style={{ 
+                <Button style={{ 
                     width: '4.123711340206185vh', height: '4.123711340206185vh', 
                     borderRadius: '2.0618556701030926vh', 
-                    backgroundColor: `${COLORS[id - 1]}`, 
+                    backgroundColor: 'rgb(12, 207, 185)', 
                     fontSize: '3.1023784901758016vh',
                     textAlign: 'center'
                     }}>
                     ➔
-                    </Button>
-                </Link>
+                </Button>
             </div>
         </div>
     )
 }
 
-const Card = (props) => {
+const Card = () => {
+
     const [ hover, setHover ] = useState(false);
-    
+
     let styleHere = {}
 
     const hoverer = () => {
@@ -82,7 +73,7 @@ const Card = (props) => {
 
     return (
         <CardBackground onMouseEnter={hoverer} onMouseLeave={hoverer} style={styleHere}>
-            <InsideCard image={props.image} description={props.description} COLORS={props.COLORS} id={props.id} />
+            <InsideCard />
         </CardBackground>
     )
 }
@@ -100,7 +91,7 @@ const Display = styled.div`
     width: 100%;
     min-height: 62vh;
     max-height: 70vh;
-    background-color: ${props => props.COLORS[props.id - 1]};
+    background-color: rgb(12, 207, 185);
     background-size: cover;
 `
 
@@ -129,22 +120,10 @@ const swiperStyle = {
     padding: '12px'
 }
 
-const Deals = ({ id, title, COLORS }) => {
-    const [jsonData, setJsonData] = useState(null);
-
-    useEffect(() => {
-        fetch(`http://localhost:8000/deals/get_specific_deal_items?deal_type_id=${id}`, 
-            {mode:'cors'}
-        )
-        .then(response => response.json())
-        .then(json => {
-            setJsonData(json);
-        })
-    }, [id])
-
+const Deals = () => {
     return (
-        <Display COLORS={COLORS} id={id}>
-            <Text>{title} </Text>
+        <Display>
+            <Text>Top Deals: </Text>
             <Deal>
                 <Swiper
                 slidesPerView={4}
@@ -158,7 +137,6 @@ const Deals = ({ id, title, COLORS }) => {
                 className="mySwiper"
                 style={swiperStyle}
                 >
-                    {/* <SwiperSlide style={sliderStyle}><Card /></SwiperSlide>
                     <SwiperSlide style={sliderStyle}><Card /></SwiperSlide>
                     <SwiperSlide style={sliderStyle}><Card /></SwiperSlide>
                     <SwiperSlide style={sliderStyle}><Card /></SwiperSlide>
@@ -169,28 +147,8 @@ const Deals = ({ id, title, COLORS }) => {
                     <SwiperSlide style={sliderStyle}><Card /></SwiperSlide>
                     <SwiperSlide style={sliderStyle}><Card /></SwiperSlide>
                     <SwiperSlide style={sliderStyle}><Card /></SwiperSlide>
-                    <SwiperSlide style={sliderStyle}><Card /></SwiperSlide> */}
-                    {
-                        jsonData?.map((deal) => {
-                            return (
-                                <SwiperSlide style={sliderStyle}>
-                                    <Card image={deal.image} description={deal.description} COLORS={COLORS} id={id} />
-                                </SwiperSlide>
-                            )
-                        })
-                    }
-                    {/* {
-                        jsonData?.map((deal) => {
-                            return (
-                                    <SwiperSlide style={sliderStyle}>
-                                        <Card image={deal.image} description={deal.description} />
-                                            {
-                                                                //Please include an "image" and a "desc" attribute in the backend. 
-                                                                //Make sure that the json has an array of objects which have two properties called "image" and "desc"
-                                            }
-                                    </SwiperSlide>
-                        )})
-                    } */}
+                    <SwiperSlide style={sliderStyle}><Card /></SwiperSlide>
+                    <SwiperSlide style={sliderStyle}><Card /></SwiperSlide>
                 </Swiper>
         </Deal>
     </Display>

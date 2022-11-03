@@ -62,6 +62,7 @@ const SubmitButton = styled.button`
   }
     font-size: 20px;
     font-weight: bold;
+  }
 `;
 
 const Input = styled.input`
