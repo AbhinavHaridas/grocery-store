@@ -4,7 +4,7 @@ import { useState } from "react"
 import Categories from "./Categories";
 import COLORS from "./COLORS";
 
-const AllCategories = () => {
+const AllCategories = ({ scrollID }) => {
     const [jsonData, setJsonData] = useState(null);
 
     useEffect(() => {
@@ -23,7 +23,7 @@ const AllCategories = () => {
         <>
             {
                 jsonData?.map((category) => {
-                    return <Categories id={category.id} title={category.title} COLORS={COLORS} />
+                    return <Categories id={category.id} title={category.title} COLORS={COLORS} scrollID={scrollID} />
                 })
             }
         </>

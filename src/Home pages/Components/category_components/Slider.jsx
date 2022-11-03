@@ -22,7 +22,7 @@ const Cardbackground = styled.div`
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 `
 
-const InsideCard = ({ title, image, id }) => {
+const InsideCard = ({ title, image, id, setScrollID, scrollID }) => {
     return (
         <section>
             <div style={{display: 'flex', justifyContent: 'center'}} >
@@ -39,13 +39,14 @@ const InsideCard = ({ title, image, id }) => {
                 marginRight: '30px', 
                 marginBottom: '20px' 
                 }}>
-                <Link to={id}><Button style={{ 
+                <Link to={`/category#${scrollID}`} style={{all: 'unset'}}><Button style={{ 
                     width: '40px', height: '40px', 
                     borderRadius: '20px', 
                     backgroundColor: 'rgb(12, 207, 185)', 
                     fontSize: '30px',
                     textAlign: 'center'
                     }}
+                    onClick={() => setScrollID(id)}
                     >
                     ➔
                 </Button></Link>
@@ -56,7 +57,7 @@ const InsideCard = ({ title, image, id }) => {
 
 const Card = (props) => {
     return <Cardbackground>
-            <InsideCard title={props.title} image={props.image} id={props.id} />
+            <InsideCard title={props.title} image={props.image} id={props.id} setScrollID={props.setScrollID} />
             </Cardbackground>
 }
 
@@ -101,7 +102,7 @@ const swiperStyle = {
     width:"100%",
 };
 
-const Slider = () => {
+const Slider = ({ setScrollID, scrollID }) => {
     const [jsonData, setJsonData] = useState(null);
     const [scrollState, setScrollState] = useState(false);
 
@@ -132,7 +133,7 @@ const Slider = () => {
                 >
                         {
                             jsonData?.map((category) => {
-                                return <SwiperSlide style={sliderStyle}><Card title={category.title} image={category.image} id={category.id} /></SwiperSlide>
+                                return <SwiperSlide style={sliderStyle}><Card title={category.title} image={category.image} id={category.id} setScrollID={setScrollID} scrollID={scrollID} /></SwiperSlide>
                             })
                         }  
                 </Swiper>

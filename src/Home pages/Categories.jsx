@@ -59,7 +59,7 @@ const TextP = styled.p`
   margin-left: 4%;
 `;
 
-const Categories = ({ id, title, COLORS, scroll }) => {
+const Categories = ({ id, title, COLORS, scrollID }) => {
     const [jsonData, setJsonData] = useState(null);
 
     useEffect(() => {
@@ -74,8 +74,12 @@ const Categories = ({ id, title, COLORS, scroll }) => {
             .catch(error => console.log('error', error));
     }, [id]);
 
+    useEffect(() => {
+        document.getElementById(`#${scrollID}`)?.scrollIntoView({ behavior: 'smooth' })
+    }, [scrollID])
+
     return (
-        <div id={id}><Displayveg COLORS={COLORS} id={id} scroll={scroll}>
+        <div id={`#${id}`}><Displayveg COLORS={COLORS} id={id}>
             <h3 className="text1">{title}</h3>
             <Slideveg>
                     {
