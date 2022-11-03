@@ -11,3 +11,23 @@ body{margin-top:0px;}
     justify-content: center;
     min-height: 80vh;
 }
+.col-md-5 {
+    width: 80vh;
+    margin: 20px;
+}
+
+.alert {
+    margin-bottom: 20px;
+}
+
+.alert.alert-info.alert-coupon {
+    background: #d4edda;
+}
+
+.alert.alert-warning.alert-coupon {
+    background: #d1ecf1;
+}
+
+.alert.alert-danger.alert-coupon {
+    background: #fff3cd;
+}
