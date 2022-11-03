@@ -18,6 +18,7 @@ import ForgotPassword from "./Landing pages/Components/ForgotPassword";
 import Offers from "./Home pages/Components/Offers/Offers";
 import Terms from "./Home pages/Components/Terms";
 import Dashboard from "./Home pages/Dashboard";
+import Paymentpage from "./Home pages/Payment/Payment";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -40,6 +41,7 @@ root.render(
         <Route path="/offers" element={<Offers />} />
         <Route path="/terms" element={<Terms />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/payment" element={<Paymentpage />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

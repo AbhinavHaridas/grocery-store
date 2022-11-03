@@ -1,7 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 // Import components here
+import { Model } from "./Modalordersummary";
 
 // Import images here
 
@@ -67,7 +69,16 @@ const Button = styled.button`
   color: #fff;
 `;
 
-const OrderComponent = ({ type, color, cost, time, date, quantity,text }) => {
+const Callmodal = ({ summaryClick, setSummaryClick }) => {
+  if (summaryClick) {
+    return <Model open={summaryClick} setOpen={setSummaryClick} />;
+  }
+}; 
+
+
+const OrderComponent = ({ type, color, cost, time, date, quantity, text }) => {
+  const [summaryClick, setSummaryClick] = React.useState(false);
+  const navigate = useNavigate();
   return (
     <OrderComponentWrap>
       <OrderType>{type}</OrderType>
@@ -87,14 +98,28 @@ const OrderComponent = ({ type, color, cost, time, date, quantity,text }) => {
         </SectionB>
         <Cost>₹ {cost}</Cost>
         <ButtonWrap>
-          <Button style={{ backgroundColor: `${color}` }}>
-            {text}
-          </Button>
-          <Button style={{ backgroundColor: "#72DB4E", marginTop: "20px" }}>
+          {text === "Track Your Order" && (
+            <Button style={{ backgroundColor: `${color}` }} onClick={() => {
+              navigate("/trackorder",{replace:true});
+            }}>{text}</Button>
+          )}
+          {text === "Re-Order" && (
+            <Button style={{ backgroundColor: `${color}` }} onClick={() => {
+              navigate("/cart",{replace:true});
+            }}>{text}</Button>
+          )}
+          <Button
+            style={{ backgroundColor: "#72DB4E", marginTop: "20px" }}
+            onClick={() => setSummaryClick(true)}
+          >
             View Order Summary
           </Button>
         </ButtonWrap>
       </OrderDetails>
+      <Callmodal
+        summaryClick={summaryClick}
+        setSummaryClick={setSummaryClick}
+      />
     </OrderComponentWrap>
   );
 };

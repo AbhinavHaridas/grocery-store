@@ -1,0 +1,93 @@
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+.containerpay {
+  max-width: 960px;
+  font-family: "Forum";
+}
+
+.columncart{
+  float: right;
+}
+.firstname,.address1,.cardname,.cardnumber,.Expirationpay,.CVVpay,.cardpay,.codpay{
+    display: flex;
+    align-items: center;
+    border-collapse: separate;
+    border-spacing: 0 15px;
+    padding-bottom: 20px;
+
+}
+
+.label{
+  font-family: "Forum";
+}
+
+.form-control{
+  margin: 0px 20px 0px 5px;
+}
+
+.maincontainer{
+  padding: 20px;
+}
+
+.checkouthead{
+  font-family: "Forum";
+  font:bold;
+}
+
+.buttonsubmit{
+  
+    background-color: rgb(186, 182, 182);
+    color: black;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    font-size: 20px;
+    font-family: "Forum";
+}
+
+.buttonsubmit:hover{
+  background-color: #6b6b6b; /* Green */
+  color: white;
+  cursor: pointer;
+}
+
+.redeembutton{
+  background-color: rgb(186, 182, 182);
+    color: black;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    font-size: 20px;
+    font-family: "Forum";
+}
+
+.redeembutton:hover{
+  background-color: #6b6b6b; /* Green */
+  color: white;
+  cursor: pointer;
+}
+
+.oldtotal,.newtotal,.discount{
+  margin-bottom: 12px;
+}
+
+.input-group{
+  display: flex;
+}
+
+.carthead{
+  display: flex;
+    justify-content: space-around;
+}
+
+.space1{
+  margin: 0px 30px;
+}
+
+.border-top { border-top: 1px solid #e5e5e5; }
+.border-bottom { border-bottom: 1px solid #e5e5e5; }
+.box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }

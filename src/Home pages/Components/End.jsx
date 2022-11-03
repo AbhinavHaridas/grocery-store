@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const TextP = styled.p`
@@ -38,7 +39,9 @@ const End = () => {
             <TextP>No of Items: 03</TextP>
             <TextP>Total Cost: $450</TextP>
             <CheckOutButton>
+                <Link to={"/payment"} style={{all:"unset"}}>
                 <TextP>Proceed to Checkout</TextP>
+                </Link>
             </CheckOutButton>
         </div>
     )
