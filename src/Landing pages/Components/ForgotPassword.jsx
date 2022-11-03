@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import '../LandingStyles/LandingStyle.css';
 
@@ -129,6 +130,67 @@ const ForgotPassword = ({ forgotPassword, isPasswordForgotten }) => {
   const [phoneNumber, setPhoneNumber] = useState();
   const [otp, setOtp] = useState();
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+
+  const generateOTP = (e) => {
+    e.preventDefault();
+    var urlencoded = new URLSearchParams();
+    urlencoded.append("contact", phoneNumber);
+
+    var requestOptions = {
+      method: 'POST',
+      body: urlencoded,
+      redirect: 'follow'
+    };
+
+    fetch("http://localhost:8000/otps/generate_new_otp", requestOptions)
+      .then(response => response.json())
+      .then(result => console.log(result))
+      .catch(error => console.log('error', error));
+  }
+
+  const validateOTP = (e) => {
+    e.preventDefault();
+    var urlencoded = new URLSearchParams();
+    urlencoded.append("contact", phoneNumber);
+    urlencoded.append("otp", otp);
+
+    var requestOptions = {
+      method: 'POST',
+      body: urlencoded,
+      redirect: 'follow'
+    };
+
+    fetch("http://localhost:8000/otps/validate_otp", requestOptions)
+      .then(response => response.json())
+      .then(json => {
+        console.log(json);
+        if (json === "OTP validated successfully") generatePassword(e);
+        else alert("Incorrect OTP");
+      })
+      .catch(error => console.log('error', error));
+  }
+
+  const generatePassword = (e) => {
+    e.preventDefault();
+    var urlencoded = new URLSearchParams();
+    urlencoded.append("contact", phoneNumber);
+    urlencoded.append("password", password);
+
+    var requestOptions = {
+      method: 'POST',
+      body: urlencoded,
+      redirect: 'follow'
+    };
+
+    fetch("http://localhost:8000/otps/change_password", requestOptions)
+      .then(response => response.json())
+      .then(json => {
+        console.log(json);
+        alert(json);
+      })
+      .catch(error => console.log('error', error));
+  }
 
   return (
     <>
@@ -179,20 +241,16 @@ const ForgotPassword = ({ forgotPassword, isPasswordForgotten }) => {
               <div style={{display: 'flex', flexDirection: 'column'}}>
                 <Label htmlFor="">Change Password.</Label>
                 <Input
-                  type="tel"
-                  onKeyPress={(event) => {
-                    if (!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(event.key)) {
-                      event.preventDefault();
-                    }
-                  }}
+                  type="password"
                   onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
             </div>
           </div>
           <div style={{display: 'flex', justifyContent: 'space-around'}}>
-            <Button>Generate OTP</Button>
-            <Button style={{width: '30vh'}}>Submit New Password</Button>
+            <Button onClick={(e) => generateOTP(e)}>Generate OTP</Button>
+            <Button style={{width: '30vh'}} 
+            onClick={(e) => validateOTP(e)}>Submit New Password</Button>
           </div>
         </div>
       </ModalContent>
