@@ -185,7 +185,7 @@ const Modal = ({ isOpen, toggle, isPasswordForgotten }) => {
               toggle(); 
               isPasswordForgotten();
               }}>
-              <Text>Forgot Password? Click Here</Text>
+              <Text style={{cursor:"pointer"}}>Forgot Password? Click Here</Text>
             </div>
           </FormWrap>
         </ModalContent>
