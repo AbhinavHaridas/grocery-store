@@ -76,7 +76,7 @@ const InsideCard = ({ name, image, quantity, price, id }) => {
                 justifyContent: 'space-between',
                 marginRight: '2.2vh'
                 }}>
-                <TextP style={{marginLeft: '1vh'}}>${price}</TextP>
+                <TextP style={{marginLeft: '1vh'}}>₹{price}</TextP>
                 <div style={{display: 'flex', alignItems: 'center'}}>
                     <Button onClick={() => {setAdded(added + 1)}}>
                         <i class="fa-solid fa-plus"></i>

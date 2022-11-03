@@ -1,4 +1,5 @@
-import React from "react";
+import React, {useState} from "react";
+import { useEffect } from "react";
 import styled from "styled-components";
 
 const TextP = styled.p`
@@ -24,7 +25,20 @@ const CheckOutButton = styled.div `
     }
 `
 
-const End = () => {
+const End = ({ jsonData }) => {
+    const [number, setNumber] = useState(0);
+    const [cost, setCost] = useState(0);
+
+    useEffect(() => {
+        jsonData?.map((item) => {
+            return setNumber(number + item.no_of_items);
+        })
+
+        jsonData?.map((item) => {
+            return setCost(cost + item.price);
+        }) 
+    }, [jsonData])
+
     return (
         <div style={{
             backgroundColor: 'white',
@@ -35,8 +49,8 @@ const End = () => {
             marginTop: '10px',
             alignItems: 'center'
         }}>
-            <TextP>No of Items: 03</TextP>
-            <TextP>Total Cost: $450</TextP>
+            <TextP>No of Items: {number}</TextP>
+            <TextP>Total Cost: ₹{cost}</TextP>
             <CheckOutButton>
                 <TextP>Proceed to Checkout</TextP>
             </CheckOutButton>
