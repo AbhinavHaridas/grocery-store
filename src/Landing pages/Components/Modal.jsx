@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import ForgotPassword from "./ForgotPassword";
 
 const ModalOverlay = styled.div`
   position: absolute;
@@ -122,7 +123,6 @@ const LoginButton = styled.button`
     transform: translateY(-0.25em);
     background-color: #4DF631;
   }
-  }
 `;
 
 const Text = styled.h1`
@@ -135,21 +135,9 @@ const Text = styled.h1`
   color: #4df631;
 
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  cursor: pointer;
 `;
 
-const StyledLink = styled(Link)`
-  text-decoration: none;
-  height: 5%;
-  width: 66%;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  align-self: center;
-`;
-
-const Modal = ({ isOpen, toggle }) => {
+const Modal = ({ isOpen, toggle, isPasswordForgotten }) => {
   const [phoneNumber, setPhoneNumber] = useState();
   const [password, setPassword] = useState();
 
@@ -193,9 +181,12 @@ const Modal = ({ isOpen, toggle }) => {
               />
               <LoginButton>Submit</LoginButton>
             </Form>
-            <StyledLink to="/home">
+            <div onClick={() => {
+              toggle(); 
+              isPasswordForgotten();
+              }}>
               <Text>Forgot Password? Click Here</Text>
-            </StyledLink>
+            </div>
           </FormWrap>
         </ModalContent>
       </>
