@@ -1,8 +1,22 @@
+// Useless Component
+
 import React from 'react';
 import { Text } from './Text';
 import { Card } from './Card';
+import { useState, useEffect } from 'react';
+
+const API_ADDRESS = "http://localhost:8000/organic";
 
 const OrganicItems = () => {
+    const [ jsonData, setJsonData ] = useState(null)
+
+    useEffect(() => {
+        fetch(API_ADDRESS, {mode: 'cors'})
+        .then(response => response.json())
+        .then(json => {
+            if (jsonData === null) setJsonData(json);
+        })
+    })
     return (
         <div style={{
             marginLeft: "27%",
@@ -16,18 +30,16 @@ const OrganicItems = () => {
                     flexWrap: 'wrap'
                 }
             }>
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
+                {
+                    jsonData?.organic.map((o) => {
+                        return (
+                            <Card name={o.name} 
+                            image={o.image} 
+                            weight={o.weight} 
+                            price={o.price} />
+                        )
+                    })
+                }
             </div>
         </div>
     )

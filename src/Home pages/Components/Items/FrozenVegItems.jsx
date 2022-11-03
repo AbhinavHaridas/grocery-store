@@ -1,8 +1,23 @@
+// Useless Component
+
 import React from 'react';
 import { Text } from './Text';
 import { Card } from './Card';
+import { useState, useEffect } from 'react';
+
+const  API_ADDRESS = 'http://localhost:8000/frozen';
 
 const FrozenVegItems = () => {
+    const [ jsonData, setJsonData ] = useState(null);
+
+    useEffect(()=> {
+        fetch(API_ADDRESS, {mode: 'cors'})
+        .then(response => response.json())
+        .then(json => {
+            console.log(json);
+            if (jsonData === null) setJsonData(json);
+        })
+    })   
     return (
         <div style={{
             marginLeft: "27%",
@@ -16,18 +31,16 @@ const FrozenVegItems = () => {
                     flexWrap: 'wrap'
                 }
             }>
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
+                {
+                    jsonData?.frozen.map((fr) => {
+                        return (
+                            <Card name={fr.name} 
+                            image={fr.image} 
+                            weight={fr.weight} 
+                            price={fr.price} />
+                        )
+                    })
+                }
             </div>
         </div>
     )

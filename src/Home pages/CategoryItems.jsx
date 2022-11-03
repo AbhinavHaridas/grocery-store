@@ -6,11 +6,24 @@ import { useState, useEffect } from "react";
 
 const CategoryItems = () => {
     const [choice, setChoice] = useState(1);
+    const [categories, setCategories] = useState([]);
+    const [jsonData, setJsonData] = useState(null);
 
     useEffect(() => {
-        window.scrollTo({
-            top: '0',
-            behavior: 'smooth'
+        fetch("http://localhost:8000/categories/fetch_category_types", { mode: 'cors' })
+        .then(response => response.json())
+        .then(json => {
+            json.map((category) => {
+                return setCategories(categories => [...categories, category]);
+            })
+        })
+    }, []);
+
+    useEffect(() => {
+        fetch(`http://localhost:8000/categories/get_specific_category_items?type_id=${choice}`)
+        .then(response => response.json())
+        .then(json => {
+            setJsonData(json)
         })
     }, [choice]);
 
@@ -20,8 +33,8 @@ const CategoryItems = () => {
                 <Navbar />
             </div>
             <div style={{display: "flex", justifyContent:"row"}}>
-                <SideNavbar setChoice={setChoice} />
-                <SideDisplay choice={choice} />
+                <SideNavbar setChoice={setChoice} categories={categories} />
+                <SideDisplay choice={choice} categories={categories} jsonData={jsonData} />
             </div>
         </div>
 
