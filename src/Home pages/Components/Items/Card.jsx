@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
+import { useState } from "react";
 import styled from "styled-components";
 
 const Button = styled.div`
@@ -18,63 +19,97 @@ const Button = styled.div`
 `;
 
 const TextC = styled.p`
-font-family: 'Forum', cursive; 
-font-size: 2.65vh;
-color: black;  
-margin-right: 1vh;
+  font-family: "Forum", cursive;
+  font-size: 2.65vh;
+  color: black;
+  margin-right: 1vh;
 `;
 
 const TextP = styled.p`
-font-family: 'Forum', cursive; 
-font-size: 3vh;
-color: black;  
+  font-family: "Forum", cursive;
+  font-size: 3vh;
+  color: black;
 `;
 
 const CardBackground = styled.div`
-margin-bottom: 2vh;
-margin-left: 2vh;
-transition: 0.3s;
-width: 34vh;
-height: 42vh;
-border-radius: 10px;
-background-color: white;
-border: solid gray 1px
+  margin-bottom: 2vh;
+  margin-left: 2vh;
+  transition: 0.3s;
+  width: 34vh;
+  height: 42vh;
+  border-radius: 10px;
+  background-color: white;
+  border: solid gray 1px;
 `;
 
-const InsideCard = () => {
-    const [item, setItem] = useState(1);
+const InsideCard = ({ name, image, quantity, price, id }) => {
+  const [added, setAdded] = useState(0);
 
-    return (
-        <div style={{height: '40vh'}}>
-            <div style={{display: 'flex', justifyContent: 'center'}} >
-            <img src="https://i.imgur.com/tUrtXEA.png" 
-                style={{ width: '20vh', height: '16.5vh', marginTop: '5vh'}} 
-            alt="images" />
-            </div>
-            <TextP style={{marginLeft: '1vh', height: '8%'}}>Fresh Tomatoes</TextP>
-            <TextC style={{marginLeft: '1vh', height: '2%'}}>{500 * item}g</TextC>
-            <div style={{ 
-                display: 'flex', 
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                marginRight: '2.2vh'
-                }}>
-                <TextP style={{marginLeft: '1vh'}}>${40 * item}</TextP>
-                <div style={{display: 'flex', alignItems: 'center'}}>
-                    <TextC>{item}</TextC>
-                    <Button onClick={() => setItem(item + 1)}>
-                        <i class="fa-solid fa-plus"></i>
-                    </Button>
-                </div>
-            </div>
+  useEffect(() => {
+    var requestOptions = {
+      method: "GET",
+      redirect: "follow",
+    };
+    if (added > 0)
+      fetch(
+        `http://localhost:8000/categories/insert_item_to_cart?customer_id=2&item_id=${id}`,
+        requestOptions
+      )
+        .then((response) => response.text())
+        .then((result) => {
+          console.log(result);
+          console.log(id);
+          console.log(added);
+        })
+        .catch((error) => console.log("error", error));
+  }, [added]);
+
+  return (
+    <div style={{ height: "40vh" }}>
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <img
+          src={image}
+          style={{ width: "20vh", height: "16.5vh", marginTop: "5vh" }}
+          alt="images"
+        />
+      </div>
+      <TextP style={{ marginLeft: "1vh", height: "8%" }}>{name}</TextP>
+      <TextC style={{ marginLeft: "1vh", height: "2%" }}>qty: {quantity}</TextC>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          marginRight: "2.2vh",
+        }}
+      >
+        <TextP style={{ marginLeft: "1vh" }}>₹{price}</TextP>
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <Button
+            onClick={() => {
+              setAdded(added + 1);
+            }}
+          >
+            <i class="fa-solid fa-plus"></i>
+          </Button>
         </div>
-    )
-}
+      </div>
+    </div>
+  );
+};
 
-export const Card = () => {
-    return (
-        <CardBackground>
-            <InsideCard />
-        </CardBackground>
-    )
-}
+export const Card = (props) => {
+  return (
+    <CardBackground>
+      <InsideCard
+        name={props.name}
+        image={props.image}
+        quantity={props.quantity}
+        price={props.price}
+        id={props.id}
+      />
+    </CardBackground>
+  );
+};
+
+
