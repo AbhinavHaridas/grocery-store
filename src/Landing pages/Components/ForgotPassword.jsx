@@ -49,7 +49,6 @@ const TriangleDesign = styled.div`
   border-bottom-color: rgba(255, 255, 255, 0.14);
   border-top: none;
   position: absolute;
-  filter: blur(20px);
 `;
 
 const FormWrap = styled.div`
