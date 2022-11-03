@@ -1,25 +1,30 @@
-.nav-link{
-        background-color: rgb(255, 255, 255);
-        color: rgb(0, 0, 0);
-        border: 2px solid #ffffff;    
+.nav-link {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  border: 2px solid #ffffff;
 }
 
-.tandc{
-        color: rgb(16, 156, 0);
-        font-family: "Forum";
-        display: flex;
-        justify-content: center;
+.tandc {
+  color: rgb(16, 156, 0);
+  font-family: "Forum";
+  display: flex;
+  justify-content: center;
 }
 
-.nav-item{
-        font-family: "Forum";
-        font-size: medium;
+.nav-item {
+  font-family: "Forum";
+  font-size: medium;
 }
 
-.col-sm-9{
-        font-family: "Forum";
+.col-sm-9 {
+  font-family: "Forum";
 }
 
-.body{
-        font-family: "Forum";
+.body {
+  font-family: "Forum";
+}
+
+.row {
+  display: flex;
+  gap: 75px;
 }
