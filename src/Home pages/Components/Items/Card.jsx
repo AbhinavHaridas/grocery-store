@@ -1,4 +1,5 @@
-import React from "react";
+import React, {useEffect} from "react";
+import { useState } from "react";
 import styled from "styled-components";
 
 const Button = styled.div`
@@ -41,7 +42,25 @@ background-color: white;
 border: solid gray 1px
 `;
 
-const InsideCard = ({ name, image, quantity, price }) => {
+const InsideCard = ({ name, image, quantity, price, id }) => {
+    const [added, setAdded] = useState(0);
+
+    useEffect(() => {
+        var requestOptions = {
+            method: 'GET', 
+            redirect: 'follow'
+          };
+          if (added > 0)
+            fetch(`http://localhost:8000/categories/insert_item_to_cart?customer_id=2&item_id=${id}`, requestOptions)
+            .then(response => response.text())
+            .then(result => {
+                console.log(result);
+                console.log(id);
+                console.log(added);
+            })
+            .catch(error => console.log('error', error));
+    }, [added])
+
     return (
         <div style={{height: '40vh'}}>
             <div style={{display: 'flex', justifyContent: 'center'}} >
@@ -59,7 +78,7 @@ const InsideCard = ({ name, image, quantity, price }) => {
                 }}>
                 <TextP style={{marginLeft: '1vh'}}>${price}</TextP>
                 <div style={{display: 'flex', alignItems: 'center'}}>
-                    <Button onClick={() => {}}>
+                    <Button onClick={() => {setAdded(added + 1)}}>
                         <i class="fa-solid fa-plus"></i>
                     </Button>
                 </div>
@@ -71,7 +90,7 @@ const InsideCard = ({ name, image, quantity, price }) => {
 export const Card = (props) => {
     return (
         <CardBackground>
-            <InsideCard name={props.name} image={props.image} quantity={props.quantity} price={props.price} />
+            <InsideCard name={props.name} image={props.image} quantity={props.quantity} price={props.price} id={props.id} />
         </CardBackground>
     )
 }

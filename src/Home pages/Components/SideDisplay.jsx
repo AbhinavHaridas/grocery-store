@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect } from "react";
 // import VegetablesItems from "./Items/VegetablesItems";
 // import FruitItems from "./Items/FruitItems";
 // import FrozenVegItems from "./Items/FrozenVegItems";
@@ -9,6 +10,7 @@ import { Card } from './Items/Card';
 import { Text } from './Items/Text';
 
 const SideDisplay = ({ choice, categories, jsonData }) => {
+    
     return (
         <div style={{
             marginLeft: "27%",
@@ -24,7 +26,7 @@ const SideDisplay = ({ choice, categories, jsonData }) => {
             {
                 jsonData?.map((item) => {
                     return <Card name={item.name} price={item.price} 
-                    image={item.image} quantity={item.quantity} />
+                    image={item.image} quantity={item.quantity} id={item.id} />
                 })
             }
             </div>
