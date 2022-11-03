@@ -111,7 +111,8 @@ const SignUp = () => {
   const [location, setLocation] = useState();
   const navigate = useNavigate();
 
-  const createAccount = () => {
+  const createAccount = (e) => {
+    e.preventDefault();
     var urlencoded = new URLSearchParams();
     urlencoded.append("name", name);
     urlencoded.append("contact", phoneNumber);
@@ -200,7 +201,7 @@ const SignUp = () => {
               value={location}
               onChange={(e) => setLocation(e.target.value)}
             />
-            <CreateButton onClick={() => createAccount()}>Create Account</CreateButton>
+            <CreateButton onClick={(e) => createAccount(e)}>Create Account</CreateButton>
           </Form>
         </FormWrap>
       </SignUpPage>
