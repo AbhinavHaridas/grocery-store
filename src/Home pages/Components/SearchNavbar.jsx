@@ -118,24 +118,30 @@ const SearchNavbar = ({ setIsSelected, isSelected }) => {
           </Link>
         </li>
         <li>
+          <Link to="/offers">
           <h3>Offers</h3>
+          </Link>
         </li>
         <li>
-          <Link to="/trackorder">
+          <Link to="/yourorder">
             <h3>Orders</h3>
           </Link>
         </li>
         <li>
           <div className="cart">
+            <Link to="/cart">
             <i
               class="fa-solid fa-cart-shopping fa-2xl"
               style={{ color: "white" }}
-            />
+              />
+            </Link>
           </div>
         </li>
         <li>
           <div className="dropdown">
-            <i class="fa-thin fa-bars fa" style={{ color: "white" }}></i>
+            <Link to="/dashboard">
+              <i class="fa-solid fa-chart-simple fa-2xl" style={{ color: "white" }}></i>
+            </Link>
           </div>
         </li>
       </ul>
