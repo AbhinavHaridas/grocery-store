@@ -1,6 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import "../Home pages/Components/category_components/tomato.css";
 
@@ -28,10 +29,12 @@ const InsideCardveg = ({ image, name }) => {
       </TextP>
       <div>
         <center>
-          <button type="button" class="btnveg">
-            {" "}
-            <i class="fa fa-shopping-cart"></i>Add to cart{" "}
-          </button>
+          <Link to='/categoryitems'>
+            <button type="button" class="btnveg">
+              {" "}
+              <i class="fa fa-shopping-cart"></i>Add to cart{" "}
+            </button>
+          </Link>
         </center>
       </div>
     </section>
