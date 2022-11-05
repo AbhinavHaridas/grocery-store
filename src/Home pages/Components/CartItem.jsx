@@ -33,7 +33,7 @@ const Amount = styled.div`
   margin-right: 20px;
 `;
 
-const CartItem = ({ name, price, quantity, Count }) => {
+const CartItem = ({ name, price, quantity, Count, image }) => {
   const [count, setCount] = useState(Count);
   const [open, setOpen] = useState(false);
   const [index, setIndex] = useState(0);
@@ -54,7 +54,7 @@ const CartItem = ({ name, price, quantity, Count }) => {
         }}
       >
         <img
-          src="https://imgur.com/SDCKI4n.png"
+          src={image}
           alt="none"
           style={{ height: "20vh", alignSelf: "center" }}
         />

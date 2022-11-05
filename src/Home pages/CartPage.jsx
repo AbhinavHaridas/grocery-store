@@ -54,6 +54,7 @@ const CartPage = () => {
               price={item.price}
               quantity={item.quantity}
               Count={item.no_of_items}
+              image={item.image}
             />
           );
         })}
