@@ -38,12 +38,13 @@ const CartItem = ({ name, price, quantity, Count, image }) => {
   const [count, setCount] = useState(Count);
   const [open, setOpen] = useState(false);
   const [index, setIndex] = useState(0);
+  const [qt, setQt] = useState(quantity);
 
   useEffect(() => {
     var urlencoded = new URLSearchParams();
     urlencoded.append("customer_id", "2");
     // urlencoded.append("cart_items[0][id]", "5");
-    urlencoded.append("cart_items[0][quantity]", count);
+    urlencoded.append("cart_items[0][quantity]", qt);
   
     var requestOptions = {
       method: 'POST',
@@ -52,10 +53,10 @@ const CartItem = ({ name, price, quantity, Count, image }) => {
     };
   
     fetch("http://localhost:8000/categories/update_cart_quantity", requestOptions)
-      .then(response => response.text())
+      .then(response => response.json())
       .then(result => console.log(result))
       .catch(error => console.log('error', error));
-  }, [count])
+  }, [qt])
 
   if (count > 0) {
     return (
