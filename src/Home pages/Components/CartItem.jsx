@@ -3,6 +3,7 @@ import { useState } from "react";
 import styled from "styled-components";
 import Dropdown from "./Dropdown";
 import AMOUNT from "./AMOUNT";
+import { useEffect } from "react";
 
 const TextC = styled.p`
   font-family: "Forum", cursive;
@@ -37,6 +38,24 @@ const CartItem = ({ name, price, quantity, Count, image }) => {
   const [count, setCount] = useState(Count);
   const [open, setOpen] = useState(false);
   const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    var urlencoded = new URLSearchParams();
+    urlencoded.append("customer_id", "2");
+    // urlencoded.append("cart_items[0][id]", "5");
+    urlencoded.append("cart_items[0][quantity]", count);
+  
+    var requestOptions = {
+      method: 'POST',
+      body: urlencoded,
+      redirect: 'follow'
+    };
+  
+    fetch("http://localhost:8000/categories/update_cart_quantity", requestOptions)
+      .then(response => response.text())
+      .then(result => console.log(result))
+      .catch(error => console.log('error', error));
+  }, [count])
 
   if (count > 0) {
     return (
