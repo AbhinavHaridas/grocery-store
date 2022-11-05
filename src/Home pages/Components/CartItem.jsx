@@ -38,25 +38,24 @@ const CartItem = ({ name, price, quantity, Count, image }) => {
   const [count, setCount] = useState(Count);
   const [open, setOpen] = useState(false);
   const [index, setIndex] = useState(0);
-  const [qt, setQt] = useState(quantity);
 
-  useEffect(() => {
-    var urlencoded = new URLSearchParams();
-    urlencoded.append("customer_id", "2");
-    // urlencoded.append("cart_items[0][id]", "5");
-    urlencoded.append("cart_items[0][quantity]", qt);
-  
-    var requestOptions = {
-      method: 'POST',
-      body: urlencoded,
-      redirect: 'follow'
-    };
-  
-    fetch("http://localhost:8000/categories/update_cart_quantity", requestOptions)
-      .then(response => response.json())
-      .then(result => console.log(result))
-      .catch(error => console.log('error', error));
-  }, [qt])
+  const updateCount = () => {
+      var urlencoded = new URLSearchParams();
+      urlencoded.append("customer_id", "2");
+      urlencoded.append("cart_items[0][quantity]", count);
+    
+      var requestOptions = {
+        method: 'POST',
+        body: urlencoded,
+        redirect: 'follow'
+      };
+    
+      fetch("http://localhost:8000/categories/update_cart_quantity", requestOptions)
+        .then(response => response.json())
+        .then(result => console.log(result))
+        .catch(error => console.log('error', error));
+  };
+
 
   if (count > 0) {
     return (
@@ -108,7 +107,7 @@ const CartItem = ({ name, price, quantity, Count, image }) => {
               paddingTop: "0vh",
             }}
           >
-            <TextC>Qty: {count}</TextC>
+            <TextC>Qty: {quantity}</TextC>
           </div>
           <div
             style={{
@@ -142,18 +141,18 @@ const CartItem = ({ name, price, quantity, Count, image }) => {
                   marginRight: "4vh",
                   cursor: "pointer",
                 }}
-                onClick={() => setCount(0)}
+                onClick={() => {setCount(0)}}
               />
               <Amount>
                 <i
                   class="fa-solid fa-plus"
-                  onClick={() => setCount(count + 1)}
+                  onClick={() => {setCount(count + 1); updateCount();}}
                 ></i>
                 <TextC>{count}</TextC>
                 <i
                   class="fa-solid fa-minus"
                   onClick={() => {
-                    if (count !== 0) setCount(count - 1);
+                    if (count !== 0) {setCount(count - 1); updateCount();}
                   }}
                 ></i>
               </Amount>
