@@ -5,6 +5,7 @@ import Navbar from "./Components/Navbar";
 import CartItem from "./Components/CartItem";
 import End from "./Components/End";
 import SearchNavbar from "./Components/SearchNavbar";
+import { useLocation } from "react-router-dom";
 
 const CartItems = styled.div`
   display: flex;
@@ -17,15 +18,16 @@ const CartItems = styled.div`
 
 const CartPage = () => {
   const [jsonData, setJsonData] = useState(null);
-
+  const location = useLocation();
+  const customerId = location.state.customer_id;
   useEffect(() => {
     var requestOptions = {
       method: "GET",
       redirect: "follow",
     };
-
+    
     fetch(
-      "http://localhost:8000/categories//fetch_cart_items?customer_id=2",
+      `http://localhost:8000/categories//fetch_cart_items?customer_id=${customerId}`,
       requestOptions
     )
       .then((response) => response.json())
@@ -35,7 +37,7 @@ const CartPage = () => {
 
   return (
     <div style={{ backgroundColor: "rgb(179, 173, 173)", minHeight: "1200px" }}>
-      <SearchNavbar />
+      <SearchNavbar customerId={customerId}/>
       <div
         style={{
           position: "sticky",
@@ -54,6 +56,7 @@ const CartPage = () => {
               price={item.price}
               quantity={item.quantity}
               Count={item.no_of_items}
+              image={item.image}
             />
           );
         })}

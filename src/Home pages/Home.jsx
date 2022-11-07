@@ -5,15 +5,16 @@ import SearchNavbar from "./Components/SearchNavbar";
 import Bestsellers from "./Components/Bestsellers";
 import Footer from "../Landing pages/Components/Footer";
 import AllDeals from "./Components/AllDeals";
+import { useLocation } from "react-router-dom";
 
 const Home = () => {
+  const location = useLocation();
+  const customerId = location?.state?.user_id;
   return (
     <>
-      <SearchNavbar />
+      <SearchNavbar customerId={customerId} />
       <Header />
-      {/* <Deals />
-      <Bestsellers /> */}
-      <AllDeals />
+      <AllDeals customerId={customerId} />
       <Footer />
     </>
   );

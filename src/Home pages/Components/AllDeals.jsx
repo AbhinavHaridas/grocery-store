@@ -5,7 +5,7 @@ import Deals from "./Deals";
 
 const COLORS = ["rgb(175,238,238)", "rgb(255,192,203)", "rgb(250,250,210)"];
 
-const AllDeals = () => {
+const AllDeals = ({ customerId }) => {
   const [jsonData, setJsonData] = useState(null);
 
   useEffect(() => {
@@ -20,7 +20,7 @@ const AllDeals = () => {
     <>
       {jsonData?.map((deal_type) => {
         return (
-          <Deals id={deal_type.id} title={deal_type.title} COLORS={COLORS} />
+          <Deals id={deal_type.id} title={deal_type.title} COLORS={COLORS} customerId={customerId} />
         );
       })}
     </>

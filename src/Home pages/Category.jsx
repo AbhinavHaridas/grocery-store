@@ -5,13 +5,15 @@ import Slider from "./Components/category_components/Slider";
 import AllCategories from "./AllCategories";
 import { useState } from "react";
 import SearchNavbar from "./Components/SearchNavbar";
+import { useLocation } from "react-router-dom";
 
 const Category = () => {
   const [scrollID, setScrollID] = useState(0);
-
+  const location = useLocation();
+  const customerId = location.state.customer_id;
   return (
     <>
-      <SearchNavbar />
+      <SearchNavbar customerId={customerId}/>
       <Slider setScrollID={setScrollID} scrollID={scrollID} />
       <AllCategories scrollID={scrollID} />
       <Footer />

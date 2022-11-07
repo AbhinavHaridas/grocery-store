@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { Link, useNavigate } from "react-router-dom";
-import ForgotPassword from "./ForgotPassword";
 
 const ModalOverlay = styled.div`
   position: absolute;
@@ -157,7 +156,13 @@ const Modal = ({ isOpen, toggle, isPasswordForgotten }) => {
     fetch("http://localhost:8000/customers/signin", requestOptions)
       .then(response => response.json())
       .then(json => {
-        if (json.message === "Login Successful") navigate('/home', { replace:true })
+        if (json.message === "Login successful")
+        {
+          navigate('/home', { replace: true ,state: {user_id: json.id}})
+        }
+        else {
+          alert("Invalid Credentials");
+        }
       })
       .catch(error => console.log('error', error));
   }

@@ -83,7 +83,7 @@ const P = styled.p`
   padding: 10px 12px;
 `;
 
-const SearchNavbar = ({ setIsSelected, isSelected }) => {
+const SearchNavbar = ({ customerId,setIsSelected, isSelected }) => {
   const [searchItem, setSearchItem] = useState("");
 
   return (
@@ -113,7 +113,7 @@ const SearchNavbar = ({ setIsSelected, isSelected }) => {
           />
         </li>
         <li>
-          <Link to="/category">
+          <Link to="/category" state={{customer_id:customerId}}>
             <h3>Categories</h3>
           </Link>
         </li>
@@ -123,13 +123,13 @@ const SearchNavbar = ({ setIsSelected, isSelected }) => {
           </Link>
         </li>
         <li>
-          <Link to="/yourorder">
+          <Link to="/yourorder" state={{customer_id:customerId}}>
             <h3>Orders</h3>
           </Link>
         </li>
         <li>
           <div className="cart">
-            <Link to="/cart">
+            <Link to="/cart" state={{customer_id:customerId}}>
             <i
               class="fa-solid fa-cart-shopping fa-2xl"
               style={{ color: "white" }}
