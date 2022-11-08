@@ -10,12 +10,12 @@ import { useLocation } from "react-router-dom";
 const Category = () => {
   const [scrollID, setScrollID] = useState(0);
   const location = useLocation();
-  const customerId = location.state.customer_id;
+  const customerId = location?.state?.customer_id;
   return (
     <>
       <SearchNavbar customerId={customerId}/>
       <Slider setScrollID={setScrollID} scrollID={scrollID} />
-      <AllCategories scrollID={scrollID} />
+      <AllCategories scrollID={scrollID} customerId={customerId} />
       <Footer />
     </>
   );

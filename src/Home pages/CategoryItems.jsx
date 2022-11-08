@@ -4,12 +4,15 @@ import SideNavbar from "./Components/SideNavbar";
 import SideDisplay from "./Components/SideDisplay";
 import { useState, useEffect } from "react";
 import SearchNavbar from "./Components/SearchNavbar";
+import { useLocation } from "react-router-dom";
 
 const CategoryItems = () => {
   const [choice, setChoice] = useState(1);
   const [categories, setCategories] = useState([]);
   const [jsonData, setJsonData] = useState(null);
-
+  const location = useLocation();
+  const customerId = location?.state?.customer_id;
+  console.log(customerId);
   useEffect(() => {
     fetch("http://localhost:8000/categories/fetch_category_types", {
       mode: "cors",
@@ -35,7 +38,7 @@ const CategoryItems = () => {
   return (
     <div>
       <div style={{ position: "fixed", top: "0%", width: "100%" }}>
-        <SearchNavbar />
+        <SearchNavbar customerId={customerId}/>
       </div>
       <div style={{ display: "flex", justifyContent: "row" }}>
         <SideNavbar setChoice={setChoice} categories={categories} />

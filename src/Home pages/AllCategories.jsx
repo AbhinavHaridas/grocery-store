@@ -7,7 +7,7 @@ const COLORS = [
 
 ];
 
-const AllCategories = ({ scrollID }) => {
+const AllCategories = ({ scrollID ,customerId}) => {
   const [jsonData, setJsonData] = useState(null);
 
   useEffect(() => {
@@ -34,6 +34,7 @@ const AllCategories = ({ scrollID }) => {
             title={category.title}
             COLORS={COLORS}
             scrollID={scrollID}
+            customerId={customerId}
           />
         );
       })}

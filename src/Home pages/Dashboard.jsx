@@ -12,6 +12,7 @@ import items from "./images/category.png";
 import users from "./images/account_circle.png";
 import earnings from "./images/attach_money.png";
 import profit from "./images/auto_graph.png";
+import { useLocation } from "react-router-dom";
 
 const Heading = styled.p`
   font-family: "Forum", cursive;
@@ -55,9 +56,12 @@ const Td = styled.td`
 `;
 
 const Dashboard = () => {
+  const location = useLocation();
+  const customerId = location.state.customer_id;
+
   return (
     <div style={{ margin: 0, padding: 0, boxSizing: "border-box" }}>
-      <SearchNavbar />
+      <SearchNavbar customerId={customerId}/>
       <Heading>Welcome Admin</Heading>
       <DasboardWrap>
         <DashboardComponent

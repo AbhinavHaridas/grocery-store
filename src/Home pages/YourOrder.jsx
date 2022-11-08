@@ -1,4 +1,5 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 
 // Import components here
@@ -19,9 +20,11 @@ const OrderHeading = styled.p`
 `;
 
 const Order = () => {
+  const location = useLocation();
+  const customerId = location.state.customer_id;
   return (
     <div>
-      <SearchNavbar />
+      <SearchNavbar customerId={customerId}/>
       <OrderWrap>
         <OrderHeading>Your Order History</OrderHeading>
         <OrderComponent

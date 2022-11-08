@@ -158,6 +158,7 @@ const Modal = ({ isOpen, toggle, isPasswordForgotten }) => {
       .then(json => {
         if (json.message === "Login successful")
         {
+          alert("Login successful");
           navigate('/home', { replace: true ,state: {user_id: json.id}})
         }
         else {

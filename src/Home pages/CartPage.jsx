@@ -19,7 +19,7 @@ const CartItems = styled.div`
 const CartPage = () => {
   const [jsonData, setJsonData] = useState(null);
   const location = useLocation();
-  const customerId = location.state.customer_id;
+  const customerId = location?.state?.customer_id;
   useEffect(() => {
     var requestOptions = {
       method: "GET",

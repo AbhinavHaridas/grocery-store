@@ -14,7 +14,7 @@ const Vegcard = styled.div`
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 `;
 
-const InsideCardveg = ({ image, name }) => {
+const InsideCardveg = ({ image, name ,customerId }) => {
   return (
     <section>
       <div style={{ display: "flex", justifyContent: "center" }}>
@@ -29,7 +29,7 @@ const InsideCardveg = ({ image, name }) => {
       </TextP>
       <div>
         <center>
-          <Link to='/categoryitems'>
+          <Link to='/categoryitems' state={{customer_id:customerId}}>
             <button type="button" class="btnveg">
               {" "}
               <i class="fa fa-shopping-cart"></i>Add to cart{" "}
@@ -62,8 +62,9 @@ const TextP = styled.p`
   margin-left: 4%;
 `;
 
-const Categories = ({ id, title, COLORS, scrollID }) => {
+const Categories = ({ id, title, COLORS, scrollID ,customerId}) => {
   const [jsonData, setJsonData] = useState(null);
+  console.log(customerId);
 
   useEffect(() => {
     var requestOptions = {
@@ -82,7 +83,7 @@ const Categories = ({ id, title, COLORS, scrollID }) => {
 
   useEffect(() => {
     document
-      .getElementById(`#${scrollID}`)
+      .getElementById(`#${scrollID }`)
       ?.scrollIntoView({ behavior: "smooth" });
   }, [scrollID]);
 
@@ -94,7 +95,7 @@ const Categories = ({ id, title, COLORS, scrollID }) => {
           {jsonData?.map((item) => {
             return (
               <Vegcard>
-                <InsideCardveg image={item.image} name={item.name} />
+                <InsideCardveg image={item.image} name={item.name} customerId={customerId} />
               </Vegcard>
             );
           })}
