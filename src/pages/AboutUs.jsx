@@ -3,7 +3,7 @@ import LandingNavbar from "../Landing pages/Components/LandingNavbar";
 import styled from "styled-components";
 
 // Assets import here
-import image from "./images/ServiceHero.jpg";
+import image from "../images/ServiceHero.jpg";
 
 // Components import here
 import Service from "../Landing pages/Components/Service-component";
