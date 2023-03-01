@@ -23,7 +23,7 @@
     "start": "react-scripts start",
     "start-sync": "browser-sync start --proxy 'localhost:3000' --files 'public/**/*.*'",
     "pre-deploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d build --branch=gh-pages",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -46,7 +46,7 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "http://AbhinavHairdas.github.io/grocery-store",
+  "homepage": "http://AbhinavHairdas.github.io/grocery-store/",
   "devDependencies": {
     "browser-sync": "^2.27.12",
     "eslint-config-react-app": "^7.0.1",
