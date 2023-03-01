@@ -13,6 +13,7 @@
     "react-bootstrap-validation": "^0.1.11",
     "react-dom": "^18.2.0",
     "react-modal": "^3.15.1",
+    "react-router-dom": "^6.8.2",
     "react-scripts": "5.0.1",
     "styled-components": "^5.3.5",
     "swiper": "^8.4.2",
@@ -22,6 +23,8 @@
     "start": "react-scripts start",
     "start-sync": "browser-sync start --proxy 'localhost:3000' --files 'public/**/*.*'",
     "build": "react-scripts build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -46,6 +49,6 @@
   "devDependencies": {
     "browser-sync": "^2.27.12",
     "eslint-config-react-app": "^7.0.1",
-    "react-router-dom": "^6.3.0"
+    "gh-pages": "^5.0.0"
   }
 }
