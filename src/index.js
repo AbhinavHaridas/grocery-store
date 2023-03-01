@@ -23,7 +23,7 @@ import Paymentpage from "./Home pages/Payment/Payment";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="https://abhinavharidas.github.io/grocery-store/">
       <Routes>
         <Route exact path="/" element={<App />} />
         <Route exact path="/signin" element={<SignIn />} />
