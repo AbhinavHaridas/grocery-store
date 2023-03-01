@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/grocery-store/static/css/main.fddafaf9.css",
+    "main.js": "/grocery-store/static/js/main.bef1c4a1.js",
+    "static/media/ContactImage.jpg": "/grocery-store/static/media/ContactImage.ef63e66a4471ff653c09.jpg",
+    "static/media/vegetables.png": "/grocery-store/static/media/vegetables.f571788fcffc10f2a3a1.png",
+    "static/media/ServiceHero.jpg": "/grocery-store/static/media/ServiceHero.6a22f5ec417371ee5f9f.jpg",
+    "static/media/ServiceImage.jpg": "/grocery-store/static/media/ServiceImage.f4f39ff6e7639ff3cb5d.jpg",
+    "static/media/slider-img-3.jpeg": "/grocery-store/static/media/slider-img-3.52eb23b9c3b0b87be433.jpeg",
+    "static/media/slider-img-4.jpeg": "/grocery-store/static/media/slider-img-4.f555f052b4c671bb7bc8.jpeg",
+    "static/media/slider-img-1.jpeg": "/grocery-store/static/media/slider-img-1.ddf2be22b74f8bf97522.jpeg",
+    "static/media/slider-img-2.jpeg": "/grocery-store/static/media/slider-img-2.4682c04ba6d3702b9593.jpeg",
+    "static/media/Order-Man.png": "/grocery-store/static/media/Order-Man.e248d08e20875713a7cd.png",
+    "static/media/twitter.png": "/grocery-store/static/media/twitter.8e65601e69067aadfe55.png",
+    "index.html": "/grocery-store/index.html",
+    "main.fddafaf9.css.map": "/grocery-store/static/css/main.fddafaf9.css.map",
+    "main.bef1c4a1.js.map": "/grocery-store/static/js/main.bef1c4a1.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fddafaf9.css",
+    "static/js/main.bef1c4a1.js"
+  ]
+}
