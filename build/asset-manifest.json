@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/grocery-store/static/css/main.e1f106fc.css",
+    "main.js": "/grocery-store/static/js/main.92302270.js",
+    "static/media/ServiceHero.jpg": "/grocery-store/static/media/ServiceHero.6a22f5ec417371ee5f9f.jpg",
+    "static/media/ServiceImage.jpg": "/grocery-store/static/media/ServiceImage.f4f39ff6e7639ff3cb5d.jpg",
+    "static/media/twitter.png": "/grocery-store/static/media/twitter.8e65601e69067aadfe55.png",
+    "index.html": "/grocery-store/index.html",
+    "main.e1f106fc.css.map": "/grocery-store/static/css/main.e1f106fc.css.map",
+    "main.92302270.js.map": "/grocery-store/static/js/main.92302270.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e1f106fc.css",
+    "static/js/main.92302270.js"
+  ]
+}
